@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.7)
+The top-level auxiliary file: naacl_amt_bm.aux
+The style file: naaclhlt2010.bst
+Database file #1: amturk.bib
+Warning--empty journal in kittur_crowdsourcing_2008
+You've used 7 entries,
+            2490 wiz_defined-function locations,
+            591 strings with 5826 characters,
+and the built_in function-call counts, 3622 in all, are:
+= -- 379
+> -- 121
+< -- 5
++ -- 40
+- -- 40
+* -- 238
+:= -- 522
+add.period$ -- 27
+call.type$ -- 7
+change.case$ -- 48
+chr.to.int$ -- 7
+cite$ -- 8
+duplicate$ -- 177
+empty$ -- 287
+format.name$ -- 50
+if$ -- 817
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 7
+newline$ -- 44
+num.names$ -- 21
+pop$ -- 63
+preamble$ -- 1
+purify$ -- 55
+quote$ -- 0
+skip$ -- 164
+stack$ -- 0
+substring$ -- 223
+swap$ -- 77
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 56
+warning$ -- 1
+while$ -- 23
+width$ -- 11
+write$ -- 97
+(There was 1 warning)

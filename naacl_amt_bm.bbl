@@ -1,0 +1,55 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citename{Dawid and Skene}1979]{dawid_maximum_1979}
+A.~P. Dawid and A.~M. Skene.
+\newblock 1979.
+\newblock Maximum likelihood estimation of observer error-rates using the {EM}
+  algorithm.
+\newblock {\em Journal of the Royal Statistical Society. Series C {(Applied}
+  Statistics)}, 28(1):20–--28.
+
+\bibitem[\protect\citename{Esuli and Sebastiani}2006]{sentiwordnet:06}
+A.~Esuli and F.~Sebastiani.
+\newblock 2006.
+\newblock {SentiWordNet:} a publicly available lexical resource for opinion
+  mining.
+\newblock In {\em Proceedings of {LREC}}, volume~6.
+
+\bibitem[\protect\citename{Kittur \bgroup et al.\egroup
+  }2008]{kittur_crowdsourcing_2008}
+A.~Kittur, E.~H Chi, and B.~Suh.
+\newblock 2008.
+\newblock Crowdsourcing user studies with mechanical turk.
+
+\bibitem[\protect\citename{Mason and Watts}2009]{mason_financial_2009}
+W.~Mason and D.~J Watts.
+\newblock 2009.
+\newblock Financial incentives and the performance of crowds.
+\newblock In {\em Proceedings of the {ACM} {SIGKDD} Workshop on Human
+  Computation}, pages 77–--85.
+
+\bibitem[\protect\citename{Sheng \bgroup et al.\egroup }2008]{sheng_get_2008}
+V.~S Sheng, F.~Provost, and P.~G Ipeirotis.
+\newblock 2008.
+\newblock Get another label? improving data quality and data mining using
+  multiple, noisy labelers.
+\newblock In {\em Proceeding of the 14th {ACM} {SIGKDD} international
+  conference on Knowledge discovery and data mining}, pages 614–--622.
+
+\bibitem[\protect\citename{Snow \bgroup et al.\egroup }2008]{snow_cheap_2008}
+R.~Snow, B.~{O'Connor}, D.~Jurafsky, and A.~Y Ng.
+\newblock 2008.
+\newblock Cheap and fast—but is it good?: evaluating non-expert annotations
+  for natural language tasks.
+\newblock In {\em Proceedings of the Conference on Empirical Methods in Natural
+  Language Processing}, pages 254–--263.
+
+\bibitem[\protect\citename{Su \bgroup et al.\egroup
+  }2007]{su_internet-scale_2007}
+Q.~Su, D.~Pavlov, J.~H Chow, and W.~C Baker.
+\newblock 2007.
+\newblock Internet-scale collection of human-reviewed data.
+\newblock In {\em Proceedings of the 16th international conference on World
+  Wide Web}, pages 231–--240.
+
+\end{thebibliography}

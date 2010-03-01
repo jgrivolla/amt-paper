@@ -1,0 +1,336 @@
+%  Linguistics article environments in LaTeX
+%  R.L.H. - EUROTRA PROJECT, Dept. Lang & Ling, University of Essex
+%  Mar 16 90
+%	Revised Aug 90
+%
+%
+%  Input this file into your source file by putting the LaTeX command
+%  `` \input <thisfilename> '' on its first line.
+%
+% `%' starts a comment !
+
+%%	*********** Macro Definitions **************
+%%
+% LINGUISTIC ITEM ENVIRONMENT
+% Linguistic items (examples, diagrams, trees etc) are normally
+% numbered consecutively throughout a linguistic article.
+
+\newcounter{licntr}			% linguistic item counter
+
+% Two commands required in the defintion of a linguistic item
+\newcommand{\stepli}{\refstepcounter{licntr}}	% increment
+					  	% li counter
+\newcommand{\lival}{\thelicntr}			% return value
+						% of li
+						% counter
+%% Now we define the ``linguistic item'' environment for cases where
+%% there is just one \item to be displayed e.g. a single sentence
+%% First, define the outer environment (which handles the numbering)
+\newenvironment{liout}{\small
+		\stepli			% step li counter
+		\samepage			% prevent page break
+		\begin{list}{		% begin definition
+			(\lival)\hfill}{} 	% left adjust number
+			\samepage
+			\item 			% dummy item
+		}{ \end{list}}
+
+\newenvironment{liexc}{\small
+		\samepage			% prevent page break
+		\begin{list}{		% begin definition
+			(27)\hfill}{} 	% left adjust number
+			\samepage
+			\item 			% dummy item
+		}{ \end{list}}
+
+%% Now embed a new list in the outer list - to typographical match the
+%% ``lis'' environment (where we have alpha-indexed items)
+\newenvironment{li}{\small
+		\begin{liout} 			% begin outer list
+		\begin{list}{\samepage \noindent}{} 	% begin inner
+						% list,  prevent page break 
+		\item}{				% item
+		\end{list} 
+		\end{liout}}
+
+\newenvironment{liexcp}{\small
+		\begin{liexc} 			% begin outer list
+		\begin{list}{\samepage \noindent}{} 	% begin inner
+						% list,  prevent page break 
+		\item}{				% item
+		\end{list} 
+		\end{liexc}}
+
+
+
+%% Special version of li which does NOT indent material - puts number
+%% on line by itself and then (unindented) material below
+\newenvironment{li*}{\small
+	\stepli
+	\samepage				% prevent page break
+	\begin{trivlist} \item[] (\lival) \end{trivlist}
+	\begin{trivlist} 
+	{\samepage \item[]}
+	}{\end{trivlist}}					% space
+				
+
+% LINGUISTIC ITEMS ENVIRONMENT
+% Define a counter for alphabetically indexed items
+\newcounter{alphcntr}		% will be reset in each new lis environment
+
+% Define an environment (called ``lis'' = linguistic items) for a
+% series of alpha-indexed linguistic items e.g. 
+%	(1) a.
+%	    b.    etc.
+\newenvironment{lis}{\small
+		\begin{liout} 				% begin outer list
+			\begin{list}{			% begin inner
+							% list
+				\samepage		% prevent pg breaks
+				\alph{alphcntr}.\hfill 	%left-align letter
+					}{
+				\usecounter{alphcntr}}}{
+		\end{list} \end{liout}}
+
+% LINGUISTIC PRINCIPLE COMMAND - \princ
+\newtheorem{prin}{Principle}
+%%\newtheorem{ax}{Axiom}
+%%\newtheorem{fig}{Figure}
+\newtheorem{assum}{Assumption}
+\newtheorem{defn}{Definition}
+% Define any more you want here.....
+
+% Now define a command with two arguments to handle linguistic
+% principles.  The command - ``princ'' takes two arguments: the
+% first is the name associated with a \newtheorem (e.g. ``prin'') and
+% the second  is the text of that principle. (We use a command here
+% rather than an  environment due to technical limitations of LaTeX environment
+% parameter handling.)
+\newcommand{\princ}[2]{\begin{liout} 
+			\begin{#1} 
+				{#2}
+			\end{#1}
+			\end{liout}}
+			
+			
+% MACROS FOR PRODUCING LABELLED/UNLABELLED BRACKETS
+\newcommand{\lb}{\mbox{$ [ $}}			% unlabelled right
+						% bracket 
+
+\newcommand{\rb}{\mbox{$ ] $}}			% unlabelled right
+						% bracket 
+
+\newcommand{\llb}[1]{\mbox{$ [_{#1} $}}		% labelled left
+						% bracket
+
+\newcommand{\lrb}[1]{\mbox{$ ]_{#1} $}}   	% labelled right
+					      	% bracket
+
+% MACROS FOR HANDLING LISTS, SHORTCUTS etc - A.W., 13/1/95
+\newcommand{\bi}{\begin{itemize}}		 
+\newcommand{\ei}{\end{itemize}}		 
+
+\newcommand{\be}{\begin{enumerate}}		 
+\newcommand{\ee}{\end{enumerate}}
+
+\newcommand{\bc}{\begin{center}}		
+\newcommand{\ec}{\end{center}}		
+
+\newcommand{ \heading }[1]{ \begin{center}
+			   {\bf {#1}}
+			    \end{center}}
+
+% MACROS FOR STANDARD LINGUISTIC SYMBOLS (can be used in text mode)
+\newcommand{\tarr}{\mbox{$ \Longrightarrow $}}	% ==> i.e
+						% translation arrow
+
+\newcommand{\rarr}{\mbox{$ \longrightarrow $}}	% --> i.e.
+						% rule arrow
+
+\newcommand{\llr}{\mbox{$ \longleftrightarrow $}}	% <--> i.e.
+						% rule arrow
+
+\newcommand{\up}{\mbox{$ \uparrow $}}	% uparrow for text/maths
+						% environment
+
+\newcommand{\down}{\mbox{$ \downarrow $}}	% downarrow for
+					    	% text/maths environment
+
+%% \newcommand{\th}{\mbox{$ \theta $}}		% theta
+\newcommand{\al}{\mbox{$ \alpha $}}		% alpha
+
+% MACROS FOR ASTERISKING LINGUISTIC DATA
+% (ensures data strings are neatly aligned e.g
+%	Green ideas sleep furiously
+%      *Green ideas furious sleep
+
+\newlength{\astspace}				% initialise length command
+
+\settowidth{\astspace}{\mbox{$\ast$}}		% set length command
+						% to width of an asterisk
+
+\newcommand{\un}{\mbox{$\ast$}}			% unacceptable string (*)
+
+\newcommand{\qu}{?}				% questionable string
+
+\newcommand{\ac}{\hspace*{\astspace}}		% acceptable string
+						% (inserts *-width
+						% space at start of
+						% string)
+
+%% ATTRIBUTE-VALUE ARRAY ENVIRONMENT		
+%% Now we define some specialised linguistic items, starting with an
+%% attribute value array
+\newcommand{\attrib}[1]{{\rm \bf {#1}}}		% define the
+						% attributes of an
+						% attribute
+
+\newcommand{\atomval}[1]{{\rm {#1}}}		% define attribute of
+						% an atomic value
+
+\newcommand{\sematomval}[1]{{\mit {#1}}}	% define attribute of 
+						% semantic atomic values
+
+% Att-Val array environment.  
+% Must occur inside maths environment
+\newenvironment{av}{\left[ \begin{array}{ll}}{\end{array} \right]}
+
+%% Labelled Att-Val array environment
+\newenvironment{lav}[1]{ \left[_{#1} \begin{array}{ll}}{\end{array} \right]}
+
+
+%% TREE ENVIRONMENT - \begin{tree}{}......\end{tree}
+% Trees produced by specialised tabular environment which takes an
+% argument corresponding to the width of the tree - a string in c*
+% e.g. cccc  for a tree 4 nodes wide. Lines between nodes must be   
+% drawn by hand. 
+\newenvironment{tree}[1]{		
+	\begin{large}				% nodes in large typeface
+	\renewcommand{\arraystretch}{4}		% set interrow space
+						% to 4 (LaTeX default
+						% is 1.  Change this
+						% value to increase
+						% depth of subtrees.
+						% Range 3-6  approx
+
+	\begin{tabular}{{#1}} 			% begin tree with 
+						% argument-specified width
+	\addtolength{\tabcolsep}{\tabcolsep}	% Double normal table
+					    	% column separation. 
+	}{				
+
+	\addtolength{\tabcolsep}{-0.5\tabcolsep}	% Restore normal table
+					     	% column separation
+	\end{tabular}				% end of tree description
+
+	\renewcommand{\arraystretch}{1}		% Restore default
+						% array row separation
+	\end{large} }				% Back to normal size
+
+%% Commands for drawing boxes around lists, from Arnold et al '94.
+
+\newcommand{\dougswideboxfigure}[3]{	
+\begin{figure}[hbtp]
+\begin{center}
+\begin{tabular}{|p{134mm}|}\hline
+%{|@{\hspace{3em}}l@{\hspace{3em}}|}\hline
+\\
+\multicolumn{1}{|c|}{\bf #2}\\
+% only one extra line here is better:\\
+\begin{center}
+\begin{minipage}[t]{110mm}
+#3
+\end{minipage}
+\end{center}
+\\
+\hline
+\end{tabular}
+\end{center}
+\label{#1}
+\end{figure}
+}
+
+
+
+\newcounter{figcntr}			% figiom counter
+
+% Two commands required in the defintion of an figiom
+\newcommand{\stepfig}{\refstepcounter{figcntr}}	% increment
+					  	% fig counter
+\newcommand{\figval}{\thefigcntr}		% return value
+						% of fig
+						% counter
+
+%% Now we define the ``linguistic item'' environment for cases where
+%% there is just one \item to be displayed e.g. a single sentence
+%% First, define the outer environment (which handles the numbering)
+\newenvironment{figout}{
+		\stepfig			% step fig counter
+		\begin{list}{		% begin definition
+			(\figval)\hfill}{} 	% left adjust number
+			\item 			% dummy item
+		}{ \end{list}}
+
+%% Now embed a new list in the outer list - to typographical match the
+%% ``lis'' environment (where we have alpha-indexed items)
+\newenvironment{fig}{
+		\samepage			% prevent page break
+		\begin{figout} 			% begin outer list
+		\begin{list}{}{} 		% begin inner list
+		\item}{				% item
+		\end{list} 
+		\end{figout}}
+
+\renewcommand{\thefigcntr}{\Alph{figcntr}}
+
+\newcounter{axcntr}			% axiom counter
+
+% Two commands required in the defintion of an axiom
+\newcommand{\stepax}{\refstepcounter{axcntr}}	% increment
+					  	% ax counter
+\newcommand{\axval}{\theaxcntr}		% return value
+						% of ax
+						% counter
+
+%% Now we define the ``linguistic item'' environment for cases where
+%% there is just one \item to be displayed e.g. a single sentence
+%% First, define the outer environment (which handles the numbering)
+\newenvironment{axout}{
+		\stepax			% step ax counter
+		\begin{list}{		% begin definition
+			(\axval)\hfill}{} 	% left adjust number
+			\item 			% dummy item
+		}{ \end{list}}
+
+%% Now embed a new list in the outer list - to typographical match the
+%% ``lis'' environment (where we have alpha-indexed items)
+\newenvironment{ax}{
+		\samepage			% prevent page break
+		\begin{axout} 			% begin outer list
+		\begin{list}{\noindent}{} 		% begin inner list
+		\item}{				% item
+		\end{list} 
+		\end{axout}}
+
+\renewcommand{\theaxcntr}{\Roman{axcntr}}
+
+%EMBEDDED AXIOMS e.g.
+%	(1) a.
+%	    b.    etc.
+
+\newcounter{alphacntr}		% will be reset in each new ax environment
+
+\newenvironment{axs}{
+		\begin{axout} 				% begin outer list
+			\begin{list}{			% begin inner
+							% list
+				\samepage		% prevent pg breaks
+				\alph{alphacntr}.\hfill %left-align letter
+					}{
+				\usecounter{alphacntr}}}{
+		\end{list} \end{axout}}
+
+
+\newcommand{\s}{\mbox{$ \sectionsymbol $}}      
+\let\sectionsymbol=\S
+\def\S{{}\;{}}
