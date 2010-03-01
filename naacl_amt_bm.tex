@@ -52,7 +52,7 @@ We compare different HIT design strategies by evaluating the usefulness of resul
 \section{HIT Design}
 \label{sect:design}
 
-We selected a dataset of 1000 sentences containing user opinions on cars from the automotive section of \texttt{www.ciao.es} (Spanish). This website was chosen since it contains a large and varied amount of opinions in Spanish and because opinions include simultaneously global numeric and specific ratings over particular attributes of the subject matter. Section \ref{datasets} contains more detailed information about the selection of the dataset. An example of a sentence from the data set can be found in (\ref{ex}):
+We selected a dataset of 1000 sentences containing user opinions on cars from the automotive section of \texttt{www.ciao.es} (Spanish). This website was chosen because it contains a large and varied pool of Spanish customer comments suitable to train an Opinion Mining System and because opinions include simultaneously global numeric and specific ratings over particular attributes of the subject matter. Section \ref{datasets} contains more detailed information about the selection of the dataset. An example of a sentence from the data set can be found in (\ref{ex}):
 
 \begin{li}
   \label{ex}
@@ -64,7 +64,7 @@ We selected a dataset of 1000 sentences containing user opinions on cars from th
   \begin{center}
     \includegraphics[scale=0.6]
 	{pics/Shot_HIT1.png}
-	\caption{Figure 1.}
+	\caption{HIT1. A simple categorization scheme.}
 	\label{fig1}
   \end{center}
 \end{figure}
@@ -73,7 +73,7 @@ We selected a dataset of 1000 sentences containing user opinions on cars from th
   \begin{center}
     \includegraphics[scale=0.6]
 	{pics/Shot_HIT2.png}
-	\caption{Figure 2.}
+	\caption{HIT2. A graded categorization template.}
 	\label{fig2}
   \end{center}
 \end{figure}
@@ -82,26 +82,12 @@ We selected a dataset of 1000 sentences containing user opinions on cars from th
   \begin{center}
     \includegraphics[scale=0.6]
 	{pics/Shot_HIT3.png}
-	\caption{Figure 3.}
+	\caption{HIT3. A continuous triangular categorization template containing both a horizontal positive-negative axis and a vertical subjective-objective axis.}
 	\label{fig3}
   \end{center}
 \end{figure}
 
-The sentences in the dataset were presented to the AMT workers in three different HIT designs. HIT1 is a simple categorization scheme in which workers are asked to classify each sentence as being either `positive', `negative' or `neutral', as is shown in Figure \ref{fig1}. HIT2 is a graded categorization template in which workers had to assign a score between -5 (negative) and +5 (positive) to each example sentence, as is shown in Figure \ref{fig2}. Finally, HIT3 is a continuous triangular categorization template that allows workers to place \texttt{<improve>} examples both on a horizontal positive-negative axis and on a vertical subjective-objective axis. This latter axis expresses the degree to which the sentence contains opinionated content and was earlier used by \cite{sentiwordnet:06}. For example, the sentence `I think this is a wonderful car' clearly marks an opinion and should be positioned towards subjective scale, while the sentence `The car has six cilinders' should be placed high on the objective scale. An example of HIT is is provided in Figure \ref{fig2}. In order not to burden workers with ..., we kept things simple and did this and that.
-
-%         o F1: elige para cada frase 'positivo'/'negativo'/'otro'
-%         o F2: para cada frase, puntúa entre -5 y 5 (11 opciones con 0
-%           en el centro).
-%         o F3: estructura triangular, con la base entre 'negativo' y
-%           'positivo' y el ángulo opuesto 'neutro'. Idealmente, el
-%           usuario debería poder cliquear en cualquier punto del
-%           triángulo. En la línea base entran opiniones que son
-%           relevantes al objeto del que se está expresando una opinión
-%           (e.g. 'Mi coche no es ni bueno ni malo' se clasificaría en
-%           la línea base entre 'negativo' y 'positivo', mientras que la
-%           frase 'Qué tal?' se clasificaría en el punto 'neutro').
-%           Requisito: una pequeña aplicación en Javascript (o similar).
-%           Si eso llevara demasiado tiempo, pensaremos en alternativas.
+The sentences in the dataset were presented to the AMT workers in three different HIT designs. HIT1 is a simple categorization scheme in which workers are asked to classify each sentence as being either \textit{positive}, \textit{negative} or \textit{neutral}, as is shown in Figure \ref{fig1}. HIT2 is a graded categorization template in which workers had to assign a score between -5 (negative) and +5 (positive) to each example sentence, as is shown in Figure \ref{fig2}. Finally, HIT3 is a continuous triangular categorization template that allows workers to use both a horizontal positive-negative axis and a vertical subjective-objective axis by placing the example sentence anywhere inside the triangle. The subjective-objective axis expresses the degree to which the sentence contains opinionated content and was earlier used by \cite{sentiwordnet:06}. For example, the sentence \textit{`I think this is a wonderful car'} clearly marks an opinion and should be positioned towards the subjective end, while the sentence \textit{`The car has six cilinders'} should be located towards the objective end. Figure \ref{fig3} contains an example of HIT3. In order not to burden the workers with overly complex instructions, we did not mention this subjective-objective axis but asked them instead to place ambiguous sentences towards the center of the horizontal positive-negative axis and more objective, non-opinionated sentences towards the lower \textit{neutral} tip of the triangle.\\
 
 \section{Annotation Task Results and Analysis}
 \label{sect:results}
@@ -133,9 +119,6 @@ These are the statistics:\\
 \end{table}
 
 %% correspondence with IAA? (might be tricky especially if there are only a few HITs to go by)
-
-
-
 \subsection{Annotation Quality}
 \texttt{<take into account annotator bias>} \\
 \texttt{<This is a very useful reference: \cite{dawid_maximum_1979}>} \\
@@ -148,6 +131,7 @@ These are the statistics:\\
 
 \section{Incidence of annotations on suppervised polarity classification}
 \label{sect:classifier}
+\texttt{<SVM-based classifier: Matlab, (LibSVM?)>}
 This section intends to evaluate the incidence of AMT-generated annotations on the polarity classification task.
 According to this, a comparative evaluation between two polarity classification systems is conducted. 
 More specifically, baseline or reference classifiers trained with noisy available metadata are compared with 
@@ -155,7 +139,6 @@ contrastive classifiers trained with AMT generated annotations.
 Although more sophisticated classification schemas can be conceived for this task, a simple SVM-based binary supervised classification approach is considered here.
 
 \subsection{Description of datasets}
-\label{datasets}
 For conducting the experimental evaluation, three different datasets were considered:
 
 \begin{enumerate}
@@ -234,7 +217,7 @@ Table \ref{tc_pre_rec} presents the resulting average values of precision and re
 in classifiers trained with either the baseline or the annotated dataset. As observed in the table, with the
 exception of recall for class "negative" and precision for class "not\_negative", both metrics are substantially 
 improved when the annotated dataset is used for training the classifiers. The most impressive improvements
-are observed for "neutral" precision and recall, and for "positive" precision. 
+are observed for "neutral" precision and recall. 
 
 \begin{table}
 \begin{tabular}{|l|l|l|l|l|}
@@ -243,17 +226,17 @@ are observed for "neutral" precision and recall, and for "positive" precision.
 \hline
 class &precision &recall &precision &recall \\ 
 \hline
-positive &54.23 (3.52) &44.65 (3.68) &68.33 (3.09) &53.65 (2.93) \\ 
+positive &50.10 (3.79) &62.00 (7.47) &60.21 (2.07) &71.00 (2.18) \\ 
 \hline
-not\_positive &66.88 (1.79) &74.75 (2.85) &72.88 (1.21) &83.28 (2.53) \\ 
+not\_positive &69.64 (2.70) &58.05 (7.54) &77.95 (1.32) &68.54 (2.75) \\ 
 \hline
-negative &40.49 (3.22) &39.93 (4.18) &44.96 (2.08) &38.26 (5.38) \\ 
+negative &35.25 (2.63) &53.46 (10.55) &39.07 (1.78) &55.52 (3.26) \\ 
 \hline
-not\_negative &77.16 (1.27) &77.53 (2.33) &77.69 (1.07) &82.02 (2.92) \\ 
+not\_negative &78.04 (2.19) &62.62 (6.76) &79.73 (1.10) &66.87 (2.31) \\ 
 \hline
-neutral &34.37 (3.57) &31.43 (7.93) &49.69 (3.39) &50.43 (5.60) \\ 
+neutral &32.51 (3.02) &48.03 (7.33) &44.72 (2.00) &67.12 (2.96) \\ 
 \hline
-not\_neutral &68.75 (1.60) &71.72 (5.84) &76.26 (1.89) &75.65 (2.92) \\ 
+not\_neutral &68.17 (2.65) &52.81 (3.84) &79.41 (1.58) &60.40 (2.96) \\ 
 \hline
 \end{tabular}
 \caption{Average precision and average recall (with standard deviations provided in parenthesis) 
@@ -264,20 +247,20 @@ for each considered class in classifiers trained with either the baseline or the
 Table \ref{tc_accu} presents the resulting average values of accuracy for each considered subtask 
 in classifiers trained with either the baseline or the annotated dataset. As observed in the table,
 all subtasks benefit from using the annotated dataset for training the classifiers; however, it is 
-important to mention that while similar absolute gains are observed for the "positive/not\_positive" and "neutral/not\_neutral"
-subtasks, this is not the case for the subtask "negative/not\_negative", which actually gains much less than the other
-two subtasks.
+important to mention that while similar absolute gains are observed for the "positive/not\_positive" 
+and "neutral/not\_neutral" subtasks, this is not the case for the subtask "negative/not\_negative", 
+which actually gains much less than the other two subtasks.
 
 \begin{table}
 \begin{tabular}{|l|l|l|}
 \hline
 classifier &baseline &annotated \\ 
 \hline
-positive/not\_positive &62.69 (2.35) &71.40 (1.64) \\ 
+positive/not\_positive &59.63 (3.04) &69.53 (1.70) \\ 
 \hline
-negative/not\_negative &67.13 (1.90) &69.92 (1.19) \\ 
+negative/not\_negative &60.09 (2.90) &63.73 (1.60) \\ 
 \hline
-neutral/not\_neutral &58.72 (2.55) &67.52 (2.10) \\ 
+neutral/not\_neutral &51.27 (2.49) &62.57 (2.08) \\ 
 \hline
 \end{tabular}
 \caption{Average accuracy (with standard deviations provided in parenthesis) 
@@ -287,7 +270,7 @@ for each classification subtasks trained with either the baseline or the annotat
 
 After considering all evaluation metrics, it is evident the important benefit provided by human-annotated data 
 availability for classes "neutral" and "positive". However, in the case of class "negative", although some 
-gain is also observed, the benefit of human-annotated data does not seem to be as much as for the other two 
+gain is also observed, the benefit of human-annotated data does not seem to be as much as for the two other 
 classes. This, along with the fact that the "negative/not\_negative" subtask is actually the best performing
 one (in terms of accuracy) when baseline training data is used, might suggest that low rating comments contains 
 a better representation of sentences belonging to class "negative" than medium and high rating comments do with
