@@ -106,9 +106,48 @@ These are the statistics:\\
 
 %% correspondence with IAA? (might be tricky especially if there are only a few HITs to go by)
 \subsection{Annotation Quality}
-\texttt{<take into account annotator bias>} \\
 \texttt{<This is a very useful reference: \cite{dawid_maximum_1979}>} \\
 \texttt{<This is another useful reference: \cite{mason_financial_2009}>}
+
+The annotation quality of AMT workers can be measured by comparing them to expert annotations. This is usually done by calculating inter-annotator agreement (ITA) scores. Note that, since a single HIT can contain more than one assignment and each assignment is typically performed by more than one annotator, we can only calculate ITA scores between batches of assignments, rather than between individual workers. Therefore, we describe the ITA scores in terms of batches. In Table \ref{table.ita}, we present a comparison of standard kappa\footnote{In reality, we found that fixed and free margin Kappa values were almost identical, which reflects the balanced distribution of the dataset.} calculations \cite{eugenio_kappa_2004} between batches of assignments in HIT1 and expert annotations.
+
+We found an inter-batch ITA score of 0.598, which indicates a moderate agreement due to fairly consistent annotations between workers. When comparing individual batches with expert annotations, we found similar ITA scores, in the range between 0.628 and 0.649. This increase with respect to the inter-batch score suggests a higher variability among AMT workers than between workers and experts. 
+In order to filter out noise in worker annotations, we applied a simple majority voting procedure in which we selected, for each sentence in HIT1, the most voted category. This results in an additional batch of annotations. This batch, refered in Table \ref{table.ita} as \textit{Majority}, produced a considerably higher ITA score of 0.716, which confirms the validity of the majority voting scheme to obtain better annotations.
+
+In addition, we calculated ITA scores between three expert annotators on a separate, 500-sentence dataset, randomly selected from the same corpus as described at the start of Section \ref{sect:design}. This collection was later used as test set in the experiments described in Section \ref{sect:classifier}. The inter-expert ITA scores on this separate dataset contains values of 0.725 for $\kappa_{1}$ and 0.729 for $\kappa_{2}$, only marginally higher than the \textit{Majority} ITA scores. Although we are comparing results on different data sets, these results seem to indicate that multiple AMT annotations are able to produce a similar quality to expert annotations. This might suggest that a further increase in the number of HIT assignments would outperform expert ITA scores, as was previously reported in~\cite{snow_cheap_2008}.
+
+% It's interesting that the inter annotation agreement between the agregated majority batch and the Expert was almost the same than the inter annotation agreement of the experts*.
+% 
+
+% that both fixed and free margin Kappa values increase when  
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+& $\kappa_{1}$ & $\kappa_{2}$ \\ 
+\hline
+Inter-batch & 0.598 & 0.598 \\ \hline
+Batch\_1 vs. Expert & 0.628 & 0.628\\
+Batch\_2 vs. Expert & 0.649 & 0.649\\
+Batch\_3 vs. Expert & 0.626 & 0.626\\ \hline
+Majority vs. Expert & 0.716 & 0.716\\ \hline
+Experts\footnote{Results on a different 500-sentence random sample of the same corpus.} & 0.725 & 0.729\\ \hline
+\end{tabular}
+\end{center}
+\label{table.ita}
+\caption{Interannotation Agreement as a measure of quality of the annotations in HIT1. $\kappa_{1} = $ Fixed Margin Kappa. $\kappa_{2} = $ Free Margin Kappa.}
+\end{table}
+
+
+
+
+
+
+
+
+
+
 
 % \section{Classifier Performance}
 % \label{sect:classifier}
@@ -272,6 +311,10 @@ In any case, this experimental work only verifies the feasibility of constructin
 opinionated content analysis, as well as it provides an approximated idea of costs involved in the generation
 of this type of resources, by using AMT.
 
+Apart from the xxx, ... explain.
+
+
+
 \begin{table}
 \begin{center}
 \begin{small}
@@ -295,81 +338,14 @@ of this type of resources, by using AMT.
 \label{table:amtvsexp}
 \end{table}
 
-\begin{comment}
-\begin{table}
-\begin{center}
-%%\begin{scriptsize}
-\begin{tabular}{|l|c|}
-\hline
-System & Accuracy \\
-\hline
-\multicolumn{2}{|c|}{Naieve Bayes} \\
-\hline
-Experts & 58.2 \\
-Ann1 & 55.8 \\
-Ann2 & 56.2 \\
-Ann3 & 56.4 \\
-Ann123 & 59.0 \\
-Ann1+2+3 & 55.6 \\
-\hline
-\multicolumn{2}{|c|}{Maxent} \\
-\hline
-Experts & 59.2 \\
-Ann1 & 55.8 \\
-Ann2 & 57.6 \\
-Ann3 & 54.0 \\
-Ann123 & 57.6 \\
-Ann1+2+3 & 58.6 \\
-\hline
-\multicolumn{2}{|c|}{ID3} \\
-\hline
-Experts & 51.2 \\
-Ann1 & 47.2 \\
-Ann2 & 50.0 \\
-Ann3 & 48.6 \\
-Ann123 & 45.8 \\
-Ann1+2+3 & 51.4 \\
-\hline
-\multicolumn{2}{|c|}{C45} \\
-\hline
-Experts & 42.2 \\
-Ann1 & 33.6 \\
-Ann2 & 42.0 \\
-Ann3 & 41.2 \\
-Ann123 & 41.6 \\
-Ann1+2+3 & 45.0 \\
-\hline
-\multicolumn{2}{|c|}{Winnow} \\
-\hline
-Experts & 44.2 \\
-Ann1 & 43.6 \\
-Ann2 & 40.4 \\
-Ann3 & 47.6 \\
-Ann123 & 46.2 \\
-Ann1+2+3 & 50.6 \\
-\hline
-\multicolumn{2}{|c|}{SVM} \\
-\hline
-Experts &  \\
-Ann1 &  \\
-Ann2 &  \\
-Ann3 &  \\
-Ann123 &  \\
-Ann1+2+3 &  \\
-\hline
-\end{tabular}
-%%\end{scriptsize}
-\end{center}
-\caption{Accuracy of a batch of vanilla classifiers trained on six different datasets.}
-\label{table:amtvsexp}
-\end{table}
-\end{comment}
+% (*this kappa correponds to the interannotation agreement in the test set, althoush it's a different data set it's a balanced sample of the same corpus of sentences used in training, 
+% therefore give us an estimation of the higher limit of the kappa due to the difficulty of the annotation task by itself.)
 
 \texttt{<extend on cost/benefit.>}
 
 \section{Conclusions}
 \label{sect:conclusions}
-\texttt{Future work: HIT Design: what is the optimal design of the annotation task for our purpose and what is the effect of a suboptimal design on the system scores? We present AMT workers with three different HIT designs and evaluate the impact of each of them on the overall system performance. Train classifiers with results from HIT2/HIT3.}
+\texttt{Future work: HIT Design: what is the optimal design of the annotation task for our purpose and what is the effect of a suboptimal design on the system scores? We present AMT workers with three different HIT designs and evaluate the impact of each of them on the overall system performance. Train classifiers with results from HIT2/HIT3. two ways of measuring quality: kappa \& performance}
 
 \section*{Acknowledgments}
 We thank Amazon for generously sponsoring this Shared Task.
