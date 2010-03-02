@@ -9,6 +9,7 @@
 \usepackage{latexsym}
 \usepackage{verbatim}
 \usepackage{graphicx}
+\usepackage{rotating}
 \usepackage[table]{xcolor}
 \include{lart}
 
@@ -62,32 +63,15 @@ We selected a dataset of 1000 sentences containing user opinions on cars from th
 
 \begin{figure}
   \begin{center}
+    \fbox{
     \includegraphics[scale=0.6]
-	{pics/Shot_HIT1.png}
-	\caption{HIT1. A simple categorization scheme.}
-	\label{fig1}
+	{pics/Reshots_All.png}}
+	\caption{An example sentence (a) and the three HIT designs used in the experiments: (b) HIT1: a simple categorization scheme, (c) HIT2: a graded categorization scheme, and (d) HIT3: a continuous triangular categorization scheme containing both a horizontal positive-negative axis and a vertical subjective-objective axis.}
+	\label{hits}
   \end{center}
 \end{figure}
 
-\begin{figure}
-  \begin{center}
-    \includegraphics[scale=0.6]
-	{pics/Shot_HIT2.png}
-	\caption{HIT2. A graded categorization template.}
-	\label{fig2}
-  \end{center}
-\end{figure}
-
-\begin{figure}
-  \begin{center}
-    \includegraphics[scale=0.6]
-	{pics/Shot_HIT3.png}
-	\caption{HIT3. A continuous triangular categorization template containing both a horizontal positive-negative axis and a vertical subjective-objective axis.}
-	\label{fig3}
-  \end{center}
-\end{figure}
-
-The sentences in the dataset were presented to the AMT workers in three different HIT designs. HIT1 is a simple categorization scheme in which workers are asked to classify each sentence as being either \textit{positive}, \textit{negative} or \textit{neutral}, as is shown in Figure \ref{fig1}. HIT2 is a graded categorization template in which workers had to assign a score between -5 (negative) and +5 (positive) to each example sentence, as is shown in Figure \ref{fig2}. Finally, HIT3 is a continuous triangular categorization template that allows workers to use both a horizontal positive-negative axis and a vertical subjective-objective axis by placing the example sentence anywhere inside the triangle. The subjective-objective axis expresses the degree to which the sentence contains opinionated content and was earlier used by \cite{sentiwordnet:06}. For example, the sentence \textit{`I think this is a wonderful car'} clearly marks an opinion and should be positioned towards the subjective end, while the sentence \textit{`The car has six cilinders'} should be located towards the objective end. Figure \ref{fig3} contains an example of HIT3. In order not to burden the workers with overly complex instructions, we did not mention this subjective-objective axis but asked them instead to place ambiguous sentences towards the center of the horizontal positive-negative axis and more objective, non-opinionated sentences towards the lower \textit{neutral} tip of the triangle.\\
+The sentences in the dataset were presented to the AMT workers in three different HIT designs. HIT1 is a simple categorization scheme in which workers are asked to classify each sentence as being either \textit{positive}, \textit{negative} or \textit{neutral}, as is shown in Figure \ref{hits}, section b. HIT2 is a graded categorization template in which workers had to assign a score between -5 (negative) and +5 (positive) to each example sentence, as is shown in Figure \ref{hits}, section c. Finally, HIT3 is a continuous triangular categorization template that allows workers to use both a horizontal positive-negative axis and a vertical subjective-objective axis by placing the example sentence anywhere inside the triangle. The subjective-objective axis expresses the degree to which the sentence contains opinionated content and was earlier used by \cite{sentiwordnet:06}. For example, the sentence \textit{`I think this is a wonderful car'} clearly marks an opinion and should be positioned towards the subjective end, while the sentence \textit{`The car has six cilinders'} should be located towards the objective end. Figure \ref{hits}, section d contains an example of HIT3. In order not to burden the workers with overly complex instructions, we did not mention this subjective-objective axis but asked them instead to place ambiguous sentences towards the center of the horizontal positive-negative axis and more objective, non-opinionated sentences towards the lower \textit{neutral} tip of the triangle.\\
 
 \texttt{<Explain three independent annotations. Total of 9000 annotations. Total cost.>}
 
@@ -134,6 +118,8 @@ These are the statistics:\\
 \section{Incidence of annotations on supervised polarity classification}
 \label{sect:classifier}
 
+\texttt{<Two experiments: (i) AMT annotations vs. original Ciao annotations and (ii) AMT annotations vs. expert annotations. >}
+
 \texttt{<Make it very clear in the intro that only HIT1, and not HIT2 and HIT3 are considered for classifier training>}
 
 This section intends to evaluate the incidence of AMT-generated annotations on a polarity classification task.
@@ -143,6 +129,7 @@ contrastive classifiers trained with AMT generated annotations.
 Although more sophisticated classification schemas can be conceived for this task, a simple SVM-based binary supervised classification approach is considered here.
 
 \subsection{Description of datasets}
+\label{datasets}
 
 As was mentioned in Section \ref{sect:design}, all sentences were extracted from a corpus of user opinions on cars from the automotive section of \texttt{www.ciao.es} (Spanish). For conducting the experimental evaluation, three different datasets were considered:
 
@@ -284,6 +271,99 @@ respect to classes `neutral' and `positive'.
 In any case, this experimental work only verifies the feasibility of constructing training datasets for
 opinionated content analysis, as well as it provides an approximated idea of costs involved in the generation
 of this type of resources, by using AMT.
+
+\begin{table}
+\begin{center}
+\begin{small}
+\begin{tabular}{|l|l|l|l|l|l|l|} \hline
+ System & 
+ {\begin{sideways}\parbox{2cm}{\centering Experts}\end{sideways}} &
+ {\begin{sideways}\parbox{2cm}{\centering Batch\_1}\end{sideways}} &
+ {\begin{sideways}\parbox{2cm}{\centering Batch\_2}\end{sideways}} &
+ {\begin{sideways}\parbox{2cm}{\centering Batch\_3}\end{sideways}} &
+ {\begin{sideways}\parbox{2cm}{\centering Majority}\end{sideways}} &
+ {\begin{sideways}\parbox{2cm}{\centering All}\end{sideways}} \\ \hline
+ %% & Ann1 & Ann2 & Ann3 & Ann123 & Ann1+2+3 \\ \hline
+ Maxent & 59.2 & 55.8 & 57.6 & 54.0 & 57.6 & 58.6 \\ \hline
+ C45 & 42.2 & 33.6 & 42.0 & 41.2 & 41.6 & 45.0 \\ \hline
+ Winnow & 44.2 & 43.6 & 40.4 & 47.6 & 46.2 & 50.6 \\ \hline
+ SVM &  &  &  &  &  &  \\ \hline
+\end{tabular}
+\end{small}
+\end{center}
+\caption{Accuracy figures of four different classifiers (Maxent, C45, Winnow and SVM) trained on six different datasets: Experts$=$training set annotated by experts, Batch\_1$=$first batch of HIT1, Batch\_2$=$second batch of HIT1, Batch\_3$=$third batch of HIT1, Majority$=$ batch obtained by majority voting between Batch\_1, Batch\_2 and Batch\_3, All$=$batch obtained by aggregating Batch\_1, Batch\_2 and Batch\_3.}
+\label{table:amtvsexp}
+\end{table}
+
+\begin{comment}
+\begin{table}
+\begin{center}
+%%\begin{scriptsize}
+\begin{tabular}{|l|c|}
+\hline
+System & Accuracy \\
+\hline
+\multicolumn{2}{|c|}{Naieve Bayes} \\
+\hline
+Experts & 58.2 \\
+Ann1 & 55.8 \\
+Ann2 & 56.2 \\
+Ann3 & 56.4 \\
+Ann123 & 59.0 \\
+Ann1+2+3 & 55.6 \\
+\hline
+\multicolumn{2}{|c|}{Maxent} \\
+\hline
+Experts & 59.2 \\
+Ann1 & 55.8 \\
+Ann2 & 57.6 \\
+Ann3 & 54.0 \\
+Ann123 & 57.6 \\
+Ann1+2+3 & 58.6 \\
+\hline
+\multicolumn{2}{|c|}{ID3} \\
+\hline
+Experts & 51.2 \\
+Ann1 & 47.2 \\
+Ann2 & 50.0 \\
+Ann3 & 48.6 \\
+Ann123 & 45.8 \\
+Ann1+2+3 & 51.4 \\
+\hline
+\multicolumn{2}{|c|}{C45} \\
+\hline
+Experts & 42.2 \\
+Ann1 & 33.6 \\
+Ann2 & 42.0 \\
+Ann3 & 41.2 \\
+Ann123 & 41.6 \\
+Ann1+2+3 & 45.0 \\
+\hline
+\multicolumn{2}{|c|}{Winnow} \\
+\hline
+Experts & 44.2 \\
+Ann1 & 43.6 \\
+Ann2 & 40.4 \\
+Ann3 & 47.6 \\
+Ann123 & 46.2 \\
+Ann1+2+3 & 50.6 \\
+\hline
+\multicolumn{2}{|c|}{SVM} \\
+\hline
+Experts &  \\
+Ann1 &  \\
+Ann2 &  \\
+Ann3 &  \\
+Ann123 &  \\
+Ann1+2+3 &  \\
+\hline
+\end{tabular}
+%%\end{scriptsize}
+\end{center}
+\caption{Accuracy of a batch of vanilla classifiers trained on six different datasets.}
+\label{table:amtvsexp}
+\end{table}
+\end{comment}
 
 \texttt{<extend on cost/benefit.>}
 
