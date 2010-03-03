@@ -1,13 +1,5 @@
 \begin{thebibliography}{}
 
-\bibitem[\protect\citename{Dawid and Skene}1979]{dawid_maximum_1979}
-A.~P. Dawid and A.~M. Skene.
-\newblock 1979.
-\newblock Maximum likelihood estimation of observer error-rates using the {EM}
-  algorithm.
-\newblock {\em Journal of the Royal Statistical Society. Series C {(Applied}
-  Statistics)}, 28(1):20–--28.
-
 \bibitem[\protect\citename{Esuli and Sebastiani}2006]{sentiwordnet:06}
 A.~Esuli and F.~Sebastiani.
 \newblock 2006.
@@ -27,14 +19,6 @@ W.~Mason and D.~J Watts.
 \newblock Financial incentives and the performance of crowds.
 \newblock In {\em Proceedings of the {ACM} {SIGKDD} Workshop on Human
   Computation}, pages 77–--85.
-
-\bibitem[\protect\citename{Sheng \bgroup et al.\egroup }2008]{sheng_get_2008}
-V.~S Sheng, F.~Provost, and P.~G Ipeirotis.
-\newblock 2008.
-\newblock Get another label? improving data quality and data mining using
-  multiple, noisy labelers.
-\newblock In {\em Proceeding of the 14th {ACM} {SIGKDD} international
-  conference on Knowledge discovery and data mining}, pages 614–--622.
 
 \bibitem[\protect\citename{Snow \bgroup et al.\egroup }2008]{snow_cheap_2008}
 R.~Snow, B.~{O'Connor}, D.~Jurafsky, and A.~Y Ng.

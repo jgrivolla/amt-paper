@@ -127,7 +127,7 @@ As to a comparison of completion times, it took a worker on average 11 seconds t
 \begin{figure*}
   \begin{center}
     \fbox{
-    \includegraphics[scale=0.3]
+    \includegraphics[scale=0.5]
 	{pics/Reshots_All.png}}
 	\caption{The caption.}
 	\label{distr}
@@ -142,11 +142,12 @@ Figure \ref{distr}c shows a heat map that plots the distribution of the annotati
 
 % Although the negative-positive axis has been used in some degree as an scale, the other edges, the negative-neutral and the positive-neutral are empty.
 
-Figure \ref{distr}d shows the distribution of all datapoints in the triangle of Figure \ref{distr}c, projected onto the X-axis (positive/negative). Although similar to the graded scale in HIT2, the distribution shows a slightly higher polarization.
+Figure \ref{distr}d shows the distribution of all datapoints in the triangle of Figure \ref{distr}c, projected onto the X-axis (positive/negative). of the HIT3 annotations, although similar to the graded scale in HIT-2, it shows a slightly higher polarization.
 
-These results suggest that, out of all three HIT designs, HIT2 is the one that contains the best balance between the amount of information that can be obtained and the simplicity of a one-dimensional annotation. 
+These first results suggests that HIT-2 balances the information richness of a continuous annottion and the simplicity of a discrete annotation. It could be that the conceptual complexity of a bidimensional annotation would force the annotators to re-interpret the grading task as a classification task.
 
-%%It could be that the conceptual complexity of a bidimensional annotation would force the annotators to re-interpret the grading task as a classification task.
+
+The sentences in the dataset were presented to the AMT workers in three different HIT designs. Each HIT design contains a single sentence to be evaluated. HIT1 is a simple categorization scheme in which workers are asked to classify the sentence as being either \textit{positive}, \textit{negative} or \textit{neutral}, as is shown in Figure \ref{hits}, section b. HIT2 is a graded categorization template in which workers had to assign a score between -5 (negative) and +5 (positive) to the example sentence, as is shown in Figure \ref{hits}, section c. Finally, HIT3 is a continuous triangular scoring template that allows workers to use both a horizontal positive-negative axis and a vertical subjective-objective axis by placing the example sentence anywhere inside the triangle. The subjective-objective axis expresses the degree to which the sentence contains opinionated content and was earlier used by \cite{sentiwordnet:06}. For example, the sentence \textit{`I think this is a wonderful car'} clearly marks an opinion and should be positioned towards the subjective end, while the sentence \textit{`The car has six cilinders'} should be located towards the objective end. Figure \ref{hits}, section d contains an example of HIT3. In order not to burden the workers with overly complex instructions, we did not mention this subjective-objective axis but asked them instead to place ambiguous sentences towards the center of the horizontal positive-negative axis and more objective, non-opinionated sentences towards the lower \textit{neutral} tip of the triangle.
 
 
 \subsection{Annotation Quality}
