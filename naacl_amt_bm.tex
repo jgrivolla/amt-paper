@@ -29,7 +29,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-  One of the major bottlenecks in the development of data-driven AI Systems is the lack of reliable human annotations. The recent advent of several crowdsourcing platforms such as Amazon's Mechanical Turk, allowing requesters the access to affordable and rapid results of a global workforce, greatly facilitates the creation of massive training data. Most of the available studies on the effectiveness of crowdsourcing report on English data. We use Mechanical Turk annotations to train an Opinion Mining System to classify Spanish consumer comments. We design three different Human Intelligence Task (HIT) strategies and show high inter-annotator agreement between non-experts and expert annotators. We evaluate the advantages/drawbacks of each HIT design and report \texttt{<results of the classifier>}.
+  One of the major bottlenecks in the development of data-driven AI Systems is the lack of reliable human annotations. The recent advent of several crowdsourcing platforms such as Amazon's Mechanical Turk, allowing requesters the access to affordable and rapid results of a global workforce, greatly facilitates the creation of massive training data. Most of the available studies on the effectiveness of crowdsourcing report on English data. We use Mechanical Turk annotations to train an Opinion Mining System to classify Spanish consumer comments. We design three different Human Intelligence Task (HIT) strategies and report high inter-annotator agreement between non-experts and expert annotators. We evaluate the advantages/drawbacks of each HIT design and show that, in our case, the use of non-expert annotations is a viable and cost-effective alternative to expert annotations.
 \end{abstract}
 
 \section{Introduction}
@@ -127,9 +127,9 @@ As to a comparison of completion times, it took a worker on average 11 seconds t
 \begin{figure*}
   \begin{center}
     \fbox{
-    \includegraphics[scale=0.3]
-	{pics/Reshots_All.png}}
-	\caption{The caption.}
+    \includegraphics[scale=0.339]
+	{pics/Histograms.png}}
+	\caption{Overview of HIT results: a) distribution of the three categories used in HIT1, b) distribution of results in the scaled format of HIT2, c) heat map of the distribution of results in the HIT3 triangle, d) distribution of projection of triangle data points onto the X-axis (positive/negative).}
 	\label{distr}
   \end{center}
 \end{figure*}
@@ -161,19 +161,18 @@ In addition, we calculated ITA scores between three expert annotators on a separ
 
 \subsection{Annotation Cost}
 
+At the specified cost of 0.02\$ per HIT, a total sum of 180\$ (minus Amazon fees) was spent on the task.
+
+
+
 \texttt{<This is another useful reference: \cite{mason_financial_2009}>}
 
-At the specified cost of 0.02\$ per HIT, a total sum of 180\$ (minus Amazon fees) was spent on the task.
+
 
 In order to decide to use the Amazon's "mechanical turk" it's important to measure the quality of the results, but, of course, the cost of performing the annotation using turkers instead of in-house experts and the time needed to perform the annotation must also be taken into account.
 To compute the in-House costs, the expert or engineer is paid at a rate of 70\$ an hour, including salary and all other structural costs. The in-house annotation tasks of 1000 sentences would last for three hours, giving a cost of 210\$ and a marginal cost of preparing the data. By means of Amazon we spent 75\$ to annotate the same sentences three times, to get the same quality of results. But we must add the costs of designing the Hits and  the qualifying test and the task of upload the data into Amazon's servers. These tasks highly depend on the experience of the engineers developing it, and can range from a couple of hours to a couple of days (for the first times).
 As the volume of data to annotate increases, the economical benefit of the AMT is more evident, because the design time becomes a small portion of the budget. For annotating 30,000 sentences the differences rises up to 1350\$ that are more than enough to design the hit. 
 But the main important economic impact may not be the cost but the time to perform the task. In-house massive annotation may take a lot of time, and can become a hard task, as a few users need to annotate a lot of sentences. As this task can become tiresome and hard it needs to be elapsed in time. In AMT the a hit may be distributed into many volunteers that 24 hours a day are ready to work in parallel to produce the results in a few hours.     
-
-% It's interesting that the inter annotation agreement between the agregated majority batch and the Expert was almost the same than the inter annotation agreement of the experts*.
-% 
-
-% that both fixed and free margin Kappa values increase when  
 
 \begin{table}[h]
 \begin{center}
@@ -385,15 +384,16 @@ The Maxent classifier ... The C45 decision tree ... . Finally, the SVM ...
 
 \section{Conclusions}
 \label{sect:conclusions}
-In this paper we have analyzed the use of Amazon's "mechanical turk" to annotate polarity of sentences. We have observed that even that the quality of single annotators may be lower than using experts, the price of each annotation is so cheap that allows the use of multiple annotators to reach similar quality still at lower prices. 
-From the different designs of the hits that we did, we can conclude that the complexity of the task was simpler than we thought, (and maybe two cents was a high price) and that what a priory seemed simpler the turkers took more time than the multiple answers task that includes richest data. From a first trial Hit we observed some users answering at random, also the task was in Spanish, and somehow we had to be sure that the turkers would understand the language. We designed a qualifying test (from which we don't have any information about how many users tried it and failed, we think that could be interesting to have this information). 
+In this paper we have examined the usefulness of non-expert annotations on Amazon's Mechanical Turk to annotate the polarity of Spanish consumer comments. We discussed the advantages/drawbacks of three different HIT designs, ranging from a simple categorization scheme to a continous scoring template. We report high inter-annotator agreement scores between non-experts and expert annotators and show that training an Opinion Mining System with non-expert AMT annotations outperforms original noisy annotations and obtains competitive results when compared to expert annotations using a variety of classifiers. In conclusion, we found that, in our case, the use of non-expert annotations through crowdsourcing is a viable and cost-effective alternative to the use of expert annotations.
 
-  
+% In these experiments reported in this paper, we have relied exclusively on To date, We have used only AMT annotations from HIT1 to perform
+% Further work is needed to fully analyze the impact of each of the three HIT designs
+% an important area for future research
+% In terms of future work, 
+% \texttt{Future work: HIT Design: what is the optimal design of the annotation task for our purpose and what is the effect of a suboptimal design on the system scores? We present AMT workers with three different HIT designs and evaluate the impact of each of them on the overall system performance. Train classifiers with results from HIT2/HIT3.}
 
-\texttt{Future work: HIT Design: what is the optimal design of the annotation task for our purpose and what is the effect of a suboptimal design on the system scores? We present AMT workers with three different HIT designs and evaluate the impact of each of them on the overall system performance. Train classifiers with results from HIT2/HIT3. two ways of measuring quality: kappa \& performance}
-
-\section*{Acknowledgments}
-We thank Amazon for generously sponsoring this Shared Task.
+% \section*{Acknowledgments}
+% We thank Amazon for generously sponsoring this Shared Task.
 
 \bibliographystyle{naaclhlt2010}
 \bibliography{amturk}

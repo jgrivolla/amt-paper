@@ -29,7 +29,7 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-  One of the major bottlenecks in the development of data-driven AI Systems is the lack of reliable human annotations. The recent advent of several crowdsourcing platforms such as Amazon's Mechanical Turk, allowing requesters the access to affordable and rapid results of a global workforce, greatly facilitates the creation of massive training data. Most of the available studies on the effectiveness of crowdsourcing report on English data. We use Mechanical Turk annotations to train an Opinion Mining System to classify Spanish consumer comments. We design three different Human Intelligence Task (HIT) strategies and show high inter-annotator agreement between non-experts and expert annotators. We evaluate the advantages/drawbacks of each HIT design and report \texttt{<results of the classifier>}.
+  One of the major bottlenecks in the development of data-driven AI Systems is the lack of reliable human annotations. The recent advent of several crowdsourcing platforms such as Amazon's Mechanical Turk, allowing requesters the access to affordable and rapid results of a global workforce, greatly facilitates the creation of massive training data. Most of the available studies on the effectiveness of crowdsourcing report on English data. We use Mechanical Turk annotations to train an Opinion Mining System to classify Spanish consumer comments. We design three different Human Intelligence Task (HIT) strategies and report high inter-annotator agreement between non-experts and expert annotators. We evaluate the advantages/drawbacks of each HIT design and show that, in our case, the use of non-expert annotations are a viable and cost-effective alternative to expert annotations.
 \end{abstract}
 
 \section{Introduction}
@@ -127,9 +127,9 @@ As to a comparison of completion times, it took a worker on average 11 seconds t
 \begin{figure*}
   \begin{center}
     \fbox{
-    \includegraphics[scale=0.5]
-	{pics/Reshots_All.png}}
-	\caption{The caption.}
+    \includegraphics[scale=0.339]
+	{pics/Histograms.png}}
+	\caption{Overview of HIT results: a) distribution of the three categories used in HIT1, b) distribution of results in the scaled format of HIT2, c) heat map of the distribution of results in the HIT3 triangle, d) distribution of projection of triangle data points onto the X-axis (positive/negative).}
 	\label{distr}
   \end{center}
 \end{figure*}
@@ -142,12 +142,11 @@ Figure \ref{distr}c shows a heat map that plots the distribution of the annotati
 
 % Although the negative-positive axis has been used in some degree as an scale, the other edges, the negative-neutral and the positive-neutral are empty.
 
-Figure \ref{distr}d shows the distribution of all datapoints in the triangle of Figure \ref{distr}c, projected onto the X-axis (positive/negative). of the HIT3 annotations, although similar to the graded scale in HIT-2, it shows a slightly higher polarization.
+Figure \ref{distr}d shows the distribution of all datapoints in the triangle of Figure \ref{distr}c, projected onto the X-axis (positive/negative). Although similar to the graded scale in HIT2, the distribution shows a slightly higher polarization.
 
-These first results suggests that HIT-2 balances the information richness of a continuous annottion and the simplicity of a discrete annotation. It could be that the conceptual complexity of a bidimensional annotation would force the annotators to re-interpret the grading task as a classification task.
+These results suggest that, out of all three HIT designs, HIT2 is the one that contains the best balance between the amount of information that can be obtained and the simplicity of a one-dimensional annotation. 
 
-
-The sentences in the dataset were presented to the AMT workers in three different HIT designs. Each HIT design contains a single sentence to be evaluated. HIT1 is a simple categorization scheme in which workers are asked to classify the sentence as being either \textit{positive}, \textit{negative} or \textit{neutral}, as is shown in Figure \ref{hits}, section b. HIT2 is a graded categorization template in which workers had to assign a score between -5 (negative) and +5 (positive) to the example sentence, as is shown in Figure \ref{hits}, section c. Finally, HIT3 is a continuous triangular scoring template that allows workers to use both a horizontal positive-negative axis and a vertical subjective-objective axis by placing the example sentence anywhere inside the triangle. The subjective-objective axis expresses the degree to which the sentence contains opinionated content and was earlier used by \cite{sentiwordnet:06}. For example, the sentence \textit{`I think this is a wonderful car'} clearly marks an opinion and should be positioned towards the subjective end, while the sentence \textit{`The car has six cilinders'} should be located towards the objective end. Figure \ref{hits}, section d contains an example of HIT3. In order not to burden the workers with overly complex instructions, we did not mention this subjective-objective axis but asked them instead to place ambiguous sentences towards the center of the horizontal positive-negative axis and more objective, non-opinionated sentences towards the lower \textit{neutral} tip of the triangle.
+%%It could be that the conceptual complexity of a bidimensional annotation would force the annotators to re-interpret the grading task as a classification task.
 
 
 \subsection{Annotation Quality}
@@ -386,15 +385,16 @@ The Maxent classifier ... The C45 decision tree ... . Finally, the SVM ...
 
 \section{Conclusions}
 \label{sect:conclusions}
-In this paper we have analyzed the use of Amazon's "mechanical turk" to annotate polarity of sentences. We have observed that even that the quality of single annotators may be lower than using experts, the price of each annotation is so cheap that allows the use of multiple annotators to reach similar quality still at lower prices. 
-From the different designs of the hits that we did, we can conclude that the complexity of the task was simpler than we thought, (and maybe two cents was a high price) and that what a priory seemed simpler the turkers took more time than the multiple answers task that includes richest data. From a first trial Hit we observed some users answering at random, also the task was in Spanish, and somehow we had to be sure that the turkers would understand the language. We designed a qualifying test (from which we don't have any information about how many users tried it and failed, we think that could be interesting to have this information). 
+In this paper we have examined the usefulness of non-expert annotations on Amazon's Mechanical Turk to annotate the polarity of Spanish consumer comments. We discussed the advantages/drawbacks of three different HIT designs, ranging from a simple categorization scheme to a continous scoring template. We report high inter-annotator agreement scores between non-experts and expert annotators and show that training an Opinion Mining System with non-expert AMT annotations outperforms original noisy annotations and obtains competitive results when compared to expert annotations using a variety of classifiers. 
 
-  
+% In these experiments reported in this paper, we have relied exclusively on To date, We have used only AMT annotations from HIT1 to perform
+% Further work is needed to fully analyze the impact of each of the three HIT designs
+% an important area for future research
+% In terms of future work, 
+% \texttt{Future work: HIT Design: what is the optimal design of the annotation task for our purpose and what is the effect of a suboptimal design on the system scores? We present AMT workers with three different HIT designs and evaluate the impact of each of them on the overall system performance. Train classifiers with results from HIT2/HIT3.}
 
-\texttt{Future work: HIT Design: what is the optimal design of the annotation task for our purpose and what is the effect of a suboptimal design on the system scores? We present AMT workers with three different HIT designs and evaluate the impact of each of them on the overall system performance. Train classifiers with results from HIT2/HIT3. two ways of measuring quality: kappa \& performance}
-
-\section*{Acknowledgments}
-We thank Amazon for generously sponsoring this Shared Task.
+% \section*{Acknowledgments}
+% We thank Amazon for generously sponsoring this Shared Task.
 
 \bibliographystyle{naaclhlt2010}
 \bibliography{amturk}
