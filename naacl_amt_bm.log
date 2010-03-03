@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.9.26)  3 MAR 2010 18:52
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.9.26)  3 MAR 2010 19:56
 entering extended mode
  %&-line parsing enabled.
 **naacl_amt_bm.tex
@@ -195,42 +195,25 @@ Underfull \hbox (badness 1057) in paragraph at lines 145--146
 []\OT1/ptm/m/n/10.95 Figure 2[]d shows the dis-tri-bu-tion of all dat-a-
  []
 
-
-LaTeX Warning: Citation `eugenio_kappa_2004' on page 4 undefined on input line 
-155.
-
 [4 <./pics/Histograms.png>]
 Underfull \hbox (badness 1009) in paragraph at lines 157--159
 \OT1/ptm/m/n/10.95 con-sis-tent an-no-ta-tions be-tween work-ers. When
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 164--165
-\OT1/pcr/m/n/10.95 <This is another useful reference:
- []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [5] [6]
-Underfull \hbox (badness 1028) in paragraph at lines 273--276
+Underfull \hbox (badness 1028) in paragraph at lines 263--266
 []\OT1/ptm/m/n/10.95 Multiple-fold cross-validation was used in all
  []
 
 
-Overfull \hbox (11.47208pt too wide) in paragraph at lines 326--338
+Overfull \hbox (11.47208pt too wide) in paragraph at lines 316--328
 [][] 
  []
 
-[7]
-
-LaTeX Warning: Citation `mccallum' on page 8 undefined on input line 358.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-(./naacl_amt_bm.bbl
+[7] (./naacl_amt_bm.bbl
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no “ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
@@ -240,21 +223,20 @@ Missing character: There is no ” in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
- [8]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
-) [9
+ [8]) [9
 
 ] (./naacl_amt_bm.aux) ) 
 Here is how much of TeX's memory you used:
- 1573 strings out of 95086
- 18643 string characters out of 1183255
+ 1574 strings out of 95086
+ 18655 string characters out of 1183255
  85334 words of memory out of 1500000
- 4725 multiletter control sequences out of 10000+50000
+ 4726 multiletter control sequences out of 10000+50000
  27267 words of font info for 63 fonts, out of 1200000 for 2000
  28 hyphenation exceptions out of 8191
- 41i,17n,35p,1610b,354s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 41i,18n,35p,1610b,358s stack positions out of 5000i,500n,6000p,200000b,5000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}<
 /usr/share/texmf-texlive/fonts/type1/bluesky/cm/cmmi10.pfb></usr/share/texmf-te
 xlive/fonts/type1/bluesky/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/bl
@@ -263,7 +245,7 @@ sr/share/texmf-texlive/fonts/type1/bluesky/cm/cmsy10.pfb></usr/share/texmf-texl
 ive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/ur
 w/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb><
 /usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on naacl_amt_bm.pdf (9 pages, 218504 bytes).
+Output written on naacl_amt_bm.pdf (9 pages, 216671 bytes).
 PDF statistics:
  73 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)

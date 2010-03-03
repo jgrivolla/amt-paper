@@ -160,21 +160,11 @@ In order to filter out noise in worker annotations, we applied a simple majority
 In addition, we calculated ITA scores between three expert annotators on a separate, 500-sentence dataset, randomly selected from the same corpus as described at the start of Section \ref{sect:design}. This collection was later used as test set in the experiments described in Section \ref{sect:classifier}. The inter-expert ITA scores on this separate dataset contains values of 0.725 for $\kappa_{1}$ and 0.729 for $\kappa_{2}$, only marginally higher than the \textit{Majority} ITA scores. Although we are comparing results on different data sets, these results seem to indicate that multiple AMT annotations are able to produce a similar quality to expert annotations. This might suggest that a further increase in the number of HIT assignments would outperform expert ITA scores, as was previously reported in~\cite{snow_cheap_2008}.
 
 \subsection{Annotation Costs}
-\ref{sect:costs}
+\label{sect:costs}
 
-As explained in Section \ref{sect:design}, a total amount of 9000 assignments were uploaded on AMT. At a reward of .02\$ per assignment, a total sum of 225\$ (180\$ + 45\$ Amazon fees) was spent on the task. Workers perceived an average hourly rate of 6.5\$/hour for HIT1 and 8\$/hour for HIT2 and HIT3. These figures suggest that 
+As explained in Section \ref{sect:design}, a total amount of 9000 assignments were uploaded on AMT. At a reward of .02\$ per assignment, a total sum of 225\$ (180\$ + 45\$ Amazon fees) was spent on the task. Workers perceived an average hourly rate of 6.5\$/hour for HIT1 and 8\$/hour for HIT2 and HIT3. These figures suggest that, at least for assignments of type HIT2 and HIT3, a lower reward/assignment might have been considered. This would also be consistent with the findings of \cite{mason_financial_2009}, who claim that lower rewards might have an effect on the speed at which the task will be completed - more workers will be competing for the task at any given moment - but not on the quality. Since we were not certain whether a large enough crowd existed with the necessary skills to perform our task, we explicitly decided not to try to offer the lowest possible price.
 
-
-
-% 6.5 $/hora -> 8 $/hora
-
-To compute the in-House costs, the expert or engineer is paid at a rate of 70\$ an hour. The in-house annotation tasks of 1000 sentences would last for three hours, giving a cost of 210\$ and a marginal cost of preparing the data. 
-
-
- as is suggested in ... \texttt{<This is another useful reference: \cite{mason_financial_2009}>}
-
-As this task can become tiresome and hard it needs to be elapsed in time. In AMT the a hit may be distributed into many volunteers that 24 hours a day are ready to work in parallel to produce the results in a few hours.     
-
+An in-house expert annotator (working at approximately 70\$/hour, including overhead) finished a batch of 1000 HIT assignments in approximately three hours, which leads to a total expert annotator cost of 210\$. By comparing this figure to the cost of uploading $3 \times 1000$ HIT assignments (75\$), we gained $210 - 75 = 135$\$, which constitutes almost 65\% of the cost of an expert annotator. These figures do not take into account the costs of preparing the data and HIT templates, but it can be assumed that these costs will be marginal when large data sets are used.
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{|l|c|c|}

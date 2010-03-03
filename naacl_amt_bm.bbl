@@ -7,6 +7,12 @@ A.~Esuli and F.~Sebastiani.
   mining.
 \newblock In {\em Proceedings of {LREC}}, volume~6.
 
+\bibitem[\protect\citename{Eugenio and Glass}2004]{eugenio_kappa_2004}
+B.~D Eugenio and M.~Glass.
+\newblock 2004.
+\newblock The kappa statistic: A second look.
+\newblock {\em Computational linguistics}, 30(1):95–101.
+
 \bibitem[\protect\citename{Kittur \bgroup et al.\egroup
   }2008]{kittur_crowdsourcing_2008}
 A.~Kittur, E.~H Chi, and B.~Suh.
@@ -19,6 +25,12 @@ W.~Mason and D.~J Watts.
 \newblock Financial incentives and the performance of crowds.
 \newblock In {\em Proceedings of the {ACM} {SIGKDD} Workshop on Human
   Computation}, pages 77–--85.
+
+\bibitem[\protect\citename{McCallum}2002]{mccallum}
+A.~K. McCallum.
+\newblock 2002.
+\newblock Mallet: A machine learning for language toolkit.
+\newblock http://mallet.cs.umass.edu.
 
 \bibitem[\protect\citename{Snow \bgroup et al.\egroup }2008]{snow_cheap_2008}
 R.~Snow, B.~{O'Connor}, D.~Jurafsky, and A.~Y Ng.

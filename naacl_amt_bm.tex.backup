@@ -160,26 +160,24 @@ In order to filter out noise in worker annotations, we applied a simple majority
 In addition, we calculated ITA scores between three expert annotators on a separate, 500-sentence dataset, randomly selected from the same corpus as described at the start of Section \ref{sect:design}. This collection was later used as test set in the experiments described in Section \ref{sect:classifier}. The inter-expert ITA scores on this separate dataset contains values of 0.725 for $\kappa_{1}$ and 0.729 for $\kappa_{2}$, only marginally higher than the \textit{Majority} ITA scores. Although we are comparing results on different data sets, these results seem to indicate that multiple AMT annotations are able to produce a similar quality to expert annotations. This might suggest that a further increase in the number of HIT assignments would outperform expert ITA scores, as was previously reported in~\cite{snow_cheap_2008}.
 
 \subsection{Annotation Costs}
+\ref{sect:costs}
 
-\texttt{average hourly cost per HIT}
-%Hit 1: 3.000 anotacions; 11 segons/clic; 6.5 $/hora
-%Hit 2: 3.000 anotacions; 9 segons/clic; 8 $/hora
-%Hit 2: 3.000 anotacions; 9 segons/clic; 8 $/hora
+As explained in Section \ref{sect:design}, a total amount of 9000 assignments were uploaded on AMT. At a reward of .02\$ per assignment, a total sum of 225\$ (180\$ + 45\$ Amazon fees) was spent on the task. Workers perceived an average hourly rate of 6.5\$/hour for HIT1 and 8\$/hour for HIT2 and HIT3. These figures suggest that, at least for assignments of type HIT2 and HIT3, a lower reward/assignment might have been considered. This would also be consistent with the findings of \cite{mason_financial_2009}, who claim that lower rewards might have an effect on the speed at which the task will be completed - more workers will be competing for the task at any given moment - but not on the quality. Since we were not certain whether a large enough crowd existed with the necessary skills to perform our task, we explicitly decided not to try to offer the lowest possible price.
 
-% 6.5 $/hora -> 8 $/hora
-
-At the specified cost of 0.02\$ per HIT, a total sum of 180\$ (minus Amazon fees) was spent on the task.
+An in-house expert annotator (working at approximately 70\$/hour, including overhead) finished a batch of 1000 HIT assignments in approximately three hours, which leads to a total expert annotator cost of 210\$. By comparing this figure to the cost of uploading $3 \times 1000$ HIT assignments (75\$), we
 
 
 
-\texttt{<This is another useful reference: \cite{mason_financial_2009}>}
+Comparing  agains the costs of in-house expert annotators (approximately 70\$/hour, including overhead costs), 
+Since an in-house annotator (70\$/hour) would have taken approximately three hours to annotate 1000 HIT assignments, we deduce that w
+
+Comparing these costs with in-house costs for expert annotators (70\$/hour),
 
 
+the expert or engineer is paid at a rate of 70\$ an hour. The in-house annotation tasks of 1000 sentences would last for three hours, giving a cost of 210\$ and a marginal cost of preparing the data. 
 
-In order to decide to use the Amazon's "mechanical turk" it's important to measure the quality of the results, but, of course, the cost of performing the annotation using turkers instead of in-house experts and the time needed to perform the annotation must also be taken into account.
-To compute the in-House costs, the expert or engineer is paid at a rate of 70\$ an hour, including salary and all other structural costs. The in-house annotation tasks of 1000 sentences would last for three hours, giving a cost of 210\$ and a marginal cost of preparing the data. By means of Amazon we spent 75\$ to annotate the same sentences three times, to get the same quality of results. But we must add the costs of designing the Hits and  the qualifying test and the task of upload the data into Amazon's servers. These tasks highly depend on the experience of the engineers developing it, and can range from a couple of hours to a couple of days (for the first times).
-As the volume of data to annotate increases, the economical benefit of the AMT is more evident, because the design time becomes a small portion of the budget. For annotating 30,000 sentences the differences rises up to 1350\$ that are more than enough to design the hit. 
-But the main important economic impact may not be the cost but the time to perform the task. In-house massive annotation may take a lot of time, and can become a hard task, as a few users need to annotate a lot of sentences. As this task can become tiresome and hard it needs to be elapsed in time. In AMT the a hit may be distributed into many volunteers that 24 hours a day are ready to work in parallel to produce the results in a few hours.     
+
+As this task can become tiresome and hard it needs to be elapsed in time. In AMT the a hit may be distributed into many volunteers that 24 hours a day are ready to work in parallel to produce the results in a few hours.     
 
 \begin{table}[h]
 \begin{center}
