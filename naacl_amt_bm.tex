@@ -16,7 +16,7 @@
 %%\usepackage{colortbl}
 \setlength\titlebox{6.5cm}    % Expanding the titlebox
 
-\title{Evaluating Non-Expert Annotations on Mechanical Turk for Opinion Mining on Spanish Data}
+\title{Opinion Mining of Spanish Customer Comments with Non-Expert Annotations on Mechanical Turk}
 
 \author{\\
   \\
@@ -29,17 +29,19 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-  One of the major bottlenecks in the development of data-driven AI Systems is the lack of reliable human annotations. The recent advent of several crowdsourcing platforms such as Amazon's Mechanical Turk, allowing requesters the access to affordable and rapid results of a global workforce, greatly facilitates the creation of massive training sets. Most of the available studies on the effectiveness of crowdsourcing report on English data. We use Mechanical Turk annotations to train an Opinion Mining System to classify Spanish consumer comments. We design three different Human Intelligence Task (HIT) strategies and show high inter-annotator agreement between non-experts and expert annotators. We evaluate the advantages/drawbacks of each HIT design and report \texttt{<results of the classifier>}.
+  One of the major bottlenecks in the development of data-driven AI Systems is the lack of reliable human annotations. The recent advent of several crowdsourcing platforms such as Amazon's Mechanical Turk, allowing requesters the access to affordable and rapid results of a global workforce, greatly facilitates the creation of massive training data. Most of the available studies on the effectiveness of crowdsourcing report on English data. We use Mechanical Turk annotations to train an Opinion Mining System to classify Spanish consumer comments. We design three different Human Intelligence Task (HIT) strategies and show high inter-annotator agreement between non-experts and expert annotators. We evaluate the advantages/drawbacks of each HIT design and report \texttt{<results of the classifier>}.
 \end{abstract}
 
 \section{Introduction}
 \label{sect:intro}
-\texttt{<Intro.>}
-\texttt{<Some possible citations for remainder paper.>}
-In~\cite{snow_cheap_2008}, it is shown that $\ldots$ \\
-In~\cite{sheng_get_2008}, it is shown that $\ldots$ \\
-In~\cite{kittur_crowdsourcing_2008}, it is shown that $\ldots$ \\
-In~\cite{su_internet-scale_2007}, it is shown that $\ldots$ \\
+
+The recent advent of crowdsourcing platforms such as Amazon's Mechanical Turk\footnote{\texttt{https://www.mturk.com}}, Crowdflower\footnote{\texttt{http://crowdflower.com/}} and others has attracted a lot of attention both from companies as from academia. Crowdsourcing enables requesters to tap from a global pool of non-experts to obtain rapid and affordable answers to simple Human Intelligence Tasks (HITs), which can be subsequently used to train data-driven AI systems.
+
+A number of recent papers on this subject point out that non-expert annotations, if produced in a sufficient quantity, can rival and even surpass the quality of expert annotations, often at a much lesser cost \cite{snow_cheap_2008}, \cite{su_internet-scale_2007}. However, this possible increase in quality depends on the task at hand and on an adequate HIT design \cite{kittur_crowdsourcing_2008}.
+
+In this paper, we evaluate the usefulness of AMT annotations to train an Opinion Mining system to detect opinionated contents (Polarity Detection) in Spanish customer comments on car brands. Currently, a large majority of AMT tasks is designed for English speakers. One of the reasons for participating in this shared task was to find out how easy it is to obtain annotated data for Spanish. In addition, we want to find out how useful these data are, by comparing them to expert annotations and using them to train an Opinion Mining system for polarity detection.
+
+This paper is structured as follows. Section \ref{sect:outline} contains an explanation of the task outline and our goals. Section \ref{sect:design} contains an analysis of three different HIT designs that we used in this task. In Section \ref{sect:results}, we provide a detailed analysis of the retrieved HITs and focus on geographical information of the workers, the correlation between the different HIT designs, the quality of the retrieved answers and the total cost of the experiment. In Section \ref{sect:classifier}, we evaluate the incidence of AMT-generated annotations on a polarity classification task using two different experimental settings. Finally, we conclude in Section \ref{sect:conclusions}.
 
 \section{Task Outline and Goals}
 \label{sect:outline}
@@ -71,43 +73,58 @@ We selected a dataset of 1000 sentences containing user opinions on cars from th
   \end{center}
 \end{figure}
 
-The sentences in the dataset were presented to the AMT workers in three different HIT designs. HIT1 is a simple categorization scheme in which workers are asked to classify each sentence as being either \textit{positive}, \textit{negative} or \textit{neutral}, as is shown in Figure \ref{hits}, section b. HIT2 is a graded categorization template in which workers had to assign a score between -5 (negative) and +5 (positive) to each example sentence, as is shown in Figure \ref{hits}, section c. Finally, HIT3 is a continuous triangular categorization template that allows workers to use both a horizontal positive-negative axis and a vertical subjective-objective axis by placing the example sentence anywhere inside the triangle. The subjective-objective axis expresses the degree to which the sentence contains opinionated content and was earlier used by \cite{sentiwordnet:06}. For example, the sentence \textit{`I think this is a wonderful car'} clearly marks an opinion and should be positioned towards the subjective end, while the sentence \textit{`The car has six cilinders'} should be located towards the objective end. Figure \ref{hits}, section d contains an example of HIT3. In order not to burden the workers with overly complex instructions, we did not mention this subjective-objective axis but asked them instead to place ambiguous sentences towards the center of the horizontal positive-negative axis and more objective, non-opinionated sentences towards the lower \textit{neutral} tip of the triangle.\\
+The sentences in the dataset were presented to the AMT workers in three different HIT designs. Each HIT design contains a single sentence to be evaluated. HIT1 is a simple categorization scheme in which workers are asked to classify the sentence as being either \textit{positive}, \textit{negative} or \textit{neutral}, as is shown in Figure \ref{hits}, section b. HIT2 is a graded categorization template in which workers had to assign a score between -5 (negative) and +5 (positive) to the example sentence, as is shown in Figure \ref{hits}, section c. Finally, HIT3 is a continuous triangular categorization template that allows workers to use both a horizontal positive-negative axis and a vertical subjective-objective axis by placing the example sentence anywhere inside the triangle. The subjective-objective axis expresses the degree to which the sentence contains opinionated content and was earlier used by \cite{sentiwordnet:06}. For example, the sentence \textit{`I think this is a wonderful car'} clearly marks an opinion and should be positioned towards the subjective end, while the sentence \textit{`The car has six cilinders'} should be located towards the objective end. Figure \ref{hits}, section d contains an example of HIT3. In order not to burden the workers with overly complex instructions, we did not mention this subjective-objective axis but asked them instead to place ambiguous sentences towards the center of the horizontal positive-negative axis and more objective, non-opinionated sentences towards the lower \textit{neutral} tip of the triangle.
 
-\texttt{<Explain three independent annotations. Total of 9000 annotations. Total cost.>}
+For each of the three HIT designs, we specified the requirement of three different unique assignments per HIT, which led to a total amount of $3 \times 3 \times 1000 = 9000$ HITs being uploaded on AMT. Mind that setting the requirement of unique assigments ensures a number of unique workers \textit{per individual HIT}, but does not ensure a consistency of workers over a single batch of 1000 HITs. This is in the line with the philosophy of crowdsourcing, which allows many different people to participate in the same task.
 
 \section{Annotation Task Results and Analysis}
 \label{sect:results}
 
-After designing the HITs, we uploaded 30 random samples for testing purposes. These HITs were completed in a matter of seconds, mostly by workers in India. After a brief inspection of the results, it was obvious that most answers corresponded to random clicks. Therefore, we decided to include a small competence test to ensure that future workers would possess the necessary linguistic skills to perform the task. The test consists of six simple categorisation questions of the type of HIT1 that a skilled worker would be able to perform in under a minute.
+After designing the HITs, we uploaded 30 random samples for testing purposes. These HITs were completed in a matter of seconds, mostly by workers in India. After a brief inspection of the results, it was obvious that most answers corresponded to random clicks. Therefore, we decided to include a small competence test to ensure that future workers would possess the necessary linguistic skills to perform the task. The test consists of six simple categorisation questions of the type of HIT1 that a skilled worker would be able to perform in under a minute. In order to discourage the use of automatic translation tools, a time limit of two minutes was  imposed and test sentences contain idiomatic constructions notoriously difficult for Machine Translation Systems.
 
-\subsection{Annotation Statistics}
+\subsection{HIT Statistics}
 
-These are the statistics:\\
-\texttt{<among non-experts and experts vs. non-experts. \cite{snow_cheap_2008} is good for this.>}
+Table \ref{table.stats} contains statistics on the workers who completed our HITs. A total of 19 workers passed the competence test and submitted at least one HIT. Of those, four workers completed HITs belonging to two different designs and six submitted HITs in all three designs. Twelve workers are located in the US (64\%), three in Spain (16\%), and one in Mexico (5\%), Equador (5\%), The Netherlands (5\%) and an unknown location (5\%).
 
+As to a comparison of completion times, it took a worker on average 11 seconds to complete an instance of HIT1, and 9 seconds to complete an instance of HIT2 and HIT3. At first sight, this result might seem surprising, since conceptually there is an increase in complexity when moving from HIT1 to HIT2 and from HIT2 to HIT3. These results might suggest that users find it easier to classify items on a graded or continuous scale such as HIT2 and HIT3, which allows for a certain degree of flexibility, than on a stricter categorical template such as HIT1, where there is no room for error.
+
+%\multicolumn{2}{c}{}
 \begin{table}
 \begin{scriptsize}
-\begin{tabular}{|l|l|l|l|l|l|}
+\begin{tabular}{|l|l|c|c|c|c|c|c|c|}
  \hline
- ID & Country & HIT1 & HIT2 & HIT3 & Acc \\ \hline
-%  \rowcolor{gray} 1 & country1 & x & x & x & x\% \\
-%  \rowcolor{lightgray} 1 & country2 & x & x & x & x\% \\
- A16MC82ITK70QZ & US & 77/8.2 &  &  & x\% \\
- A19835WFUL4B52 & US & 43/5.3 &  &  & x\% \\
- A198YDDSSOBP8A & Mexico & 794/11.0 &  &  & x\% \\
- A1COK1GRYUJA1M & US & 3/15.7 &  &  & x\% \\
- A1F70TQGR00PTQ & US & 980/ &  &  & x\% \\
+ \multicolumn{3}{|c|}{Overall} & \multicolumn{2}{|c|}{HIT1} & \multicolumn{2}{|c|}{HIT2} & \multicolumn{2}{|c|}{HIT3}  \\ \hline
+ ID & C & \% & \# & sec. & \# & sec. & \# & sec. \\ \hline %A1VZZ0Z066Y4Z6
+ 1 & mx & 29.9 & 794 & 11.0 & 967 & 8.6 & 930 & 11.6 \\ %A198YDDSSOBP8A
+ 2 & us & 27.6 & 980 & 8.3 & 507 & 7.8 & 994 & 7.4 \\ %A1F70TQGR00PTQ
+ 3 & nl & 11.0 & 85 & 8.3 & 573 & 10.9 & 333 & 11.4 \\ %A3GPY0YRKEQFTN
+ 4 & us & 9.5 & 853 & 16.8 & - & - & - & - \\ %A1VZZ0Z066Y4Z6
+ 5 & es & 9.4 & - & - & 579 & 9.1 & 265 & 8.0 \\ %A36Y503MT333BI
+ 6 & ec & 4.1 & 151 & 9.4 & 14 & 16.7 & 200 & 13.0 \\ %A28EP28N6ZVN92
+ 7 & us & 3.6 & 3 & 15.7 & 139 & 8.5 & 133 & 11.6 \\ %A1COK1GRYUJA1M
+ 8 & us & 2.2 & 77 & 8.2 & 106 & 7.3 & 11 & 10.5 \\ %A16MC82ITK70QZ
+ 9 & us & 0.6 & - & - & - & - & 50 & 11.2 \\ %AMFD4SECCGB9M
+ 10 & us & 0.5 & 43 & 5.3 & 1 & 5 & - & - \\ %A19835WFUL4B52
+ 11 & us & 0.4 & - & - & 38 & 25.2 & - & - \\ %AKZL93LN5PNM8
+ 12 & us & 0.4 & - & - & 10 & 9.5 & 27 & 10.8 \\ %A1CY631WJA8W0F
+ 13 & es & 0.4 & - & - & - & - & 35 & 15.1 \\ %A2RUNAAB6696MJ
+ 14 & es & 0.3 & - & - & 30 & 13.5 & - & - \\ %A14OKIBGWHJE1F
+ 15 & us & 0.3 & 8 & 24.7 & 18 & 21.5 & - & - \\ %A1H95IZT6SJKC9
+ 16 & us & 0.2 & - & - & - & - & 22 & 8.9 \\ %A3TXA8FQAXNMDM
+ 17 & us & 0.2 & - & - & 17 & 16.5 & - & - \\ %A2M7EYDXHMTLL7
+ 18 & ? & 0.1 & 6 & 20  & - & - & - & -  \\ %A6FD8TNCPBP69
+ 19 & us & 0.1 & - & - & 1 & 33 & - & -  \\ %A1B326VW79CZEP
  \hline
 \end{tabular}
 \end{scriptsize}
-\caption{\small Statistics on AMT workers: (fictional) ID, Country, per HIT type nr. hits/average completion time, Accuracy.}
+\caption{\small Statistics on AMT workers for all three HIT designs: (fictional) worker ID, country code in ISO 3166-1, \% of total number of HITs completed, number of HITs completed per design and average completion time.}
 \label{table.stats}
 \end{table}
 
-%% correspondence with IAA? (might be tricky especially if there are only a few HITs to go by)
+\subsection{Annotation Distributions}
+
 \subsection{Annotation Quality}
-\texttt{<This is a very useful reference: \cite{dawid_maximum_1979}>} \\
-\texttt{<This is another useful reference: \cite{mason_financial_2009}>}
+\label{sect:quality}
 
 The annotation quality of AMT workers can be measured by comparing them to expert annotations. This is usually done by calculating inter-annotator agreement (ITA) scores. Note that, since a single HIT can contain more than one assignment and each assignment is typically performed by more than one annotator, we can only calculate ITA scores between batches of assignments, rather than between individual workers. Therefore, we describe the ITA scores in terms of batches. In Table \ref{table.ita}, we present a comparison of standard kappa\footnote{In reality, we found that fixed and free margin Kappa values were almost identical, which reflects the balanced distribution of the dataset.} calculations \cite{eugenio_kappa_2004} between batches of assignments in HIT1 and expert annotations.
 
@@ -115,6 +132,17 @@ We found an inter-batch ITA score of 0.598, which indicates a moderate agreement
 In order to filter out noise in worker annotations, we applied a simple majority voting procedure in which we selected, for each sentence in HIT1, the most voted category. This results in an additional batch of annotations. This batch, refered in Table \ref{table.ita} as \textit{Majority}, produced a considerably higher ITA score of 0.716, which confirms the validity of the majority voting scheme to obtain better annotations.
 
 In addition, we calculated ITA scores between three expert annotators on a separate, 500-sentence dataset, randomly selected from the same corpus as described at the start of Section \ref{sect:design}. This collection was later used as test set in the experiments described in Section \ref{sect:classifier}. The inter-expert ITA scores on this separate dataset contains values of 0.725 for $\kappa_{1}$ and 0.729 for $\kappa_{2}$, only marginally higher than the \textit{Majority} ITA scores. Although we are comparing results on different data sets, these results seem to indicate that multiple AMT annotations are able to produce a similar quality to expert annotations. This might suggest that a further increase in the number of HIT assignments would outperform expert ITA scores, as was previously reported in~\cite{snow_cheap_2008}.
+
+\subsection{Annotation Cost}
+
+\texttt{<This is another useful reference: \cite{mason_financial_2009}>}
+
+At the specified cost of 0.02\$ per HIT, a total sum of 180\$ (minus Amazon fees) was spent on the task.
+
+In order to decide to use the Amazon's "mechanical turk" it's important to measure the quality of the results, but, of course, the cost of performing the annotation using turkers instead of in-house experts and the time needed to perform the annotation must also be taken into account.
+To compute the in-House costs, the expert or engineer is paid at a rate of 70\$ an hour, including salary and all other structural costs. The in-house annotation tasks of 1000 sentences would last for three hours, giving a cost of 210\$ and a marginal cost of preparing the data. By means of Amazon we spent 75\$ to annotate the same sentences three times, to get the same quality of results. But we must add the costs of designing the Hits and  the qualifying test and the task of upload the data into Amazon's servers. These tasks highly depend on the experience of the engineers developing it, and can range from a couple of hours to a couple of days (for the first times).
+As the volume of data to annotate increases, the economical benefit of the AMT is more evident, because the design time becomes a small portion of the budget. For annotating 30,000 sentences the differences rises up to 1350\$ that are more than enough to design the hit. 
+But the main important economic impact may not be the cost but the time to perform the task. In-house massive annotation may take a lot of time, and can become a hard task, as a few users need to annotate a lot of sentences. As this task can become tiresome and hard it needs to be elapsed in time. In AMT the a hit may be distributed into many volunteers that 24 hours a day are ready to work in parallel to produce the results in a few hours.     
 
 % It's interesting that the inter annotation agreement between the agregated majority batch and the Expert was almost the same than the inter annotation agreement of the experts*.
 % 
@@ -139,24 +167,17 @@ Experts\footnote{Results on a different 500-sentence random sample of the same c
 \caption{Interannotation Agreement as a measure of quality of the annotations in HIT1. $\kappa_{1} = $ Fixed Margin Kappa. $\kappa_{2} = $ Free Margin Kappa.}
 \end{table}
 
-
-
-
-
 \section{Incidence of annotations on supervised polarity classification}
 \label{sect:classifier}
 
-\texttt{<Two experiments: (i) AMT annotations vs. original Ciao annotations and (ii) AMT annotations vs. expert annotations. >}
+This section intends to evaluate the incidence of AMT-generated annotations on a polarity classification task. We present two different evaluations. In the evaluation of Section \ref{eval1}, we compare the results of training a polarity classification system with noisy available metadata and with AMT generated annotations of HIT1. In the evaluation of Section \ref{eval2}, we compare the results of training several polarity classifiers on six different training sets, each of them generated from the AMT annotations of HIT1.
 
-\texttt{<Make it very clear in the intro that only HIT1, and not HIT2 and HIT3 are considered for classifier training>}
+\subsection{Experiment one: AMT annotations vs. original Ciao annotations}
+\label{eval1}
 
-This section intends to evaluate the incidence of AMT-generated annotations on a polarity classification task.
-According to this, a comparative evaluation between two polarity classification systems is conducted. 
-More specifically, baseline or reference classifiers trained with noisy available metadata are compared with 
-contrastive classifiers trained with AMT generated annotations.  
-Although more sophisticated classification schemas can be conceived for this task, a simple SVM-based binary supervised classification approach is considered here.
+In this section, a comparative evaluation between two polarity classification systems is conducted. More specifically, baseline or reference classifiers trained with noisy available metadata are compared with contrastive classifiers trained with AMT generated annotations. Although more sophisticated classification schemas can be conceived for this task, a simple SVM-based binary supervised classification approach is considered here.
 
-\subsection{Description of datasets}
+\subsubsection{Description of datasets}
 \label{datasets}
 
 As was mentioned in Section \ref{sect:design}, all sentences were extracted from a corpus of user opinions on cars from the automotive section of \texttt{www.ciao.es} (Spanish). For conducting the experimental evaluation, three different datasets were considered:
@@ -209,7 +230,7 @@ Totals &5570 &1000 &500 \\
 \label{tc_corpus}
 \end{table}
 
-\subsection{Experimental settings}
+\subsubsection{Experimental settings}
 As mentioned above, a simple SVM-based supervised classification approach was considered for the
 polarity detection task under consideration. According to this, two different groups of classifiers were 
 considered: a baseline or reference group, and a contrastive group. Classifiers within these two groups were
@@ -232,8 +253,8 @@ the training dataset corresponding to the classifier group, i.e. baseline datase
 and annotated dataset for contrastive systems. Training subsample sets were always balanced with respect to 
 the original three categories: `positive', `negative' and `neutral'.
 
-\subsection{Results and discussion}
-Table \ref{tc_pre_rec} presents the resulting mean values of precision and recall for each considered class 
+\subsubsection{Results and discussion}
+Table \ref{tc_pre_rec} presents the resulting mean values of precision and recall for each considered category 
 in classifiers trained with either the baseline or the annotated dataset. As observed in the table, with the
 exception of recall for category `negative' and precision for category `not\_negative', both metrics are substantially 
 improved when the annotated dataset is used for training the classifiers. The most impressive improvements
@@ -287,7 +308,7 @@ negative/not\_negative &60.09 (2.90) &63.73 (1.60) \\
 neutral/not\_neutral &51.27 (2.49) &62.57 (2.08) \\ 
 \hline
 \end{tabular}
-\caption{Mean accuracy over 20 independent simulations(with standard deviations provided in parenthesis) 
+\caption{Mean accuracy over 20 independent simulations (with standard deviations provided in parenthesis) 
 for each classification subtasks trained with either the baseline or the annotated dataset.}
 \label{tc_accu}
 \end{table}
@@ -305,9 +326,12 @@ opinionated content analysis, as well as it provides an approximated idea of cos
 of this type of resources, by using AMT.
 
 
-Apart from the xxx, ... explain.
+\subsection{Experiment two: AMT annotations vs. expert annotations}
+\label{eval2}
 
+In this section, we compare the results of training several polarity classifiers on six different training sets, each of them generated from the AMT annotations of HIT1. The different training sets are: (i) the original dataset of 1000 sentences annotated by experts (\textit{Experts}), (ii) the first set of 1000 AMT results (\textit{Batch1}), (iii) the second set of 1000 AMT results (\textit{Batch2}), (iv) the third set of 1000 AMT results (\textit{Batch3}), (v) the batch obtained by majority voting between Batch1, Batch2 and Batch3 (\textit{Majority}), and (vi) a batch of 3000 training instances obtained by aggregating Batch1, Batch2 and Batch3 (\textit{All}). In \cite{mccallum}, 
 
+Table \ref{table:amtvsexp} contains results of four different classifiers (Maxent, C45, Winnow and SVM), trained on these six different datasets and evaluated on the same 500-sentence test set as explained in Section \ref{datasets}. The Maxent classifier ... The C45 decision tree ... The Winnow classifier. Finally, the SVM ...
 
 \begin{table}
 \begin{center}
@@ -315,12 +339,11 @@ Apart from the xxx, ... explain.
 \begin{tabular}{|l|l|l|l|l|l|l|} \hline
  System & 
  {\begin{sideways}\parbox{2cm}{\centering Experts}\end{sideways}} &
- {\begin{sideways}\parbox{2cm}{\centering Batch\_1}\end{sideways}} &
- {\begin{sideways}\parbox{2cm}{\centering Batch\_2}\end{sideways}} &
- {\begin{sideways}\parbox{2cm}{\centering Batch\_3}\end{sideways}} &
+ {\begin{sideways}\parbox{2cm}{\centering Batch1}\end{sideways}} &
+ {\begin{sideways}\parbox{2cm}{\centering Batch2}\end{sideways}} &
+ {\begin{sideways}\parbox{2cm}{\centering Batch3}\end{sideways}} &
  {\begin{sideways}\parbox{2cm}{\centering Majority}\end{sideways}} &
  {\begin{sideways}\parbox{2cm}{\centering All}\end{sideways}} \\ \hline
- %% & Ann1 & Ann2 & Ann3 & Ann123 & Ann1+2+3 \\ \hline
  Maxent & 59.2 & 55.8 & 57.6 & 54.0 & 57.6 & 58.6 \\ \hline
  C45 & 42.2 & 33.6 & 42.0 & 41.2 & 41.6 & 45.0 \\ \hline
  Winnow & 44.2 & 43.6 & 40.4 & 47.6 & 46.2 & 50.6 \\ \hline
@@ -328,26 +351,17 @@ Apart from the xxx, ... explain.
 \end{tabular}
 \end{small}
 \end{center}
-\caption{Accuracy figures of four different classifiers (Maxent, C45, Winnow and SVM) trained on six different datasets: Experts$=$training set annotated by experts, Batch\_1$=$first batch of HIT1, Batch\_2$=$second batch of HIT1, Batch\_3$=$third batch of HIT1, Majority$=$ batch obtained by majority voting between Batch\_1, Batch\_2 and Batch\_3, All$=$batch obtained by aggregating Batch\_1, Batch\_2 and Batch\_3.}
+\caption{Accuracy figures of four different classifiers (Maxent, C45, Winnow and SVM) trained on six different datasets: Experts$=$training set annotated by experts, Batch1$=$first batch of HIT1, Batch2$=$second batch of HIT1, Batch3$=$third batch of HIT1, Majority$=$ batch obtained by majority voting between Batch1, Batch2 and Batch3, All$=$batch obtained by aggregating Batch1, Batch2 and Batch3.}
 \label{table:amtvsexp}
 \end{table}
 
-% (*this kappa correponds to the interannotation agreement in the test set, althoush it's a different data set it's a balanced sample of the same corpus of sentences used in training, 
-% therefore give us an estimation of the higher limit of the kappa due to the difficulty of the annotation task by itself.)
-
-\texttt{<extend on cost/benefit.>}
-
-\subsection{Economic impact}
-In order to decide to use the Amazon's "mechanical turk" it's important to measure the quality of the results, but, of course, the cost of performing the annotation using turkers instead of in-house experts and the time needed to perform the annotation must also be taken into account.
-To compute the in-House costs, the expert or engineer is paid at a rate of 70\$ an hour, including salary and all other structural costs. The in-house annotation tasks of 1000 sentences would last for three hours, giving a cost of 210\$ and a marginal cost of preparing the data. By means of Amazon we spent 75\$ to annotate the same sentences three times, to get the same quality of results. But we must add the costs of designing the Hits and  the qualifying test and the task of upload the data into Amazon's servers. These tasks highly depend on the experience of the engineers developing it, and can range from a couple of hours to a couple of days (for the first times).
-As the volume of data to annotate increases, the economical benefit of the AMT is more evident, because the design time becomes a small portion of the budget. For annotating 30,000 sentences the differences rises up to 1350\$ that are more than enough to design the hit. 
-But the main important economic impact may not be the cost but the time to perform the task. In-house massive annotation may take a lot of time, and can become a hard task, as a few users need to annotate a lot of sentences. As this task can become tiresome and hard it needs to be elapsed in time. In AMT the a hit may be distributed into many volunteers that 24 hours a day are ready to work in parallel to produce the results in a few hours.     
 \section{Conclusions}
+\label{sect:conclusions}
 In this paper we have analyzed the use of Amazon's "mechanical turk" to annotate polarity of sentences. We have observed that even that the quality of single annotators may be lower than using experts, the price of each annotation is so cheap that allows the use of multiple annotators to reach similar quality still at lower prices. 
-From the different designs of the hits that we did, we can conclude that the complexity of the task was simpler than we thought, (and maybe two cents was a high price) and that what a priory seemed simpler the turkers took more time than the multiple answers task that includes richest data. From a first trial Hit we observed some users answering at random, also the task was in Spanish, and somehow we had to be sure that the turkers would understand the language. We designed a qualifying test (from which we don't have any information about how many users tried it and failed, we think that could be interesting to have this information). The design of the qualifying test was done using sentences difficult to translate using automatic tools (like Google translate).
+From the different designs of the hits that we did, we can conclude that the complexity of the task was simpler than we thought, (and maybe two cents was a high price) and that what a priory seemed simpler the turkers took more time than the multiple answers task that includes richest data. From a first trial Hit we observed some users answering at random, also the task was in Spanish, and somehow we had to be sure that the turkers would understand the language. We designed a qualifying test (from which we don't have any information about how many users tried it and failed, we think that could be interesting to have this information). 
 
   
-\label{sect:conclusions}
+
 \texttt{Future work: HIT Design: what is the optimal design of the annotation task for our purpose and what is the effect of a suboptimal design on the system scores? We present AMT workers with three different HIT designs and evaluate the impact of each of them on the overall system performance. Train classifiers with results from HIT2/HIT3. two ways of measuring quality: kappa \& performance}
 
 \section*{Acknowledgments}
