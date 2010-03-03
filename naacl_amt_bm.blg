@@ -1,11 +1,12 @@
-This is BibTeX, Version 0.99c (Web2C 7.5.6)
+This is BibTeX, Version 0.99c (Web2C 7.5.7)
 The top-level auxiliary file: naacl_amt_bm.aux
 The style file: naaclhlt2010.bst
 Database file #1: amturk.bib
+Warning--I didn't find a database entry for "weka"
 Warning--empty journal in kittur_crowdsourcing_2008
 You've used 7 entries,
             2490 wiz_defined-function locations,
-            591 strings with 5574 characters,
+            592 strings with 5578 characters,
 and the built_in function-call counts, 3267 in all, are:
 = -- 339
 > -- 110
@@ -44,4 +45,4 @@ warning$ -- 1
 while$ -- 21
 width$ -- 10
 write$ -- 96
-(There was 1 warning)
+(There were 2 warnings)
