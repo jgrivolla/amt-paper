@@ -143,17 +143,6 @@ Experts\footnote{Results on a different 500-sentence random sample of the same c
 
 
 
-
-
-
-
-
-
-% \section{Classifier Performance}
-% \label{sect:classifier}
-% \texttt{<Result 1: HIT1 experts vs. HIT1 AMT workers>}\\
-% \texttt{<Result 2: HIT1 Ciao vs. HIT1 AMT workers>}
-
 \section{Incidence of annotations on supervised polarity classification}
 \label{sect:classifier}
 
@@ -244,38 +233,42 @@ and annotated dataset for contrastive systems. Training subsample sets were alwa
 the original three categories: `positive', `negative' and `neutral'.
 
 \subsection{Results and discussion}
-Table \ref{tc_pre_rec} presents the resulting average values of precision and recall for each considered category 
+Table \ref{tc_pre_rec} presents the resulting mean values of precision and recall for each considered class 
 in classifiers trained with either the baseline or the annotated dataset. As observed in the table, with the
 exception of recall for category `negative' and precision for category `not\_negative', both metrics are substantially 
 improved when the annotated dataset is used for training the classifiers. The most impressive improvements
 are observed for `neutral' precision and recall. 
 
 \begin{table}
-\begin{tabular}{|l|l|l|l|l|}
+\begin{tabular}{|l|l|l|}
 \hline
-&baseline &baseline &annotated &annotated \\ 
+class &precision &recall \\ 
 \hline
-category &precision &recall &precision &recall \\ 
+positive &50.10 (3.79) &62.00 (7.47) \\
+&60.21 (2.07)  &71.00 (2.18) \\ 
 \hline
-positive &50.10 (3.79) &62.00 (7.47) &60.21 (2.07) &71.00 (2.18) \\ 
+not_positive &69.64 (2.70) &58.05 (7.54) \\ 
+&77.95 (1.32) &68.54 (2.75) \\ 
 \hline
-not\_positive &69.64 (2.70) &58.05 (7.54) &77.95 (1.32) &68.54 (2.75) \\ 
+negative &35.25 (2.63) &53.46 (10.55) \\ 
+&39.07 (1.78) &55.52 (3.26) \\ 
 \hline
-negative &35.25 (2.63) &53.46 (10.55) &39.07 (1.78) &55.52 (3.26) \\ 
+not_negative &78.04 (2.19) &62.62 (6.76) \\ 
+&79.73 (1.10) &66.87 (2.31) \\ 
 \hline
-not\_negative &78.04 (2.19) &62.62 (6.76) &79.73 (1.10) &66.87 (2.31) \\ 
+neutral &32.51 (3.02) &48.03 (7.33) \\ 
+&44.72 (2.00) &67.12 (2.96) \\ 
 \hline
-neutral &32.51 (3.02) &48.03 (7.33) &44.72 (2.00) &67.12 (2.96) \\ 
-\hline
-not\_neutral &68.17 (2.65) &52.81 (3.84) &79.41 (1.58) &60.40 (2.96) \\ 
+not_neutral &68.17 (2.65) &52.81 (3.84) \\ 
+&79.41 (1.58) &60.40 (2.96) \\ 
 \hline
 \end{tabular}
-\caption{Average precision and average recall (with standard deviations provided in parenthesis) 
-for each considered category in classifiers trained with either the baseline or the annotated dataset.}
+\caption{Mean precision and recall over 20 independent simulations (with standard deviations provided in parenthesis) 
+for each considered class in classifiers trained with either the baseline dataset (upper values) or the annotated dataset (lower values).}
 \label{tc_pre_rec}
-\end{table}
+\end{table*}
 
-Table \ref{tc_accu} presents the resulting average values of accuracy for each considered subtask 
+Table \ref{tc_accu} presents the resulting mean values of accuracy for each considered subtask 
 in classifiers trained with either the baseline or the annotated dataset. As observed in the table,
 all subtasks benefit from using the annotated dataset for training the classifiers; however, it is 
 important to mention that while similar absolute gains are observed for the `positive/not\_positive' 
@@ -294,7 +287,7 @@ negative/not\_negative &60.09 (2.90) &63.73 (1.60) \\
 neutral/not\_neutral &51.27 (2.49) &62.57 (2.08) \\ 
 \hline
 \end{tabular}
-\caption{Average accuracy (with standard deviations provided in parenthesis) 
+\caption{Mean accuracy over 20 independent simulations(with standard deviations provided in parenthesis) 
 for each classification subtasks trained with either the baseline or the annotated dataset.}
 \label{tc_accu}
 \end{table}
@@ -310,6 +303,7 @@ respect to classes `neutral' and `positive'.
 In any case, this experimental work only verifies the feasibility of constructing training datasets for
 opinionated content analysis, as well as it provides an approximated idea of costs involved in the generation
 of this type of resources, by using AMT.
+
 
 Apart from the xxx, ... explain.
 
@@ -330,7 +324,7 @@ Apart from the xxx, ... explain.
  Maxent & 59.2 & 55.8 & 57.6 & 54.0 & 57.6 & 58.6 \\ \hline
  C45 & 42.2 & 33.6 & 42.0 & 41.2 & 41.6 & 45.0 \\ \hline
  Winnow & 44.2 & 43.6 & 40.4 & 47.6 & 46.2 & 50.6 \\ \hline
- SVM &  &  &  &  &  &  \\ \hline
+ SVM & 57.6 & 53.0 & 55.4 & 54.0 & 57.2 & 52.8 \\ \hline
 \end{tabular}
 \end{small}
 \end{center}

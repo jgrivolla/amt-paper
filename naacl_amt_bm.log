@@ -1,14 +1,21 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.9.26)  1 MAR 2010 12:26
+This is pdfTeXk, Version 3.1415926-1.40.9 (Web2C 7.5.7) (format=pdflatex 2009.4.2)  3 MAR 2010 13:03
 entering extended mode
+\write18 enabled.
  %&-line parsing enabled.
 **naacl_amt_bm.tex
 (./naacl_amt_bm.tex
 LaTeX2e <2005/12/01>
-Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, loaded.
-(/usr/share/texmf-texlive/tex/latex/base/article.cls
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, german-x-2008-06-18, ngerman-x-2008-06-18, ancientgreek, ibycus, ar
+abic, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danish, dutc
+h, esperanto, estonian, farsi, finnish, french, galician, german, ngerman, mono
+greek, greek, hungarian, icelandic, indonesian, interlingua, irish, italian, la
+tin, lithuanian, mongolian, mongolian2a, bokmal, nynorsk, polish, portuguese, r
+omanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, turki
+sh, ukenglish, ukrainian, uppersorbian, welsh, loaded.
+(/usr/local/texlive/2008/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2005/09/16 v1.4f Standard LaTeX document class
-(/usr/share/texmf-texlive/tex/latex/base/size11.clo
+(/usr/local/texlive/2008/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -22,72 +29,85 @@ File: size11.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
-) (./naaclhlt2010.sty
+)
+(./naaclhlt2010.sty
 Conference Style for NAACL-HLT 2010 -- released November 16, 2009
 \titlebox=\skip43
-) (/usr/share/texmf-texlive/tex/latex/psnfss/times.sty
+) (/usr/local/texlive/2008/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-(/usr/share/texmf-texlive/tex/latex/base/latexsym.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/base/latexsym.sty
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 (Font)                  U/lasy/m/n --> U/lasy/b/n on input line 47.
 )
-(/usr/share/texmf-texlive/tex/latex/tools/verbatim.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks14
 \verbatim@line=\toks15
 \verbatim@in@stream=\read1
 )
-(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/etc/texmf/tex/latex/config/graphics.cfg
+(/usr/local/texlive/2008/texmf/tex/latex/config/graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 90.
 
-(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
+(/usr/local/texlive/2008/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2008/09/08 v0.04l Graphics/color for pdfTeX
 \Gread@gobject=\count87
 ))
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/rotating/rotating.sty
+Package: rotating 2008/10/05 v2.15c rotated objects in LaTeX
+
+(/usr/local/texlive/2008/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count88
+\rotFPtop=\skip44
+\rotFPbot=\skip45
+\rot@float@box=\box26
+\rot@mess@toks=\toks17
+)
+(/usr/local/texlive/2008/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/etc/texmf/tex/latex/config/color.cfg
+(/usr/local/texlive/2008/texmf/tex/latex/config/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(/usr/share/texmf-texlive/tex/latex/colortbl/colortbl.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2001/02/13 v0.1j Color table columns (DPC)
 
-(/usr/share/texmf-texlive/tex/latex/tools/array.sty
+(/usr/local/texlive/2008/texmf-dist/tex/latex/tools/array.sty
 Package: array 2005/08/23 v2.4b Tabular extension package (FMi)
 \col@sep=\dimen105
 \extrarowheight=\dimen106
-\NC@list=\toks17
-\extratabsurround=\skip44
-\backup@length=\skip45
+\NC@list=\toks18
+\extratabsurround=\skip46
+\backup@length=\skip47
 )
-\everycr=\toks18
-\minrowclearance=\skip46
+\everycr=\toks19
+\minrowclearance=\skip48
 )
-\rownum=\count88
+\rownum=\count89
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
 Package xcolor Info: Model `RGB' extended on input line 1353.
@@ -102,12 +122,12 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 \openout2 = `lart.aux'.
 
 (./lart.tex
-\c@licntr=\count89
-\c@alphcntr=\count90
-\c@prin=\count91
-\c@assum=\count92
-\c@defn=\count93
-\astspace=\skip47
+\c@licntr=\count90
+\c@alphcntr=\count91
+\c@prin=\count92
+\c@assum=\count93
+\c@defn=\count94
+\astspace=\skip49
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 169.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -115,68 +135,76 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 169.
 LaTeX Font Info:    Try loading font information for U+lasy on input line 169.
- (/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
+ (/usr/local/texlive/2008/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-\c@figcntr=\count94
-\c@axcntr=\count95
-\c@alphacntr=\count96
+\c@figcntr=\count95
+\c@axcntr=\count96
+\c@alphacntr=\count97
 )
 (./naacl_amt_bm.aux)
 \openout1 = `naacl_amt_bm.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 28.
- (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 29.
+
+(/usr/local/texlive/2008/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
+(/usr/local/texlive/2008/texmf-dist/tex/context/base/supp-pdf.tex
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count98
+\scratchdimen=\dimen107
+\scratchbox=\box27
+\nofMPsegments=\count99
+\nofMParguments=\count100
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count101
+\MPscratchDim=\dimen108
+\MPnumerator=\count102
+\everyMPtoPDFconversion=\toks21
+)
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 29.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 30.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 29.
+(Font)              <12> on input line 30.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 29.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 31.
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 30.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 32.
+ (/usr/local/texlive/2008/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 36--42
+Underfull \hbox (badness 10000) in paragraph at lines 37--43
 \OT1/pcr/m/n/10.95 <Intro.> <Some possible citations
  []
 
 
-Underfull \hbox (badness 2818) in paragraph at lines 36--42
+Underfull \hbox (badness 2818) in paragraph at lines 37--43
 \OT1/pcr/m/n/10.95 for remainder paper.> \OT1/ptm/m/n/10.95 In (Snow et al.,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--42
+Underfull \hbox (badness 10000) in paragraph at lines 37--43
 
  []
 
 
-Underfull \hbox (badness 1184) in paragraph at lines 46--51
+Underfull \hbox (badness 1184) in paragraph at lines 47--52
 \OT1/ptm/m/n/10.95 use of AMT an-no-ta-tions com-pare eco-nom-i-cally
  []
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
-
-LaTeX Warning: Reference `datasets' on page 1 undefined on input line 55.
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+[1{/usr/local/texlive/2008/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
@@ -185,133 +213,208 @@ LaTeX Warning: Reference `datasets' on page 1 undefined on input line 55.
 
 ]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 60.
+(Font)              <7> on input line 61.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 60.
+(Font)              <5> on input line 61.
 
-<pics/Shot_HIT1.png, id=10, 349.305pt x 101.37875pt>
-File: pics/Shot_HIT1.png Graphic file (type png)
- <use pics/Shot_HIT1.png>
-<pics/Shot_HIT2.png, id=11, 298.11375pt x 80.3pt>
-File: pics/Shot_HIT2.png Graphic file (type png)
- <use pics/Shot_HIT2.png>
-<pics/Shot_HIT3.png, id=12, 280.04625pt x 220.825pt>
-File: pics/Shot_HIT3.png Graphic file (type png)
- <use pics/Shot_HIT3.png>
-Underfull \hbox (badness 1297) in paragraph at lines 90--91
+
+LaTeX Warning: File `pics/Reshots_All.png' not found on input line 68.
+
+
+! Package pdftex.def Error: File `pics/Reshots_All.png' not found.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.68 	{pics/Reshots_All.png}}
+                             
+? 
+
+Underfull \hbox (badness 3189) in paragraph at lines 74--75
+\OT1/ptm/m/n/10.95 cat-e-go-riza-tion tem-plate that al-lows work-ers to
+ []
+
+
+Underfull \hbox (badness 1297) in paragraph at lines 74--75
 \OT1/ptm/m/n/10.95 and was ear-lier used by (Esuli and Se-bas-tiani,
  []
 
 
-Underfull \hbox (badness 3209) in paragraph at lines 90--91
-\OT1/ptm/m/n/10.95 and more ob-jec-tive, non-opinionated sen-tences
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+[]\OT1/pcr/m/n/10.95 <Explain three independent
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+\OT1/pcr/m/n/10.95 annotations. Total of 9000
+ []
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 83.
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--87
 \OT1/pcr/m/n/10.95 <among non-experts and experts vs.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
+Underfull \hbox (badness 10000) in paragraph at lines 85--87
 \OT1/pcr/m/n/10.95 non-experts. (Snow et al., 2008)
  []
 
 
-Overfull \hbox (21.46043pt too wide) in paragraph at lines 104--117
+Overfull \hbox (21.46043pt too wide) in paragraph at lines 90--103
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--117
+Underfull \hbox (badness 10000) in paragraph at lines 90--103
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--126
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
 \OT1/pcr/m/n/10.95 <This is a very useful reference:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--126
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
 \OT1/pcr/m/n/10.95 <This is another useful reference:
  []
 
-[2 <./pics/Shot_HIT1.png> <./pics/Shot_HIT2.png> <./pics/Shot_HIT3.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 134--140
-\OT1/pcr/m/n/10.95 <SVM-based classifier: Matlab,
- []
-
-
-Underfull \hbox (badness 1147) in paragraph at lines 134--140
-\OT1/ptm/m/n/10.95 in-ci-dence of AMT-generated an-no-ta-tions on the
- []
-
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 155.
+(Font)              <9> on input line 112.
+
+LaTeX Warning: Citation `eugenio_kappa_2004' on page 2 undefined on input line 
+112.
+
+[2]
+Underfull \hbox (badness 1009) in paragraph at lines 114--116
+\OT1/ptm/m/n/10.95 con-sis-tent an-no-ta-tions be-tween work-ers. When
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
+\OT1/pcr/m/n/10.95 <Two experiments: (i) AMT
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
+\OT1/pcr/m/n/10.95 annotations vs. original
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
+\OT1/pcr/m/n/10.95 Ciao annotations and (ii)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--161
+\OT1/pcr/m/n/10.95 AMT annotations vs. expert
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+[]\OT1/pcr/m/n/10.95 <Make it very clear in the intro
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+\OT1/pcr/m/n/10.95 that only HIT1, and not HIT2 and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+\OT1/pcr/m/n/10.95 HIT3 are considered for classifier
+ []
+
+
+Underfull \hbox (badness 1057) in paragraph at lines 173--174
+\OT1/ptm/m/n/10.95 from the au-to-mo-tive sec-tion of \OT1/pcr/m/n/10.95 www.ci
+ao.es
+ []
+
 [3]
-Underfull \hbox (badness 1028) in paragraph at lines 206--209
+Underfull \hbox (badness 1028) in paragraph at lines 237--240
 []\OT1/ptm/m/n/10.95 Multiple-fold cross-validation was used in all
  []
 
-
-Overfull \hbox (109.92169pt too wide) in paragraph at lines 223--243
-[][] 
- []
-
-
-Overfull \hbox (11.47208pt too wide) in paragraph at lines 255--267
-[][] 
- []
-
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 285--286
-\OT1/pcr/m/n/10.95 Future work: HIT Design: what
+Overfull \hbox (11.47208pt too wide) in paragraph at lines 286--298
+[][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--286
+Underfull \hbox (badness 1024) in paragraph at lines 337--337
+\OT1/ptm/m/n/10 batch ob-tained by ma-jor-ity vot-ing be-tween Batch[]1,
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
+[]\OT1/pcr/m/n/10.95 Future work: HIT Design: what
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 \OT1/pcr/m/n/10.95 is the optimal design of the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--286
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 \OT1/pcr/m/n/10.95 annotation task for our purpose
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--286
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 \OT1/pcr/m/n/10.95 and what is the effect of a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--286
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 \OT1/pcr/m/n/10.95 suboptimal design on the system
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--286
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 \OT1/pcr/m/n/10.95 scores? We present AMT workers
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--286
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 \OT1/pcr/m/n/10.95 with three different HIT designs
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--286
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 \OT1/pcr/m/n/10.95 and evaluate the impact of each
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--286
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 \OT1/pcr/m/n/10.95 of them on the overall system
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
+\OT1/pcr/m/n/10.95 performance. Train classifiers
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
+\OT1/pcr/m/n/10.95 with results from HIT2/HIT3. two
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
+\OT1/pcr/m/n/10.95 ways of measuring quality: kappa
  []
 
 (./naacl_amt_bm.bbl
@@ -330,33 +433,33 @@ Missing character: There is no ” in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
+ [6]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no “ in font ptmr7t!
-) [5
+) [7
 
-] (./naacl_amt_bm.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+] (./naacl_amt_bm.aux) ) 
 Here is how much of TeX's memory you used:
- 1477 strings out of 95086
- 17456 string characters out of 1183255
- 75552 words of memory out of 1500000
- 4635 multiletter control sequences out of 10000+50000
- 27267 words of font info for 63 fonts, out of 1200000 for 2000
- 28 hyphenation exceptions out of 8191
- 41i,11n,35p,1528b,266s stack positions out of 5000i,500n,6000p,200000b,5000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/bluesky/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/blue
-sky/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb><
-/usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-tex
-live/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw
-/times/utmri8a.pfb>
-Output written on naacl_amt_bm.pdf (5 pages, 105544 bytes).
+ 1891 strings out of 493876
+ 23427 string characters out of 1150569
+ 90552 words of memory out of 3000000
+ 5142 multiletter control sequences out of 10000+50000
+ 27782 words of font info for 65 fonts, out of 3000000 for 5000
+ 714 hyphenation exceptions out of 8191
+ 41i,17n,35p,1561b,354s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/local/texlive/2008/texmf-dist/fonts/enc/dvips/bas
+e/8r.enc}</usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmmi10.pfb>
+</usr/local/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmr10.pfb></usr/loca
+l/texlive/2008/texmf-dist/fonts/type1/bluesky/cm/cmr7.pfb></usr/local/texlive/2
+008/texmf-dist/fonts/type1/bluesky/cm/cmr8.pfb></usr/local/texlive/2008/texmf-d
+ist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2008/texmf-dist/font
+s/type1/urw/times/utmb8a.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/ur
+w/times/utmr8a.pfb></usr/local/texlive/2008/texmf-dist/fonts/type1/urw/times/ut
+mri8a.pfb>
+Output written on naacl_amt_bm.pdf (7 pages, 103996 bytes).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
+ 59 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
