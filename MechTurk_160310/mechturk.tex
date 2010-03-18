@@ -18,17 +18,24 @@
 
 \mode<presentation>
 {
-  \usetheme{default}
-  \usecolortheme{seahorse}
-  \setbeamerfont{alerted text}{series=\bfseries}
+  %\usetheme{Warsaw}
+  %\usetheme{Montpellier}
+  \usetheme{Singapore}
+  %\usecolortheme{crane}
+  %\usecolortheme{seahorse}
+  \setbeamercovered{transparent}
 }
+
+%   \usetheme{default}
+%   \usecolortheme{seahorse}
+%   \setbeamerfont{alerted text}{series=\bfseries}
 
 %%\pgfdeclareimage[height=0.85cm]{bmlogo}{/home/bart/presentation_relextraction/pics/Logo_BM_EN.pdf}
 \pgfdeclareimage[height=0.85cm]{bmlogo}{pics/Logo_BM_EN}
 
 \title{Opinion Mining of Spanish Customer Comments with Non-Expert Annotations on\\ Mechanical Turk}
 
-\author{Rafael Banchs, Francesc Benavent, Joan Codina, \\ Jens Grivolla, Bart Mellebeek and Marta Ruiz}
+\author{Bart Mellebeek, Francesc Benavent, Jens Grivolla,\\ Joan Codina, Marta Ruiz and Rafael Banchs}
 
 \institute
 {
@@ -90,6 +97,32 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Is Mechanical Turk a sweatshop?}
+  \begin{center}
+    \scalebox{.45}{\includegraphics{pics/1903sweatshopchicago.jpg}}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Is Mechanical Turk a sweatshop?}
+\begin{columns}[T]
+\begin{column}{5cm}
+\scalebox{.5}{\includegraphics{pics/geography.png}}
+
+\begin{footnotesize}
+\begin{tabular}{p{4cm}}
+\\ \\ \\ \\ \\ \\ \\ \\ \\ \\ \\
+ Ref: Who are the Turkers? Worker Demographics in Amazon Mechanical Turk. Ross et al, 2009.
+\end{tabular} 
+\end{footnotesize}
+\end{column}
+\begin{column}{5cm}
+\scalebox{.5}{\includegraphics{pics/demographics.png}}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
   \frametitle{AMT worker annotations are cheap and fast. Are they also good?}
 	\begin{itemwide}
  	\item A number of recent papers argue they are: Kittur et al. (2008), Snow et al. (2008), Mason and Watts (2009), $\ldots$
@@ -134,6 +167,32 @@ We compare different HIT design strategies by evaluating the usefulness of resul
   \begin{center}
     \scalebox{.2}{\includegraphics{pics/HIT_example.png}}
   \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Source of our data: \texttt{www.ciao.es}}
+
+All sentences were extracted from a corpus of user opinions on cars from the automotive section of \texttt{www.ciao.es}.
+
+  \begin{center}
+    \fbox{
+    \includegraphics[scale=0.4]
+	{pics/ciao.png}}
+  \end{center}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{\texttt{www.ciao.es}: some example sentences}
+\begin{itemwide}
+ \item ¡No te lo pienses m\'{a}s, c\'ompratelo!
+ \item Tiene muchas piezas defectuosas.
+ \item La conducci\'{o}n es genial pero el diseño una porquer\'{i}a.
+ \item El Volvo es mejor que el Fiat.
+ \item Este coche tiene 6 cilindros.
+\end{itemwide}
+
+
 \end{frame}
 
 \begin{frame}
@@ -221,7 +280,7 @@ Experts\footnote{Results on a different 500-sentence random sample of the same c
  \item A total amount of 9000 assignments were uploaded on AMT.
  \item Reward of .02\$ per assignment $\rightarrow$ total sum $=$ 225\$ (180\$ + 45\$ Amazon fees).
  \item In-house expert: 1000 assignments in three hours at 70\$ per hour.
- \item We saved $210 - 75 = 135$\$, which constitutes almost 65\% of the cost of an expert annotator.
+ \item We saved 210\$ ($= 70 \times 3$) - 75\$ ($ = \frac{225}{3}$) = 135\$, which constitutes almost 65\% of the cost of an expert annotator.
  \item + a lower reward (.01\$) would most probably have worked equally well.
 \end{itemwide}
 
@@ -315,34 +374,42 @@ neutral/not\_neutral &51.27 (2.49) &62.57 (2.08) \\
 \section{Conclusions}
 
 \begin{frame}
-  \frametitle{Goals}
-We compare different HIT design strategies by evaluating the usefulness of resulting Mechanical Turk (AMT) annotations to train an Opinion Mining System on Spanish consumer data.\\
-
-\vspace{1cm}
-
-\begin{block}{Research questions:}
- \begin{enumerate}
- \item Annotation quality: AMT workers vs. experts.
- \item Annotation applicability: training of batch of classifiers.
- \item Language barriers: is there a large enough worker pool for Spanish?
- \item Return on Investment: AMT workers vs. experts.
-\end{enumerate}
+  \frametitle{Conclusions: 1. Annotation Quality}
+\begin{block}{Question?}
+How do AMT worker annotations compare to expert annotations?
+\end{block}
+\begin{block}{Result}
+High inter-annotator agreement between AMT workers and experts. %% add score.
 \end{block}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Results}
-We compare different HIT design strategies by evaluating the usefulness of resulting Mechanical Turk (AMT) annotations to train an Opinion Mining System on Spanish consumer data.\\
+  \frametitle{Conclusions: 2. Annotation Applicability}
+\begin{block}{Question?}
+How useful are AMT worker annotations to train polarity classifiers?
+\end{block}
+\begin{block}{Result}
+AMT worker annotations outperform initial noisy data and produce results on par with expert annotations.
+\end{block}
+\end{frame}
 
-\vspace{1cm}
+\begin{frame}
+  \frametitle{Conclusions: 3. Language Barriers}
+\begin{block}{Question?}
+Is there a large enough worker pool for Spanish?
+\end{block}
+\begin{block}{Result}
+After introducing a competence test, getting results for Spanish was easy and rapid.
+\end{block}
+\end{frame}
 
-\begin{block}{Research questions:}
- \begin{enumerate}
- \item Annotation quality: High inter-annotator agreement scores.
- \item Annotation applicability: AMT worker annotations outperform initial noisy data and on par with expert annotations.
- \item Language barriers: after introducing a competence test, getting results for Spanish was easy and rapid.
- \item Return on Investment: we saved 65\% of an expert annotator at a relatively high reward.
-\end{enumerate}
+\begin{frame}
+  \frametitle{Conclusions: 4. Return on Investment}
+\begin{block}{Question?}
+What is the Return on Investment of using AMT annotations instead of expert annotations.
+\end{block}
+\begin{block}{Result}
+For the proposed task, we saved 65\% of an expert annotator at a relatively high AMT reward.
 \end{block}
 \end{frame}
 
