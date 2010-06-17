@@ -1,7 +1,0 @@
-\beamer@endinputifotherversion {3.07pt}
-\beamer@sectionintoc {1}{What is Mechanical Turk?}{3}{0}{1}
-\beamer@sectionintoc {2}{Task Outline and Goals}{11}{0}{2}
-\beamer@sectionintoc {3}{HIT Design}{14}{0}{3}
-\beamer@sectionintoc {4}{Annotation Results}{20}{0}{4}
-\beamer@sectionintoc {5}{Experimental Results}{25}{0}{5}
-\beamer@sectionintoc {6}{Conclusions}{30}{0}{6}

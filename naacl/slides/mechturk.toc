@@ -1,0 +1,6 @@
+\beamer@endinputifotherversion {3.07pt}
+\beamer@sectionintoc {1}{Why participate in the Shared Task?}{3}{0}{1}
+\beamer@sectionintoc {2}{HIT Design}{6}{0}{2}
+\beamer@sectionintoc {3}{Annotation Results}{11}{0}{3}
+\beamer@sectionintoc {4}{Experimental Results}{16}{0}{4}
+\beamer@sectionintoc {5}{Conclusions}{21}{0}{5}

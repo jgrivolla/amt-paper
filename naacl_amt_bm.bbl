@@ -13,6 +13,13 @@ B.~D Eugenio and M.~Glass.
 \newblock The kappa statistic: A second look.
 \newblock {\em Computational linguistics}, 30(1):95–101.
 
+\bibitem[\protect\citename{Hall \bgroup et al.\egroup }2009]{weka}
+Mark Hall, Eibe Frank, Geoffrey Holmes, Bernhard Pfahringer, Peter Reutemann,
+  and Ian~H. Witten.
+\newblock 2009.
+\newblock The weka data mining software: an update.
+\newblock {\em SIGKDD Explor. Newsl.}, 11(1):10--18.
+
 \bibitem[\protect\citename{Kittur \bgroup et al.\egroup
   }2008]{kittur_crowdsourcing_2008}
 A.~Kittur, E.~H Chi, and B.~Suh.
