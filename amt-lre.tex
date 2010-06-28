@@ -243,8 +243,8 @@ Majority vs. Expert & 0.716 & 0.716\\ \hline
 Experts\footnote{Results on a different 500-sentence random sample of the same corpus.} & 0.725 & 0.729\\ \hline
 \end{tabular}
 \end{center}
-\label{tablita}
 \caption{Interannotation Agreement as a measure of quality of the annotations in HIT1. $\kappa_{1} = $ Fixed Margin Kappa. $\kappa_{2} = $ Free Margin Kappa.}
+\label{tablita}
 \end{table}
 
 
@@ -254,10 +254,29 @@ In addition, we calculated ITA scores between three expert annotators on a separ
 \item Evaluate the bias for the 3 annotators that did most of the work.
 \end{enumerate}
 
+We also were interested in evaluating the quality of the
+HIT2 and HIT3 designs. We evaluated the experts annotation quality of HIT2 and HIT3 by doing a mapping to HIT1.  
 
+For HIT2 we evaluated the experts annotations by performing several mappings as shown in Table \ref{tablita2}.
+As it was expected, the best HIT2 mapping was found for [-5,-1] to -1, [0] to 0 and [+1,+5] to +1 given that 0 is the 'neutral' position and it separates the positive and negative annotations. Notice that the kappas are
+slightly higher than in HIT1.
 
-\subsection{KAPPA FOR HIT2 and HIT3 using projections to HIT1}
-
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline
+Mapping & $\kappa_{1}$ & $\kappa_{2}$ \\ 
+\hline
+[-5,-1] $\rightarrow$ -1, [0] $\rightarrow$ 0, [+1,+5] $\rightarrow$ +1& 0.800 & 0.810\\ \hline
+[-5,-2] $\rightarrow$ -1, [-1,+1] $\rightarrow$ 0, [+2,+5] $\rightarrow$ +1& 0.360 & 0.370\\ \hline
+[-5,-3] $\rightarrow$ -1, [-2,+2] $\rightarrow$ 0, [+3,+5] $\rightarrow$ +1& 0.640 & 0.650\\ \hline
+[-5,-4] $\rightarrow$ -1, [-3,+3] $\rightarrow$ 0, [+4,+5] $\rightarrow$ +1& 0.500 & 0.590\\ \hline
+[-5,-4) $\rightarrow$ -1, [-4,+4] $\rightarrow$ 0, (+4,+5] $\rightarrow$ +1& 0.340 & 0.710\\ \hline
+\end{tabular}
+\end{center}
+\caption{Expert Interannotation Agreement as a measure of quality of the annotations in HIT2 using different mappings $\kappa_{1} = $ Fixed Margin Kappa. $\kappa_{2} = $ Free Margin Kappa.}
+\label{tablita2}
+\end{table}
 
 
 \subsection{Annotation Costs}
