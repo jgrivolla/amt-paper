@@ -276,11 +276,10 @@ In addition, we calculated ITA scores between three expert annotators on a separ
 %\end{enumerate}
 
 We also were interested in evaluating the quality of the
-HIT2 and HIT3 designs. We evaluated the experts annotation quality of HIT2 and HIT3 by doing a mapping to HIT1.  
+HIT2 and HIT3 designs. Using the already mentioned 500-sentence dataset, we evaluated the 3-expert annotation quality of HIT2 and HIT3 by doing different mappings to HIT1.  
 
-For HIT2 we evaluated the experts annotations by performing several mappings as shown in Table \ref{tablita2}.
-As it was expected, the best HIT2 mapping was found for [-5,-1] to -1, [0] to 0 and [+1,+5] to +1 given that 0 is the 'neutral' position and it separates the positive and negative annotations. Notice that the kappas are
-slightly higher than in HIT1.
+For HIT2 we evaluated the experts annotations by performing the mappings shown in Table \ref{tablita2}.
+As it was expected, the best HIT2 mapping was found for [-5,-1] to -1, [0] to 0 and [+1,+5] to +1 given that 0 is the 'neutral' position and it separates the positive and negative annotations. Notice that the kappas (0.800 and 0.810) are slightly higher than in HIT1.
 
 \begin{table}[h]
 \begin{center}
@@ -301,7 +300,7 @@ Mapping & $\kappa_{1}$ & $\kappa_{2}$ \\
 
 
 For HIT3 we also evaluated the experts annotations by performing several mappings, see Table \ref{tablita3}.
-The best HIT3 mapping was found for (-$\infty$,+10) to -1, [-10,+10] to 0 and (+10,+$\infty$) to +1. Here the [-10,+10] is the 'neutral' position and it separates the positive and negative annotations. Notice that the kappas are slightly higher than in HIT1 and similar to the ones in HIT2.
+The best HIT3 mapping was found for (-$\infty$,+10) to -1, [-10,+10] to 0 and (+10,+$\infty$) to +1. Here the [-10,+10] is the 'neutral' position and it separates the positive and negative annotations. The kappas are again slightly higher than in HIT1 and similar to the ones in HIT2.
 
 \begin{table}[h]
 \begin{center}
@@ -323,6 +322,25 @@ Mapping & $\kappa_{1}$ & $\kappa_{2}$ \\
 \end{table}
 
 
+Finally, given the best mappings obtained in Tables \ref{tablita2} and \ref{tablita3} we evaluated the inter-batch interannotation agreement. As shown in Table  \ref{tablita4}, results are coherent with expert annotation: the kappas increase from HIT1 to HIT2 and HIT3. The annotation quality is substantial and this confirms that HIT designs are well-defined. 
+
+What is surprising is that the inter-batch interannotation agreement was highly increased from HIT2 to HIT3. This may be explained by the fact that most turkers that performed HIT1, HIT2 and HIT3 sequentially, which allow them to improve the annotation quality. This was not the case of the experts, which were three different people for each HIT. However, this is just a hypothesis and can not be contrasted. 
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+ & $\kappa_{1}$ & $\kappa_{2}$ \\ 
+\hline
+HIT2&   61.58 & 61.64\\ \hline
+HIT3&   69.08 & 69.19\\ \hline
+\end{tabular}
+\end{center}
+\caption{Inter-batch Interannotation Agreement as a measure of quality of the annotations in HIT2 and HIT3 $\kappa_{1} = $ Fixed Margin Kappa. $\kappa_{2} = $ Free Margin Kappa.}
+\label{tablita4}
+\end{table}
+
+It is worth noticing that the fact of moving from HIT1 to HIT2 and from HIT2 to HIT3 provides more information, reduces annotation time (as shown in previous subsection) and results in a higher annotation quality.
 
 
 \subsection{Annotation Costs}
@@ -521,7 +539,7 @@ Having only evaluated each classifier (and training set) once on a static test s
 \label{sect:conclusions}
 
 
-In this paper we have examined the usefulness of non-expert annotations on Amazon's Mechanical Turk to annotate the polarity of Spanish consumer comments. We discussed the advantages/drawbacks of three different HIT designs, ranging from a simple categorization scheme to a continous scoring template. We report high inter-annotator agreement scores between non-experts and expert annotators and show that training an Opinion Mining System with non-expert AMT annotations outperforms original noisy annotations and obtains competitive results when compared to expert annotations using a variety of classifiers. In conclusion, we found that, in our case, the use of non-expert annotations through crowdsourcing is a viable and cost-effective alternative to the use of expert annotations.
+In this paper we have examined the usefulness of non-expert annotations on Amazon's Mechanical Turk to annotate the polarity of Spanish consumer comments. We discussed the advantages/drawbacks of three different HIT designs, ranging from a simple categorization scheme to a continuous scoring template. The fact of moving from the more simple annotation to the continuous annotation provides more information, reduces annotation time and results in a higher annotation quality. We report high inter-annotator agreement scores between non-experts and expert annotators and show that training an Opinion Mining System with non-expert AMT annotations outperforms original noisy annotations and obtains competitive results when compared to expert annotations using a variety of classifiers. In conclusion, we found that, in our case, the use of non-expert annotations through crowdsourcing is a viable and cost-effective alternative to the use of expert annotations.
 
 In the classification experiments reported in this paper, we have relied exclusively on AMT annotations from HIT1. \textbf{Further work is needed to fully analyze the impact of each of the HIT designs for Opinion Mining tasks. We hope that the added richness of annotation of HIT2 and HIT3 will enable us to use more sophisticated classification methods.}
 
