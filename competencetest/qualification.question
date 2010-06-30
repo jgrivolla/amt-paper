@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuestionForm xmlns="http://mechanicalturk.amazonaws.com/AWSMechanicalTurkDataSchemas/2005-10-01/QuestionForm.xsd">
+    <Overview>
+      <Title>Qualification Proficiency Spanish for Classification Purposes</Title>
+      <FormattedContent><![CDATA[
+      <h2>Instrucciones</h2>
+      Ud. leerá seis comentarios de usuarios sobre coches.
+      Indica, para cada comentario, si es <strong>positivo</strong>, <strong>negativo</strong> o <strong>ninguno de los anteriores</strong>.<br/>
+      Tendrá un máximo de cinco minutos para completar la prueba. Pasará si acerta al menos cinco de los seis comentarios.<br/>
+      Gracias.
+    ]]></FormattedContent>
+    </Overview>
+    <Question>
+        <QuestionIdentifier>question1</QuestionIdentifier>
+        <QuestionContent>
+	  <FormattedContent><![CDATA[
+         <strong>No me lo compraba ni regalado.</strong>
+    ]]></FormattedContent>
+        </QuestionContent>
+        <AnswerSpecification>
+            <SelectionAnswer>
+              <StyleSuggestion>radiobutton</StyleSuggestion>
+              <Selections>
+                <Selection>
+                  <SelectionIdentifier>Positivo</SelectionIdentifier>
+                  <Text>Positivo</Text>
+                </Selection>
+                <Selection>
+                  <SelectionIdentifier>Negativo</SelectionIdentifier>
+                  <Text>Negativo</Text>
+                </Selection>
+		<Selection>
+                  <SelectionIdentifier>Otro</SelectionIdentifier>
+                  <Text>Ninguno de los anteriores</Text>
+                </Selection>
+              </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+    <Question>
+        <QuestionIdentifier>question2</QuestionIdentifier>
+        <QuestionContent>
+	  <FormattedContent><![CDATA[
+         <strong>Me lo compraría con los ojos cerrados.</strong>
+	 ]]></FormattedContent>
+        </QuestionContent>
+        <AnswerSpecification>
+            <SelectionAnswer>
+              <StyleSuggestion>radiobutton</StyleSuggestion>
+              <Selections>
+                <Selection>
+                  <SelectionIdentifier>Positivo</SelectionIdentifier>
+                  <Text>Positivo</Text>
+                </Selection>
+                <Selection>
+                  <SelectionIdentifier>Negativo</SelectionIdentifier>
+                  <Text>Negativo</Text>
+                </Selection>
+		<Selection>
+                  <SelectionIdentifier>Otro</SelectionIdentifier>
+                  <Text>Ninguno de los anteriores</Text>
+                </Selection>
+              </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+    <Question>
+        <QuestionIdentifier>question3</QuestionIdentifier>
+        <QuestionContent>
+	  <FormattedContent><![CDATA[
+         <strong>Me lo compré y a los 3 dias ya estaba en el taller.</strong>
+	 ]]></FormattedContent>
+        </QuestionContent>
+        <AnswerSpecification>
+            <SelectionAnswer>
+              <StyleSuggestion>radiobutton</StyleSuggestion>
+              <Selections>
+                <Selection>
+                  <SelectionIdentifier>Positivo</SelectionIdentifier>
+                  <Text>Positivo</Text>
+                </Selection>
+                <Selection>
+                  <SelectionIdentifier>Negativo</SelectionIdentifier>
+                  <Text>Negativo</Text>
+                </Selection>
+		<Selection>
+                  <SelectionIdentifier>Otro</SelectionIdentifier>
+                  <Text>Ninguno de los anteriores</Text>
+                </Selection>
+              </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+    <Question>
+        <QuestionIdentifier>question4</QuestionIdentifier>
+        <QuestionContent>
+	  <FormattedContent><![CDATA[
+         <strong>Ya os contaré algo cuando lo pruebe.</strong>
+	 ]]></FormattedContent>
+        </QuestionContent>
+        <AnswerSpecification>
+            <SelectionAnswer>
+              <StyleSuggestion>radiobutton</StyleSuggestion>
+              <Selections>
+                <Selection>
+                  <SelectionIdentifier>Positivo</SelectionIdentifier>
+                  <Text>Positivo</Text>
+                </Selection>
+                <Selection>
+                  <SelectionIdentifier>Negativo</SelectionIdentifier>
+                  <Text>Negativo</Text>
+                </Selection>
+		<Selection>
+                  <SelectionIdentifier>Otro</SelectionIdentifier>
+                  <Text>Ninguno de los anteriores</Text>
+                </Selection>
+              </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+    <Question>
+        <QuestionIdentifier>question5</QuestionIdentifier>
+        <QuestionContent>
+	  <FormattedContent><![CDATA[
+         <strong>Compré mi coche en enero de 2005.</strong>
+	 ]]></FormattedContent>
+        </QuestionContent>
+        <AnswerSpecification>
+            <SelectionAnswer>
+              <StyleSuggestion>radiobutton</StyleSuggestion>
+              <Selections>
+                <Selection>
+                  <SelectionIdentifier>Positivo</SelectionIdentifier>
+                  <Text>Positivo</Text>
+                </Selection>
+                <Selection>
+                  <SelectionIdentifier>Negativo</SelectionIdentifier>
+                  <Text>Negativo</Text>
+                </Selection>
+		<Selection>
+                  <SelectionIdentifier>Otro</SelectionIdentifier>
+                  <Text>Ninguno de los anteriores</Text>
+                </Selection>
+              </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+    <Question>
+        <QuestionIdentifier>question6</QuestionIdentifier>
+        <QuestionContent>
+	  <FormattedContent><![CDATA[
+         <strong>El motor ruge que da gusto.</strong>
+	 ]]></FormattedContent>
+        </QuestionContent>
+        <AnswerSpecification>
+            <SelectionAnswer>
+              <StyleSuggestion>radiobutton</StyleSuggestion>
+              <Selections>
+                <Selection>
+                  <SelectionIdentifier>Positivo</SelectionIdentifier>
+                  <Text>Positivo</Text>
+                </Selection>
+                <Selection>
+                  <SelectionIdentifier>Negativo</SelectionIdentifier>
+                  <Text>Negativo</Text>
+                </Selection>
+		<Selection>
+                  <SelectionIdentifier>Otro</SelectionIdentifier>
+                  <Text>Ninguno de los anteriores</Text>
+                </Selection>
+              </Selections>
+            </SelectionAnswer>
+        </AnswerSpecification>
+    </Question>
+</QuestionForm>
