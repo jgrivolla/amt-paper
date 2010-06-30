@@ -37,7 +37,7 @@ A number of recent papers on this subject point out that non-expert annotations,
 
 In this paper, we evaluate the usefulness of AMT annotations to train an Opinion Mining System to detect opinionated contents (Polarity Detection) in Spanish customer comments on car brands. Currently, a large majority of AMT tasks is designed for English speakers. One of our reasons for participating in this shared task was to find out how easy it is to obtain annotated data for Spanish. In addition, we want to find out how useful these data are by comparing them to expert annotations and using them as training data of an Opinion Mining System for polarity detection.
 
-This paper is structured as follows. Section \ref{sect:outline} contains an explanation of the task outline and our goals. Section \ref{sect:design} contains a description of three different HIT designs that we used in this task. In Section \ref{sect:results}, we provide a detailed analysis of the retrieved HITs and focus on geographical information of the workers, the correlation between the different HIT designs, the quality of the retrieved answers and on the cost-effectiveness of  the experiment. In Section \ref{sect:classifier}, we evaluate the incidence of AMT-generated annotations on a polarity classification task using two different experimental settings. Finally, we conclude in Section \ref{sect:conclusions}.
+This paper is structured as follows. Section \ref{sect:outline} contains an explanation of the task outline and our goals. Section \ref{sect:design} contains a description of three different HIT designs that we used in this task. In Section \ref{sect:results}, we provide a detailed analysis of the retrieved HITs and focus on geographical information of the workers, the correlation between the different HIT designs, the quality of the retrieved answers and on the cost-effectiveness of  the experiment. In Section \ref{datasets}, we describe the datasets that were used in the experimentation. In Section \ref{sect:classifier}, we evaluate the incidence of AMT-generated annotations on a polarity classification task using two different experimental settings. Finally, we conclude in Section \ref{sect:conclusions}.
 
 \section{Task outline and goals}
 \label{sect:outline} 
@@ -67,15 +67,15 @@ This website was chosen because it contains a large and varied pool of Spanish c
 \begin{li}
   \label{ex}
   `No te lo pienses m\'{a}s, c\'{o}mpratelo!'\\
-  ($=$ `Don't think twice, buy it!')\\
+  ($=$ `\textit{Don't think twice, buy it!}')\\
    `Tiene muchas piezas defectuosas'\\
-  ($=$ `It contains many defective parts.')\\ 	
+  ($=$ `\textit{It contains many defective parts.}')\\ 	
    `La conducci\'on es genial pero el dise~no una porquer\'ia'\\
-  ($=$ `The car drives great but the design is crap.')\\ 
+  ($=$ `\textit{The car drives great but the design is crap.}')\\ 
    `El Volvo es mejor que el Fiat'\\
-  ($=$ `Volvo is better than Fiat.')\\ 
+  ($=$ `\textit{Volvo is better than Fiat.}')\\ 
  `Este coche tiene 6 cilindros'\\
-  ($=$ `This car has 6 cylinders.')\\ 		
+  ($=$ `\textit{This car has 6 cylinders.}')\\ 		
 \end{li}
 
 
@@ -121,14 +121,34 @@ In order not to burden the workers with overly complex instructions, we did not 
 
 For each of the three HIT designs, we specified the requirement of three different unique assignments per HIT, which led to a total amount of $3 \times 3 \times 1000 = 9000$ HIT assignments being uploaded on AMT. Mind that setting the requirement of unique assigments ensures a number of unique workers \textit{per individual HIT}, but does not ensure a consistency of workers over a single batch of 1000 HITs. This is in the line with the philosophy of crowdsourcing, which allows many different people to participate in the same task.
 
+
+\section{Competence Test}
+\label{sect:comtest}
+
+After designing the HITs, we uploaded 30 random samples for testing purposes. These HITs were completed in a matter of seconds, mostly by workers in India. After a brief inspection of the results, it was obvious that most answers corresponded to random clicks. Therefore, we decided to include a small competence test (see Figure \ref{comtest}) to ensure that future workers would possess the necessary linguistic skills to perform the task. In order to discourage the use of automatic translation tools, a time limit of two minutes was  imposed and most test sentences contain idiomatic constructions that are known to pose problems to Machine Translation Systems.
+
+\begin{figure*}[h]
+  \begin{center}
+    \fbox{
+    \includegraphics[scale=0.35]{pics/competencetest3}}
+	\caption{Competence test.}
+	\label{comtest}
+  \end{center}
+\end{figure*}
+
+
+The test consists of six simple categorisation questions of the type of HIT1 that a skilled worker would be able to perform in under a minute. The test was short because we did not want to discourage the annotation candidates. From the 6 sentences, 2 were positive, 2 negative and 2 neutral. If there were 5 correct answers, the candidates passed the test. 
+
+
 \section{Annotation Task Results}
 \label{sect:results}
 
-After designing the HITs, we uploaded 30 random samples for testing purposes. These HITs were completed in a matter of seconds, mostly by workers in India. After a brief inspection of the results, it was obvious that most answers corresponded to random clicks. Therefore, we decided to include a small competence test to ensure that future workers would possess the necessary linguistic skills to perform the task. The test consists of six simple categorisation questions of the type of HIT1 that a skilled worker would be able to perform in under a minute. In order to discourage the use of automatic translation tools, a time limit of two minutes was  imposed and most test sentences contain idiomatic constructions that are known to pose problems to Machine Translation Systems.
 
 Table \ref{table.stats} contains statistics on the workers who completed our HITs. A total of 19 workers passed the competence test and submitted at least one HIT. Of those, four workers completed HITs belonging to two different designs and six submitted HITs in all three designs. Twelve workers are located in the US (64\%), three in Spain (16\%), one in Mexico (5\%), Equador (5\%), The Netherlands (5\%) and an unknown location (5\%).
 
-As to a comparison of completion times, it took a worker on average 11 seconds to complete an instance of HIT1, and 9 seconds to complete an instance of HIT2 and HIT3. At first sight, this result might seem surprising, since conceptually there is an increase in complexity when moving from HIT1 to HIT2 and from HIT2 to HIT3. These results might suggest that users find it easier to classify items on a graded or continuous scale such as HIT2 and HIT3, which allows for a certain degree of flexibility, than on a stricter categorical template such as HIT1, where there is no room for error.
+As to a comparison of completion times, it took a worker on average 11 seconds to complete an instance of HIT1, and 9 seconds to complete an instance of HIT2 and HIT3. Notice that again in order to discourage the use of automatic translation tools, a time limit of two minutes was  imposed and most test sentences contain idiomatic constructions that are known to pose problems to Machine Translation Systems.
+
+At first sight, this result might seem surprising, since conceptually there is an increase in complexity when moving from HIT1 to HIT2 and from HIT2 to HIT3. These results might suggest that users find it easier to classify items on a graded or continuous scale such as HIT2 and HIT3, which allows for a certain degree of flexibility, than on a stricter categorical template such as HIT1, where there is no room for error.
 
 %\multicolumn{2}{c}{}
 \begin{table}
@@ -249,10 +269,11 @@ Experts\footnote{Results on a different 500-sentence random sample of the same c
 
 
 In addition, we calculated ITA scores between three expert annotators on a separate, 500-sentence dataset, randomly selected from the same corpus as described at the start of Section \ref{sect:design}. This collection was later used as test set in the experiments described in Section \ref{sect:classifier}. The inter-expert ITA scores on this separate dataset contains values of 0.725 for $\kappa_{1}$ and 0.729 for $\kappa_{2}$, only marginally higher than the \textit{Majority} ITA scores. Although we are comparing results on different data sets, these results seem to indicate that multiple AMT annotations are able to produce a similar quality to expert annotations. This might suggest that a further increase in the number of HIT assignments would outperform expert ITA scores, as was previously reported in~\cite{snow_cheap_2008}.
-\begin{enumerate}
-\item Interannotator agreement depending on the annotator. GOAL: evaluate the annotator reliability
-\item Evaluate the bias for the 3 annotators that did most of the work.
-\end{enumerate}
+
+%\begin{enumerate}
+%\item Interannotator agreement depending on the annotator. GOAL: evaluate the annotator reliability
+%\item Evaluate the bias for the 3 annotators that did most of the work.
+%\end{enumerate}
 
 We also were interested in evaluating the quality of the
 HIT2 and HIT3 designs. We evaluated the experts annotation quality of HIT2 and HIT3 by doing a mapping to HIT1.  
@@ -267,7 +288,7 @@ slightly higher than in HIT1.
 \hline
 Mapping & $\kappa_{1}$ & $\kappa_{2}$ \\ 
 \hline
-[-5,-1] $\rightarrow$ -1, [0] $\rightarrow$ 0, [+1,+5] $\rightarrow$ +1& 0.800 & 0.810\\ \hline
+[-5,-1] $\rightarrow$ -1, [0] $\rightarrow$ 0, [+1,+5] $\rightarrow$ +1& \textbf{0.800} & \textbf{0.810}\\ \hline
 [-5,-2] $\rightarrow$ -1, [-1,+1] $\rightarrow$ 0, [+2,+5] $\rightarrow$ +1& 0.360 & 0.370\\ \hline
 [-5,-3] $\rightarrow$ -1, [-2,+2] $\rightarrow$ 0, [+3,+5] $\rightarrow$ +1& 0.640 & 0.650\\ \hline
 [-5,-4] $\rightarrow$ -1, [-3,+3] $\rightarrow$ 0, [+4,+5] $\rightarrow$ +1& 0.500 & 0.590\\ \hline
@@ -277,6 +298,31 @@ Mapping & $\kappa_{1}$ & $\kappa_{2}$ \\
 \caption{Expert Interannotation Agreement as a measure of quality of the annotations in HIT2 using different mappings $\kappa_{1} = $ Fixed Margin Kappa. $\kappa_{2} = $ Free Margin Kappa.}
 \label{tablita2}
 \end{table}
+
+
+For HIT3 we also evaluated the experts annotations by performing several mappings, see Table \ref{tablita3}.
+The best HIT3 mapping was found for (-$\infty$,+10) to -1, [-10,+10] to 0 and (+10,+$\infty$) to +1. Here the [-10,+10] is the 'neutral' position and it separates the positive and negative annotations. Notice that the kappas are slightly higher than in HIT1 and similar to the ones in HIT2.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l|c|c|c|}
+\hline
+Mapping & $\kappa_{1}$ & $\kappa_{2}$ \\ 
+\hline
+ (-$\infty$,-1) $\rightarrow$ -1, [-1,+1] $\rightarrow$ 0, (+1,+$\infty$) $\rightarrow$ +1& 0.680 & 0.730\\ \hline
+ (-$\infty$,-5) $\rightarrow$ -1, [-5,+5] $\rightarrow$ 0, (+5,+$\infty$) $\rightarrow$ +1& 0.770 & 0.780\\ \hline
+ (-$\infty$,-10) $\rightarrow$ -1, [-10,+10] $\rightarrow$ 0, (+10,+$\infty$) $\rightarrow$ +1& \textbf{0.780} & \textbf{0.790}\\ \hline
+ (-$\infty$,-30) $\rightarrow$ -1, [-30,+30] $\rightarrow$ 0, (+30,+$\infty$) $\rightarrow$ +1& 0.700 & 0.700\\ \hline
+ (-$\infty$,-50) $\rightarrow$ -1, [-50,+50] $\rightarrow$ 0, (+50,+$\infty$) $\rightarrow$ +1& 0.490 & 0.560\\ \hline
+ (-$\infty$,-70) $\rightarrow$ -1, [-70,+70] $\rightarrow$ 0, (+70,+$\infty$) $\rightarrow$ +1& 0.310 & 0.740\\ \hline
+(-$\infty$,-90) $\rightarrow$ -1, [-90,+90] $\rightarrow$ 0, (+90,+$\infty$) $\rightarrow$ +1& 0.190 & 0.950\\ \hline
+\end{tabular}
+\end{center}
+\caption{Expert Interannotation Agreement as a measure of quality of the annotations in HIT3 using different mappings $\kappa_{1} = $ Fixed Margin Kappa. $\kappa_{2} = $ Free Margin Kappa.}
+\label{tablita3}
+\end{table}
+
+
 
 
 \subsection{Annotation Costs}
