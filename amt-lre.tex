@@ -35,7 +35,7 @@ Obtaining reliable human annotations to train data-driven AI systems is often an
 
 A number of recent papers on this subject point out that non-expert annotations, if produced in a sufficient quantity, can rival and even surpass the quality of expert annotations, often at a much lower cost \cite{snow_cheap_2008}, \cite{su_internet-scale_2007}. However, this possible increase in quality depends on the task at hand and on an adequate HIT design \cite{kittur_crowdsourcing_2008}. 
 
-In this paper, we evaluate the usefulness of AMT annotations to train an Opinion Mining System to detect opinionated contents (Polarity Detection) in Spanish customer comments on car brands. Currently, a large majority of AMT tasks is designed for English speakers. One of our reasons for participating in this shared task was to find out how easy it is to obtain annotated data for Spanish. In addition, we want to find out how useful these data are by comparing them to expert annotations and using them as training data of an Opinion Mining System for polarity detection.
+In this paper, we evaluate the usefulness of AMT annotations to train an Opinion Mining System to detect opinionated contents (Polarity Detection) in Spanish customer comments on car brands. Currently, a large majority of AMT tasks is designed for English speakers. One of our reasons for using Amazon Mechanical Turk was to find out how easy it is to obtain annotated data for Spanish. In addition, we want to find out how useful these data are by comparing them to expert annotations and using them as training data of an Opinion Mining System for polarity detection.
 
 This paper is structured as follows. Section \ref{sect:outline} contains an explanation of the task outline and our goals. Section \ref{sect:design} contains a description of three different HIT designs that we used in this task and Section \ref{sect:comtest} describes the competence test to check candidates' Spanish skills. In Section \ref{sect:results}, we provide a detailed analysis of the retrieved HITs and focus on geographical information of the workers, the correlation between the different HIT designs, the quality of the retrieved answers and on the cost-effectiveness of  the experiment. In Section \ref{datasets}, we describe the datasets that were used in the experimentation. In Section \ref{sect:classifier}, we evaluate the incidence of AMT-generated annotations on a polarity classification task using two different experimental settings. Finally, we conclude in Section \ref{sect:conclusions}.
 
@@ -84,7 +84,8 @@ This website was chosen because it contains a large and varied pool of Spanish c
 
 The sentences in the dataset were presented to the AMT workers in three different HIT designs. Each HIT design contains a single sentence to be evaluated. 
 
-HIT1 is a simple categorization scheme in which workers are asked to classify the sentence as being either \textit{positive}, \textit{negative} or \textit{neutral}, as is shown in Figure \ref{hit1}. 
+HIT1 is a simple categorization scheme in which workers are asked to classify the sentence as being either \textit{positive}, \textit{negative} or \textit{other} (meaning \textit{none of the previous ones}), as is shown in Figure \ref{hit1}. The \textit{other} category is wider than
+\textit{neutral} as it includes ambiguous sentences or comparisons.
 
 
 \begin{figure}[ht]
@@ -109,7 +110,7 @@ HIT2 is a graded categorization template in which workers had to assign a score 
 
 
 
-Finally, HIT3 is a continuous triangular scoring template that allows workers to use both a horizontal positive-negative axis and a vertical subjective-objective axis by placing the example sentence anywhere inside the triangle. The subjective-objective axis expresses the degree to which the sentence contains opinionated content and was earlier used by \cite{sentiwordnet:06}. For example, the sentence \textit{`I think this is a wonderful car'} clearly marks an opinion and should be positioned towards the subjective end, while the sentence \textit{`The car has six cilinders'} should be located towards the objective end. Figure \ref{hit3} contains an example of HIT3. 
+Finally, HIT3 is a continuous triangular scoring template that allows workers to use both a horizontal positive-negative axis and a vertical subjective-objective axis by placing the example sentence anywhere inside the triangle. The subjective-objective axis expresses the degree to which the sentence contains opinionated content and was earlier used by \cite{sentiwordnet:06}. For example, the sentence \textit{`I think this is a wonderful car'} clearly marks an opinion and should be positioned towards the subjective end, while the sentence \textit{`The car has six cylinders'} should be located towards the objective end. Figure \ref{hit3} contains an example of HIT3. 
 
 \begin{figure}[ht]
   \begin{center}
@@ -128,7 +129,7 @@ For each of the three HIT designs, we specified the requirement of three differe
 \section{Competence Test}
 \label{sect:comtest}
 
-After designing the HITs, we uploaded 30 random samples for testing purposes. These HITs were completed in a matter of seconds, mostly by workers in India. After a brief inspection of the results, it was obvious that most answers corresponded to random clicks. Therefore, we decided to include a small competence test (see Figure \ref{comtest}) to ensure that future workers would possess the necessary linguistic skills to perform the task. In order to discourage the use of automatic translation tools, a time limit of two minutes was  imposed and most test sentences contain idiomatic constructions that are known to pose problems to Machine Translation Systems.
+After designing the HITs, we uploaded 30 random samples for testing purposes. These HITs were completed in a matter of seconds, mostly by workers in India. After a brief inspection of the results, it was obvious that most answers corresponded to random clicks. Therefore, we decided to include a small competence test (see Figure \ref{comtest}) to ensure that future workers would possess the necessary linguistic skills to perform the task. In order to discourage the use of automatic translation tools, a time limit of two minutes was  imposed and, additionally, some test sentences contain idiomatic constructions that are known to pose problems to Machine Translation Systems.
 
 \begin{figure*}[h]
   \begin{center}
@@ -140,7 +141,7 @@ After designing the HITs, we uploaded 30 random samples for testing purposes. Th
 \end{figure*}
 
 
-The test consists of six simple categorisation questions of the type of HIT1 that a skilled worker would be able to perform in under a minute. The test was short because we did not want to discourage the annotation candidates. From the 6 sentences, 2 were positive, 2 negative and 2 neutral. A qualification was granted to candidates who provided a correct answer to at least 5 sentences.
+The test consists of six simple categorisation questions of the type of HIT1 that a skilled worker would be able to perform in under a minute. The test was short because we did not want to discourage the annotation candidates. From the 6 sentences, 2 were positive, 2 negative and 2 other. A qualification was granted to candidates who provided a correct answer to at least 5 sentences.
 
 
 \section{Annotation Task Results}
@@ -211,7 +212,7 @@ In order to get an overview of distribution of the results of each HIT, a histog
   \end{center}
 \end{figure*}
 
-Figure \ref{distr2} shows the distribution of the graded categorization template of HIT2. Compared to the distribution in \ref{distr1}, two observations can be made: (i) the proportion of the zero values is almost identical to the proportion of the neutral category in Figure \ref{distr1}, and (ii) the proportion of the sum of the positive values [+1,+5] and the proportion of the sum of the negative values [-5,-1] are equally similar to the proportion of the positive and negative categories in \ref{distr1}. This suggests that in order to map the graded annotations of HIT2 to the categories of HIT1, an intuitive partitioning of the graded scale into three equal parts should be avoided. Instead, a more adequate alternative would consist of mapping [-5,-1] to \textit{negative}, 0 to \textit{neutral} and [+1,+5] to \textit{positive}. This means that even slightly positive/negative grades correspond to positive/negative categories.
+Figure \ref{distr2} shows the distribution of the graded categorization template of HIT2. Compared to the distribution in \ref{distr1}, two observations can be made: (i) the proportion of the zero values is almost identical to the proportion of the `other' category in Figure \ref{distr1}, and (ii) the proportion of the sum of the positive values [+1,+5] and the proportion of the sum of the negative values [-5,-1] are equally similar to the proportion of the positive and negative categories in \ref{distr1}. This suggests that in order to map the graded annotations of HIT2 to the categories of HIT1, an intuitive partitioning of the graded scale into three equal parts should be avoided. Instead, a more adequate alternative would consist of mapping [-5,-1] to \textit{negative}, 0 to \textit{other} and [+1,+5] to \textit{positive}. This means that even slightly positive/negative grades correspond to positive/negative categories.
 
 
 
@@ -224,7 +225,7 @@ Figure \ref{distr2} shows the distribution of the graded categorization template
   \end{center}
 \end{figure*}
 
-Figure \ref{distr3} shows a heat map that plots the distribution of the annotations in the triangle of HIT3. It appears that worker annotations show a spontaneous tendency of clustering, despite the continuous nature of the design. This suggests that this HIT design, originally conceived as continuous, was transformed by the workers as a simpler categorization task using five labels: \textit{negative}, \textit{ambiguous} and \textit{positive} at the top, \textit{neutral} at the bottom, and \textit{other} in the center.
+Figure \ref{distr3} shows a heat map that plots the distribution of the annotations in the triangle of HIT3. It appears that worker annotations show a spontaneous tendency to cluster, despite the continuous nature of the design. This suggests that this HIT design, originally conceived as continuous, was transformed by the workers as a simpler categorization task using five labels: \textit{negative}, \textit{ambiguous} and \textit{positive} at the top, \textit{neutral} at the bottom, and \textit{other} in the center.
 
 \begin{figure*}
   \begin{center}
@@ -237,7 +238,7 @@ Figure \ref{distr3} shows a heat map that plots the distribution of the annotati
 
 % Although the negative-positive axis has been used in some degree as an scale, the other edges, the negative-neutral and the positive-neutral are empty.
 
-Figure \ref{distr3b} shows the distribution of all datapoints in the triangle of Figure \ref{distr3b}, projected onto the X-axis (positive/negative). Although similar to the graded scale in HIT2, the distribution shows a slightly higher polarization.
+Figure \ref{distr3b} shows the distribution of all datapoints in the triangle of Figure \ref{distr3}, projected onto the X-axis (positive/negative). Although similar to the graded scale in HIT2, the distribution shows a slightly higher polarization.
 
 These results suggest that, out of all three HIT designs, HIT2 is the one that contains the best balance between the amount of information that can be obtained and the simplicity of a one-dimensional annotation. 
 
@@ -263,7 +264,7 @@ Batch\_1 vs. Expert & 0.628 & 0.628\\
 Batch\_2 vs. Expert & 0.649 & 0.649\\
 Batch\_3 vs. Expert & 0.626 & 0.626\\ \hline
 Majority vs. Expert & 0.716 & 0.716\\ \hline
-Experts\footnote{Results on a different 500-sentence random sample of the same corpus.} & 0.725 & 0.729\\ \hline
+Experts& 0.725 & 0.729\\ \hline
 \end{tabular}
 \end{center}
 \caption{Interannotation Agreement as a measure of quality of the annotations in HIT1. $\kappa_{1} = $ Fixed Margin Kappa. $\kappa_{2} = $ Free Margin Kappa.}
@@ -279,10 +280,10 @@ In addition, we calculated ITA scores between three expert annotators on a separ
 %\end{enumerate}
 
 We also were interested in evaluating the quality of the
-HIT2 and HIT3 designs. Using the already mentioned 500-sentence dataset, we evaluated the 3-expert annotation quality of HIT2 and HIT3 by doing different mappings to HIT1.  
+HIT2 and HIT3 designs. Using the aforementioned 500-sentence dataset, we evaluated the 3-expert annotation quality of HIT2 and HIT3 by doing different mappings to HIT1.  
 
 For HIT2 we evaluated the experts annotations by performing the mappings shown in Table \ref{tablita2}.
-As was expected, the best HIT2 mapping was found for [-5,-1] to -1, [0] to 0 and [+1,+5] to +1 given that 0 is the 'neutral' position and separates the positive and negative annotations. Notice that the kappas (0.800 and 0.810) are slightly higher than in HIT1.
+As was expected, the best HIT2 mapping was found for [-5,-1] to -1, [0] to 0 and [+1,+5] to +1 given that 0 is the `other' position and separates the positive and negative annotations. Notice that the kappas (0.800 and 0.810) are slightly higher than in HIT1.
 
 \begin{table}[h]
 \begin{center}
@@ -303,7 +304,7 @@ Mapping & $\kappa_{1}$ & $\kappa_{2}$ \\
 
 
 For HIT3 we also evaluated the experts annotations by performing several mappings, see Table \ref{tablita3}.
-The best HIT3 mapping was found for (-$\infty$,+10) to -1, [-10,+10] to 0 and (+10,+$\infty$) to +1. Here the [-10,+10] is the 'neutral' position and it separates the positive and negative annotations. The kappas are again slightly higher than in HIT1 and similar to the ones in HIT2.
+The best HIT3 mapping was found for [-100,-11] to -1, [-10,+10] to 0 and [+11,+100] to +1. Here the [-10,+10] is the `other' position and it separates the positive and negative annotations. The kappas are again slightly higher than in HIT1 and similar to the ones in HIT2.
 
 \begin{table}[h]
 \begin{center}
@@ -311,13 +312,13 @@ The best HIT3 mapping was found for (-$\infty$,+10) to -1, [-10,+10] to 0 and (+
 \hline
 Mapping & $\kappa_{1}$ & $\kappa_{2}$ \\ 
 \hline
- (-$\infty$,-1) $\rightarrow$ -1, [-1,+1] $\rightarrow$ 0, (+1,+$\infty$) $\rightarrow$ +1& 0.680 & 0.730\\ \hline
- (-$\infty$,-5) $\rightarrow$ -1, [-5,+5] $\rightarrow$ 0, (+5,+$\infty$) $\rightarrow$ +1& 0.770 & 0.780\\ \hline
- (-$\infty$,-10) $\rightarrow$ -1, [-10,+10] $\rightarrow$ 0, (+10,+$\infty$) $\rightarrow$ +1& \textbf{0.780} & \textbf{0.790}\\ \hline
- (-$\infty$,-30) $\rightarrow$ -1, [-30,+30] $\rightarrow$ 0, (+30,+$\infty$) $\rightarrow$ +1& 0.700 & 0.700\\ \hline
- (-$\infty$,-50) $\rightarrow$ -1, [-50,+50] $\rightarrow$ 0, (+50,+$\infty$) $\rightarrow$ +1& 0.490 & 0.560\\ \hline
- (-$\infty$,-70) $\rightarrow$ -1, [-70,+70] $\rightarrow$ 0, (+70,+$\infty$) $\rightarrow$ +1& 0.310 & 0.740\\ \hline
-(-$\infty$,-90) $\rightarrow$ -1, [-90,+90] $\rightarrow$ 0, (+90,+$\infty$) $\rightarrow$ +1& 0.190 & 0.950\\ \hline
+ [-100,-2] $\rightarrow$ -1, [-1,+1] $\rightarrow$ 0, [+2,+100] $\rightarrow$ +1& 0.680 & 0.730\\ \hline
+ [-100,-6] $\rightarrow$ -1, [-5,+5] $\rightarrow$ 0, [+6,+100] $\rightarrow$ +1& 0.770 & 0.780\\ \hline
+ [-100,-11] $\rightarrow$ -1, [-10,+10] $\rightarrow$ 0, [+11,+100] $\rightarrow$ +1& \textbf{0.780} & \textbf{0.790}\\ \hline
+ [-100,-31] $\rightarrow$ -1, [-30,+30] $\rightarrow$ 0, [+31,+100] $\rightarrow$ +1& 0.700 & 0.700\\ \hline
+ [-100,-51] $\rightarrow$ -1, [-50,+50] $\rightarrow$ 0, [+51,+100] $\rightarrow$ +1& 0.490 & 0.560\\ \hline
+ [-100,-71] $\rightarrow$ -1, [-70,+70] $\rightarrow$ 0, [+71,+100] $\rightarrow$ +1& 0.310 & 0.740\\ \hline
+[-100,-91] $\rightarrow$ -1, [-90,+90] $\rightarrow$ 0, [+91,+100] $\rightarrow$ +1& 0.190 & 0.950\\ \hline
 \end{tabular}
 \end{center}
 \caption{Expert Interannotation Agreement as a measure of quality of the annotations in HIT3 using different mappings $\kappa_{1} = $ Fixed Margin Kappa. $\kappa_{2} = $ Free Margin Kappa.}
@@ -355,7 +356,7 @@ As explained in Section \ref{sect:design}, a total amount of 9000 assignments we
 %An in-house expert annotator (working at approximately 70\$/hour, including overhead) finished a batch of 1000 HIT assignments in approximately three hours, which leads to a total expert annotator cost of 210\$. By comparing this figure to the cost of uploading $3 \times 1000$ HIT assignments (75\$), we saved $210 - 75 = 135$\$, which constitutes almost 65\% of the cost of an expert annotator. 
 
 
-An in-house expert annotator (working at approximately 70\$/hour, including overhead) finished a batch of 1000 HIT assignments in approximately three hours, which leads to a total expert annotator cost of 210\$. To get similar quality each HIT must be annotated three times when using the AMT, so the cost of 3000 HIT assignments is approximatively 225\$/3 = 75\$ and we saved 210 - 75 = 135\$, whichconstitutes almost 65\% of the cost of an expert annotator. These figures do not take into account the costs of preparing the data and HIT templates, but it can be assumed that these costs will be marginal when large data sets are used. Moreover, most of this effort is equally needed for preparing data for in-house annotation.
+An in-house expert annotator (working at approximately 70\$/hour, including overhead) finished a batch of 1000 HIT assignments in approximately three hours, which leads to a total expert annotator cost of 210\$. To get similar quality each HIT must be annotated three times when using the AMT, so the cost of 3000 HIT assignments is approximatively 225\$/3 = 75\$ and we saved 210 - 75 = 135\$, which constitutes almost 65\% of the cost of an expert annotator. These figures do not take into account the costs of preparing the data and HIT templates, but it can be assumed that these costs will be marginal when large data sets are used. Moreover, most of this effort is equally needed for preparing data for in-house annotation.
 
 
 
@@ -372,7 +373,7 @@ As was mentioned in Section \ref{sect:design}, all sentences were extracted from
 \item Baseline: constitutes the dataset used for training the baseline or reference classifiers in Experiment 1. 
 Automatic annotation for this dataset was obtained by using the following naive approach: those sentences extracted from
 comments with ratings\footnote{The corpus at \texttt{www.ciao.es} contains consumer opinions marked with a score between 1 (negative) and 5 (positive).} equal to 5 were assigned to category `positive', those extracted from comments with ratings 
-equal to 3 were assigned to `neutral', and those extracted from comments with ratings equal to 1 were assigned to
+equal to 3 were assigned to `other', and those extracted from comments with ratings equal to 1 were assigned to
 `negative'. This dataset contains a total of 5570 sentences, with a vocabulary coverage of 11797 words. 
 
 \item AMT Annotated: constitutes the dataset that was manually annotated by AMT workers in HIT1.
@@ -380,7 +381,7 @@ This dataset is used for training the contrastive classifiers which are to be co
 The three independent annotations generated by AMT workers for each sentence within this dataset were consolidated into one unique annotation
 by majority voting: if the three provided annotations happened to be
 different\footnote{This kind of total disagreement among annotators occurred only in 13 sentences out of 1000.}, 
-the sentence was assigned to category `neutral'; otherwise, the sentence was assigned to the category with
+the sentence was assigned to category `other'; otherwise, the sentence was assigned to the category with
 at least two annotation agreements. This dataset contains a total of 1000 sentences, with a vocabulary coverage 
 of 3022 words. 
 
@@ -410,7 +411,7 @@ Positive &1882 &341 &200 \\
 \hline
 Negative &1876 &323 &137 \\
 \hline
-Neutral &1812 &336 &161 \\
+Other &1812 &336 &161 \\
 \hline
 Totals &5570 &1000 &500 \\
 \hline
@@ -434,7 +435,7 @@ polarity detection task under consideration. According to this, two different gr
 used: a baseline or reference group, and a contrastive group. Classifiers within these two groups were
 trained with data samples extracted from the baseline and annotated datasets, respectively. Within each group 
 of classifiers, three different binary classification subtasks were considered: positive/not\_positive, 
-negative/not\_negative and neutral/not\_neutral. All trained binary classifiers were evaluated by computing 
+negative/not\_negative and other/not\_other. All trained binary classifiers were evaluated by computing 
 precision and recall for each considered category, as well as overall classification accuracy, over the 
 evaluation dataset.
 
@@ -449,7 +450,7 @@ instead of individual output results, mean values and standard deviations of eva
 Each binary classifier realization was trained with a random subsample set of 600 sentences extracted from 
 the training dataset corresponding to the classifier group, i.e. baseline dataset for reference systems, 
 and annotated dataset for contrastive systems. Training subsample sets were always balanced with respect to 
-the original three categories: `positive', `negative' and `neutral'.
+the original three categories: `positive', `negative' and `other'.
 
 %\subsubsection{Results and discussion}
 
@@ -457,7 +458,7 @@ Table \ref{tc_accu} presents the resulting mean values of accuracy for each cons
 in classifiers trained with either the baseline or the annotated dataset. As observed in the table,
 all subtasks benefit from using the annotated dataset for training the classifiers; however, it is 
 important to mention that while similar absolute gains are observed for the `positive/not\_positive' 
-and `neutral/not\_neutral' subtasks, this is not the case for the subtask `negative/not\_negative', 
+and `other/not\_other' subtasks, this is not the case for the subtask `negative/not\_negative', 
 which actually gains much less than the other two subtasks.
 
 \begin{table}
@@ -471,7 +472,7 @@ positive/not\_positive &59.63 (3.04) &69.53 (1.70) \\
 \hline
 negative/not\_negative &60.09 (2.90) &63.73 (1.60) \\ 
 \hline
-neutral/not\_neutral &51.27 (2.49) &62.57 (2.08) \\ 
+other/not\_other &51.27 (2.49) &62.57 (2.08) \\ 
 \hline
 \end{tabular}
 \end{small}
@@ -482,12 +483,12 @@ for each classification subtasks trained with either the baseline or the annotat
 \end{table}
 
 After considering all evaluation metrics, the benefit provided by human-annotated data 
-availability for categories `neutral' and `positive' is evident. However, in the case of category `negative', although some 
+availability for categories `other' and `positive' is evident. However, in the case of category `negative', although some 
 gain is also observed, the benefit of human-annotated data does not seem to be as much as for the two other 
 categories. This, along with the fact that the `negative/not\_negative' subtask is actually the best performing
 one (in terms of accuracy) when baseline training data is used, might suggest that low rating comments contains 
 a better representation of sentences belonging to category `negative' than medium and high rating comments do with
-respect to classes `neutral' and `positive'. 
+respect to classes `other' and `positive'. 
 
 In any case, this experimental work only verifies the feasibility of constructing training datasets for
 opinionated content analysis, as well as it provides an approximated idea of costs involved in the generation
@@ -549,6 +550,13 @@ Having only evaluated each classifier (and training set) once on a static test s
 In this paper we have examined the usefulness of non-expert annotations on Amazon's Mechanical Turk to annotate the polarity of Spanish consumer comments. We discussed the advantages/drawbacks of three different HIT designs, ranging from a simple categorization scheme to a continuous scoring template. Moving from a simple, categorial annotation template to a continuous template provides more information, reduces annotation time and results in a higher annotation quality. We report high inter-annotator agreement scores between non-experts and expert annotators and show that training an Opinion Mining System with non-expert AMT annotations outperforms original noisy annotations and obtains competitive results when compared to expert annotations using a variety of classifiers. In conclusion, we found that, in our case, the use of non-expert annotations through crowdsourcing is a viable and cost-effective alternative to the use of expert annotations.
 
 In the classification experiments reported in this paper, we have relied exclusively on AMT annotations from HIT1. \textbf{Further work is needed to fully analyze the impact of each of the HIT designs for Opinion Mining tasks. We hope that the added richness of annotation of HIT2 and HIT3 will enable us to use more sophisticated classification methods.}
+
+
+\section{Acknowledgements}
+
+This work has been partially funded by the Spanish Department of Education and Science through the \textit{Juan de la Cierva} fellowship program. The authors also wants to thank the Barcelona Media Innovation Centre for its support and permission to publish this research. 
+
+
 
 \bibliographystyle{naaclhlt2010}
 \bibliography{amturk}
