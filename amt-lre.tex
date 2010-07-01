@@ -37,7 +37,7 @@ A number of recent papers on this subject point out that non-expert annotations,
 
 In this paper, we evaluate the usefulness of AMT annotations to train an Opinion Mining System to detect opinionated contents (Polarity Detection) in Spanish customer comments on car brands. Currently, a large majority of AMT tasks is designed for English speakers. One of our reasons for participating in this shared task was to find out how easy it is to obtain annotated data for Spanish. In addition, we want to find out how useful these data are by comparing them to expert annotations and using them as training data of an Opinion Mining System for polarity detection.
 
-This paper is structured as follows. Section \ref{sect:outline} contains an explanation of the task outline and our goals. Section \ref{sect:design} contains a description of three different HIT designs that we used in this task. In Section \ref{sect:results}, we provide a detailed analysis of the retrieved HITs and focus on geographical information of the workers, the correlation between the different HIT designs, the quality of the retrieved answers and on the cost-effectiveness of  the experiment. In Section \ref{datasets}, we describe the datasets that were used in the experimentation. In Section \ref{sect:classifier}, we evaluate the incidence of AMT-generated annotations on a polarity classification task using two different experimental settings. Finally, we conclude in Section \ref{sect:conclusions}.
+This paper is structured as follows. Section \ref{sect:outline} contains an explanation of the task outline and our goals. Section \ref{sect:design} contains a description of three different HIT designs that we used in this task and Section \ref{sect:comtest} describes the competence test to check candidates' Spanish skills. In Section \ref{sect:results}, we provide a detailed analysis of the retrieved HITs and focus on geographical information of the workers, the correlation between the different HIT designs, the quality of the retrieved answers and on the cost-effectiveness of  the experiment. In Section \ref{datasets}, we describe the datasets that were used in the experimentation. In Section \ref{sect:classifier}, we evaluate the incidence of AMT-generated annotations on a polarity classification task using two different experimental settings. Finally, we conclude in Section \ref{sect:conclusions}.
 
 \section{Task outline and goals}
 \label{sect:outline} 
@@ -51,7 +51,10 @@ We compare different HIT design strategies by evaluating the usefulness of resul
 \section{HIT design}
 \label{sect:design}
 
-We selected a dataset of 1000 sentences containing user opinions on cars from the automotive section of \texttt{www.ciao.es} (Spanish). Ciao is a European based online-shopping portal which contains a forum with user reviews and opinions on a wide variety of products. Figure \ref{ciao} shows an example of the website. 
+We selected a dataset of 1000 sentences containing user opinions on cars from the automotive section of \texttt{www.ciao.es} (Spanish). Ciao is an European based portal which contains user reviews and comparisons of online offers and merchants on a wide variety of products. Since 2008, Ciao is owned by Microsoft. Figure \ref{ciao} shows an example of the website. 
+ 
+
+%Ciao is a European based online-shopping portal which contains a forum with user reviews and opinions on a wide variety of products. 
 
 \begin{figure}[ht]
   \begin{center}
@@ -70,7 +73,7 @@ This website was chosen because it contains a large and varied pool of Spanish c
   ($=$ `\textit{Don't think twice, buy it!}')\\
    `Tiene muchas piezas defectuosas'\\
   ($=$ `\textit{It contains many defective parts.}')\\ 	
-   `La conducci\'on es genial pero el dise~no una porquer\'ia'\\
+   `La conducci\'on es genial pero el dise\~no una porquer\'ia'\\
   ($=$ `\textit{The car drives great but the design is crap.}')\\ 
    `El Volvo es mejor que el Fiat'\\
   ($=$ `\textit{Volvo is better than Fiat.}')\\ 
@@ -137,7 +140,7 @@ After designing the HITs, we uploaded 30 random samples for testing purposes. Th
 \end{figure*}
 
 
-The test consists of six simple categorisation questions of the type of HIT1 that a skilled worker would be able to perform in under a minute. The test was short because we did not want to discourage the annotation candidates. From the 6 sentences, 2 were positive, 2 negative and 2 neutral. If there were 5 correct answers, the candidates passed the test. 
+The test consists of six simple categorisation questions of the type of HIT1 that a skilled worker would be able to perform in under a minute. The test was short because we did not want to discourage the annotation candidates. From the 6 sentences, 2 were positive, 2 negative and 2 neutral. A qualification was granted to candidates who provided a correct answer to at least 5 sentences.
 
 
 \section{Annotation Task Results}
@@ -146,9 +149,9 @@ The test consists of six simple categorisation questions of the type of HIT1 tha
 
 Table \ref{table.stats} contains statistics on the workers who completed our HITs. A total of 19 workers passed the competence test and submitted at least one HIT. Of those, four workers completed HITs belonging to two different designs and six submitted HITs in all three designs. Twelve workers are located in the US (64\%), three in Spain (16\%), one in Mexico (5\%), Equador (5\%), The Netherlands (5\%) and an unknown location (5\%).
 
-As to a comparison of completion times, it took a worker on average 11 seconds to complete an instance of HIT1, and 9 seconds to complete an instance of HIT2 and HIT3. Notice that again in order to discourage the use of automatic translation tools, a time limit of two minutes was  imposed and most test sentences contain idiomatic constructions that are known to pose problems to Machine Translation Systems.
+As to a comparison of completion times, it took a worker on average 11 seconds to complete an instance of HIT1, and 9 seconds to complete an instance of HIT2 and HIT3. Notice again that in order to discourage the use of automatic translation tools, a time limit of two minutes was  imposed and most test sentences contain idiomatic constructions that are known to pose problems to Machine Translation Systems.
 
-At first sight, this result might seem surprising, since conceptually there is an increase in complexity when moving from HIT1 to HIT2 and from HIT2 to HIT3. These results might suggest that users find it easier to classify items on a graded or continuous scale such as HIT2 and HIT3, which allows for a certain degree of flexibility, than on a stricter categorical template such as HIT1, where there is no room for error.
+At first sight, these results might seem surprising, since conceptually there is an increase in complexity when moving from HIT1 to HIT2 and from HIT2 to HIT3. This might suggest that users find it easier to classify items on a graded or continuous scale such as HIT2 and HIT3, which allows for a certain degree of flexibility, than on a stricter categorical template such as HIT1, where there is no room for error.
 
 %\multicolumn{2}{c}{}
 \begin{table}
@@ -221,7 +224,7 @@ Figure \ref{distr2} shows the distribution of the graded categorization template
   \end{center}
 \end{figure*}
 
-Figure \ref{distr3} (top) shows a heat map that plots the distribution of the annotations in the triangle of HIT3. It appears that worker annotations show a spontaneous tendency of clustering, despite the continuous nature of the design. This suggests that this HIT design, originally conceived as continuous, was transformed by the workers as a simpler categorization task using five labels: \textit{negative}, \textit{ambiguous} and \textit{positive} at the top, \textit{neutral} at the bottom, and \textit{other} in the center.
+Figure \ref{distr3} shows a heat map that plots the distribution of the annotations in the triangle of HIT3. It appears that worker annotations show a spontaneous tendency of clustering, despite the continuous nature of the design. This suggests that this HIT design, originally conceived as continuous, was transformed by the workers as a simpler categorization task using five labels: \textit{negative}, \textit{ambiguous} and \textit{positive} at the top, \textit{neutral} at the bottom, and \textit{other} in the center.
 
 \begin{figure*}
   \begin{center}
@@ -279,7 +282,7 @@ We also were interested in evaluating the quality of the
 HIT2 and HIT3 designs. Using the already mentioned 500-sentence dataset, we evaluated the 3-expert annotation quality of HIT2 and HIT3 by doing different mappings to HIT1.  
 
 For HIT2 we evaluated the experts annotations by performing the mappings shown in Table \ref{tablita2}.
-As it was expected, the best HIT2 mapping was found for [-5,-1] to -1, [0] to 0 and [+1,+5] to +1 given that 0 is the 'neutral' position and it separates the positive and negative annotations. Notice that the kappas (0.800 and 0.810) are slightly higher than in HIT1.
+As was expected, the best HIT2 mapping was found for [-5,-1] to -1, [0] to 0 and [+1,+5] to +1 given that 0 is the 'neutral' position and separates the positive and negative annotations. Notice that the kappas (0.800 and 0.810) are slightly higher than in HIT1.
 
 \begin{table}[h]
 \begin{center}
@@ -324,7 +327,8 @@ Mapping & $\kappa_{1}$ & $\kappa_{2}$ \\
 
 Finally, given the best mappings obtained in Tables \ref{tablita2} and \ref{tablita3} we evaluated the inter-batch interannotation agreement. As shown in Table  \ref{tablita4}, results are coherent with expert annotation: the kappas increase from HIT1 to HIT2 and HIT3. The annotation quality is substantial and this confirms that HIT designs are well-defined. 
 
-What is surprising is that the inter-batch interannotation agreement was highly increased from HIT2 to HIT3. This may be explained by the fact that most turkers that performed HIT1, HIT2 and HIT3 sequentially, which allow them to improve the annotation quality. This was not the case of the experts, which were three different people for each HIT. However, this is just a hypothesis and can not be contrasted. 
+It is surprising is that the inter-batch interannotation agreement 
+of HIT3 is much higher than HIT2. This may be explained by the fact that most turkers performed HIT1, HIT2 and HIT3 in sequence, which might have allowed them to improve on the annotation quality. This was not the case of the experts, which were three different people for each HIT. However, this is just a hypothesis and can not be contrasted. 
 
 \begin{table}[h]
 \begin{center}
@@ -340,7 +344,7 @@ HIT3&   69.08 & 69.19\\ \hline
 \label{tablita4}
 \end{table}
 
-It is worth noticing that the fact of moving from HIT1 to HIT2 and from HIT2 to HIT3 provides more information, reduces annotation time (as shown in previous subsection) and results in a higher annotation quality.
+It is worth noticing that the fact of moving from HIT1 to HIT2 and from HIT2 to HIT3 provides more information, reduces annotation time (as shown in Section \ref{sect:results}) and results in a higher annotation quality.
 
 
 \subsection{Annotation Costs}
@@ -348,7 +352,10 @@ It is worth noticing that the fact of moving from HIT1 to HIT2 and from HIT2 to 
 
 As explained in Section \ref{sect:design}, a total amount of 9000 assignments were uploaded on AMT. At a reward of .02\$ per assignment, a total sum of 225\$ (180\$ + 45\$ Amazon fees) was spent on the task. Workers perceived an average hourly rate of 6.5\$/hour for HIT1 and 8\$/hour for HIT2 and HIT3. These figures suggest that, at least for assignments of type HIT2 and HIT3, a lower reward/assignment might have been considered. This would also be consistent with the recommendations of \cite{mason_financial_2009}, who claim that lower rewards might have an effect on the speed at which the task will be completed - more workers will be competing for the task at any given moment - but not on the quality. Since we were not certain whether a large enough crowd existed with the necessary skills to perform our task, we explicitly decided not to try to offer the lowest possible price.
 
-An in-house expert annotator (working at approximately 70\$/hour, including overhead) finished a batch of 1000 HIT assignments in approximately three hours, which leads to a total expert annotator cost of 210\$. By comparing this figure to the cost of uploading $3 \times 1000$ HIT assignments (75\$), we saved $210 - 75 = 135$\$, which constitutes almost 65\% of the cost of an expert annotator. These figures do not take into account the costs of preparing the data and HIT templates, but it can be assumed that these costs will be marginal when large data sets are used. Moreover, most of this effort is equally needed for preparing data for in-house annotation.
+%An in-house expert annotator (working at approximately 70\$/hour, including overhead) finished a batch of 1000 HIT assignments in approximately three hours, which leads to a total expert annotator cost of 210\$. By comparing this figure to the cost of uploading $3 \times 1000$ HIT assignments (75\$), we saved $210 - 75 = 135$\$, which constitutes almost 65\% of the cost of an expert annotator. 
+
+
+An in-house expert annotator (working at approximately 70\$/hour, including overhead) finished a batch of 1000 HIT assignments in approximately three hours, which leads to a total expert annotator cost of 210\$. To get similar quality each HIT must be annotated three times when using the AMT, so the cost of 3000 HIT assignments is approximatively 225\$/3 = 75\$ and we saved 210 - 75 = 135\$, whichconstitutes almost 65\% of the cost of an expert annotator. These figures do not take into account the costs of preparing the data and HIT templates, but it can be assumed that these costs will be marginal when large data sets are used. Moreover, most of this effort is equally needed for preparing data for in-house annotation.
 
 
 
@@ -539,7 +546,7 @@ Having only evaluated each classifier (and training set) once on a static test s
 \label{sect:conclusions}
 
 
-In this paper we have examined the usefulness of non-expert annotations on Amazon's Mechanical Turk to annotate the polarity of Spanish consumer comments. We discussed the advantages/drawbacks of three different HIT designs, ranging from a simple categorization scheme to a continuous scoring template. The fact of moving from the more simple annotation to the continuous annotation provides more information, reduces annotation time and results in a higher annotation quality. We report high inter-annotator agreement scores between non-experts and expert annotators and show that training an Opinion Mining System with non-expert AMT annotations outperforms original noisy annotations and obtains competitive results when compared to expert annotations using a variety of classifiers. In conclusion, we found that, in our case, the use of non-expert annotations through crowdsourcing is a viable and cost-effective alternative to the use of expert annotations.
+In this paper we have examined the usefulness of non-expert annotations on Amazon's Mechanical Turk to annotate the polarity of Spanish consumer comments. We discussed the advantages/drawbacks of three different HIT designs, ranging from a simple categorization scheme to a continuous scoring template. Moving from a simple, categorial annotation template to a continuous template provides more information, reduces annotation time and results in a higher annotation quality. We report high inter-annotator agreement scores between non-experts and expert annotators and show that training an Opinion Mining System with non-expert AMT annotations outperforms original noisy annotations and obtains competitive results when compared to expert annotations using a variety of classifiers. In conclusion, we found that, in our case, the use of non-expert annotations through crowdsourcing is a viable and cost-effective alternative to the use of expert annotations.
 
 In the classification experiments reported in this paper, we have relied exclusively on AMT annotations from HIT1. \textbf{Further work is needed to fully analyze the impact of each of the HIT designs for Opinion Mining tasks. We hope that the added richness of annotation of HIT2 and HIT3 will enable us to use more sophisticated classification methods.}
 
