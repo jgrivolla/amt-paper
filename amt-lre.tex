@@ -592,7 +592,13 @@ As mentioned earlier, the test sets are created similarly, but always using aggr
 \label{table:class_hit_comparison}
 \end{table}
 
+The best results are obtained using the annotations from the HIT3 triangle design, both for the training set produced using outside workers using the Mechanical Turk, as for the test set that was produced by in-house annotation.  The HIT3 training set does slightly worse on the HIT1 test set, which may indicate that the mapping from continuous values to discrete categories is not optimal in this case, but it performs very well on the test sets based on HIT2 and HIT3.  Given that the classifier used in all cases is exactly identical, this is likely to be due to a higher reliability and robustness of these annotations.
 
+This is consistent with the high kappa values of interannotator agreement achieved on this type of annotation.  It seems that the presentation of this annotation task leads to more homogenous annotations which both helps with training a classifier and provides a cleaner, more predictable, reference for the test set.  Baseline (majority class) prediction was not higher on the sets derived from HIT2 and HIT3 and are therefore not a factor in achieving higher prediction accuracy.
+
+Averaging the annotation values before discretization consistently yield better results than applying a majority vote after discretization.  This is a strong indication that continuous valued annotation of opinion provides a richer representation than a purely discrete one.
+
+As could be expected, classifiers tend to give the best results when evaluated on a reference set that was created in the same way as the training set.  However, the results obtained when training on one type of annotation and evaluating on another are quite good, and the HIT3 (average) based classifier even obtains the best results on most of the other test sets.  This speaks to the robustness of the annotations and the very simple mappings between them, and indicates a strong underlying conceptual similarity.  It is particularly striking that there seems to be a very clearly defined concept of a ``neutral'' point in the spectrum that can be found independently of the exact presentation of the annotation task
 
 \section{Conclusions}
 \label{sect:conclusions}
