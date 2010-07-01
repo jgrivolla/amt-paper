@@ -13,7 +13,7 @@
 
 \title{Using Annotations on Mechanical Turk to perform supervised polarity classification of Spanish Customer Comments}
 
-\name{Authors}
+\name{\\ \textbf{Marta R. Costa-juss\`a, Jens Grivolla, Bart Mellebeek, Francesc Benavent,}\\ \textbf{Joan Codina and Rafael E. Banchs}}
 
 \address{Barcelona Media Innovation Center\\
                Av Diagonal 177, 9th floor, 08018 Barcelona \\ 
@@ -35,7 +35,7 @@ Obtaining reliable human annotations to train data-driven AI systems is often an
 
 A number of recent papers on this subject point out that non-expert annotations, if produced in a sufficient quantity, can rival and even surpass the quality of expert annotations, often at a much lower cost \cite{snow_cheap_2008}, \cite{su_internet-scale_2007}. However, this possible increase in quality depends on the task at hand and on an adequate HIT design \cite{kittur_crowdsourcing_2008}. 
 
-In this paper, we evaluate the usefulness of AMT annotations to train an Opinion Mining System to detect opinionated contents (Polarity Detection) in Spanish customer comments on car brands. Currently, a large majority of AMT tasks is designed for English speakers. One of our reasons for using Amazon Mechanical Turk was to find out how easy it is to obtain annotated data for Spanish. In addition, we want to find out how useful these data are by comparing them to expert annotations and using them as training data of an Opinion Mining System for polarity detection.
+In this paper, we evaluate the usefulness of AMT annotations to train an Opinion Mining System to detect opinionated contents (Polarity Detection) in Spanish customer comments on car brands. Currently, a large majority of AMT tasks is designed for English speakers. Although the use of Mechanical Turk for less commonly used languages has been examined in academia (e.g. \cite{irvine-klementiev:2010:MTURK}), a large majority of AMT tasks is designed for English speakers. One of our reasons for using Amazon Mechanical Turk was to find out how easy it is to obtain annotated data for Spanish. In addition, we want to find out how useful these data are by comparing them to expert annotations and using them as training data of an Opinion Mining System for polarity detection.
 
 This paper is structured as follows. Section \ref{sect:outline} contains an explanation of the task outline and our goals. Section \ref{sect:design} contains a description of three different HIT designs that we used in this task and Section \ref{sect:comtest} describes the competence test to check candidates' Spanish skills. In Section \ref{sect:results}, we provide a detailed analysis of the retrieved HITs and focus on geographical information of the workers, the correlation between the different HIT designs, the quality of the retrieved answers and on the cost-effectiveness of  the experiment. In Section \ref{sect:datasets}, we describe the datasets that were used in the experimentation. In Section \ref{sect:classifier}, we evaluate the incidence of AMT-generated annotations on a polarity classification task using two different experimental settings. Finally, we conclude in Section \ref{sect:conclusions}.
 
@@ -46,7 +46,7 @@ We compare different HIT design strategies by evaluating the usefulness of resul
  \indent (i) Annotation quality: how do the different AMT annotations compare to expert annotations?\\
  \indent (ii) Annotation applicability: how does the performance of an Opinion Mining classifier vary after training on different (sub)sets of AMT and expert annotations?\\
  \indent (iii) Return on Investment: how does the use of AMT annotations compare economically against the use of expert annotations?\\
- \indent (iv) Language barriers: currently, most AMT tasks are designed for English speakers. How easy is it to obtain reliable AMT results for Spanish? 
+ \indent (iv) Language barriers \cite{irvine-klementiev:2010:MTURK}: currently, most AMT tasks are designed for English speakers. How easy is it to obtain reliable AMT results for Spanish? 
 
 \section{HIT design}
 \label{sect:design}
@@ -58,7 +58,7 @@ We selected a dataset of 1000 sentences containing user opinions on cars from th
 
 \begin{figure}[ht]
   \begin{center}
-    \fbox{\includegraphics[scale=0.5]{pics/ciao.png}}
+    \fbox{\includegraphics[scale=0.6]{pics/ciao.png}}
 	\caption{Example of the ciao opinions.}
 	\label{ciao}
   \end{center}
@@ -143,6 +143,7 @@ After designing the HITs, we uploaded 30 random samples for testing purposes. Th
 
 The test consists of six simple categorisation questions of the type of HIT1 that a skilled worker would be able to perform in under a minute. The test was short because we did not want to discourage the annotation candidates. From the 6 sentences, 2 were positive, 2 negative and 2 other. A qualification was granted to candidates who provided a correct answer to at least 5 sentences.
 
+\newpage
 
 \section{Annotation Task Results}
 \label{sect:results}
@@ -226,6 +227,7 @@ Figure \ref{distr2} shows the distribution of the graded categorization template
 \end{figure*}
 
 Figure \ref{distr3} shows a heat map that plots the distribution of the annotations in the triangle of HIT3. It appears that worker annotations show a spontaneous tendency to cluster, despite the continuous nature of the design. This suggests that this HIT design, originally conceived as continuous, was transformed by the workers as a simpler categorization task using five labels: \textit{negative}, \textit{ambiguous} and \textit{positive} at the top, \textit{neutral} at the bottom, and \textit{other} in the center.
+Figure \ref{distr3b} shows the distribution of all datapoints in the triangle of Figure \ref{distr3}, projected onto the X-axis (positive/negative). Although similar to the graded scale in HIT2, the distribution shows a slightly higher polarization.
 
 \begin{figure*}
   \begin{center}
@@ -238,7 +240,7 @@ Figure \ref{distr3} shows a heat map that plots the distribution of the annotati
 
 % Although the negative-positive axis has been used in some degree as an scale, the other edges, the negative-neutral and the positive-neutral are empty.
 
-Figure \ref{distr3b} shows the distribution of all datapoints in the triangle of Figure \ref{distr3}, projected onto the X-axis (positive/negative). Although similar to the graded scale in HIT2, the distribution shows a slightly higher polarization.
+
 
 These results suggest that, out of all three HIT designs, HIT2 is the one that contains the best balance between the amount of information that can be obtained and the simplicity of a one-dimensional annotation. 
 
