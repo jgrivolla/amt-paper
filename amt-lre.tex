@@ -252,6 +252,11 @@ These results suggest that, out of all three HIT designs, HIT2 is the one that c
 
 The annotation quality of AMT workers can be measured by comparing them to expert annotations. This is usually done by calculating inter-annotator agreement (ITA) scores. Note that, since a single HIT can contain more than one assignment and each assignment is typically performed by more than one annotator, we can only calculate ITA scores between batches of assignments, rather than between individual workers. Therefore, we describe the ITA scores in terms of batches. In Table \ref{tablita}, we present a comparison of standard kappa\footnote{In reality, we found that fixed and free margin Kappa values were almost identical, which reflects the balanced distribution of the dataset.} calculations \cite{eugenio_kappa_2004} between batches of assignments in HIT1 and expert annotations.
 
+$$k=\frac{P(a)-P(e)}{1-P(e)}$$
+
+where $P(a)$ is the relative observed agreement among raters, and $P(e)$ is the probability of chance agreement, using the observed data to calculate the probabilities of each observer randomly saying each category.
+
+
 We found an inter-batch ITA score of 0.598, which indicates a moderate agreement due to fairly consistent annotations between workers. When comparing individual batches with expert annotations, we found similar ITA scores, in the range between 0.628 and 0.649. This increase with respect to the inter-batch score suggests a higher variability among AMT workers than between workers and experts. 
 In order to filter out noise in worker annotations, we applied a simple majority voting procedure in which we selected, for each sentence in HIT1, the most voted category. This results in an additional batch of annotations. This batch, refered in Table \ref{tablita} as \textit{Majority}, produced a considerably higher ITA score of 0.716, which confirms the validity of the majority voting scheme to obtain better annotations.
 
@@ -339,8 +344,8 @@ of HIT3 is much higher than HIT2. This may be explained by the fact that most tu
 \hline
  & $\kappa_{1}$ & $\kappa_{2}$ \\ 
 \hline
-HIT2&   61.58 & 61.64\\ \hline
-HIT3&   69.08 & 69.19\\ \hline
+HIT2&   0.616 & 0.616\\ \hline
+HIT3&   0.691 & 0.692\\ \hline
 \end{tabular}
 \end{center}
 \caption{Inter-batch Interannotation Agreement as a measure of quality of the annotations in HIT2 and HIT3 $\kappa_{1} = $ Fixed Margin Kappa. $\kappa_{2} = $ Free Margin Kappa.}
@@ -374,8 +379,8 @@ As was mentioned in Section \ref{sect:design}, all sentences were extracted from
 \begin{enumerate}
 \item Baseline: constitutes the dataset used for training the baseline or reference classifiers in Experiment 1. 
 Automatic annotation for this dataset was obtained by using the following naive approach: those sentences extracted from
-comments with ratings\footnote{The corpus at \texttt{www.ciao.es} contains consumer opinions marked with a score between 1 (negative) and 5 (positive).} equal to 5 were assigned to category `positive', those extracted from comments with ratings 
-equal to 3 were assigned to `other', and those extracted from comments with ratings equal to 1 were assigned to
+comments with ratings\footnote{The corpus at \texttt{www.ciao.es} contains consumer opinions marked with a score between 1 (negative) and 5 (positive).} equal to 4 and 5 were assigned to category `positive', those extracted from comments with ratings 
+equal to 3 were assigned to `other', and those extracted from comments with ratings equal to 1 and 2 were assigned to
 `negative'. This dataset contains a total of 5570 sentences, with a vocabulary coverage of 11797 words. 
 
 \item AMT Annotated: constitutes the dataset that was manually annotated by AMT workers in HIT1.
